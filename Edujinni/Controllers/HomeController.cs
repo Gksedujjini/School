@@ -30,5 +30,11 @@ namespace Edujinni.Controllers
             con.Close();
             return View();
         }
+
+
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }

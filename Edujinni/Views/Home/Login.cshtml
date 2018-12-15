@@ -1,0 +1,74 @@
+﻿@model Edujinni.Models.Adminsignup
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <center>
+        <div class="container mt-5" style="width: 515px; margin-top: 50px; margin-bottom: -10px;">
+            <div class="row" style="margin-left: auto;">
+                <div class="col" style="background-color: #3333ff; height: 90px; width: 200px; border-radius: 20px; ">
+                    <img src="~/Images/Group 45.png"  height="70px" width="50px" hspace="20" style="float:left; margin-top:10px;">
+                    <label style="font-size:25px; margin-top:25px;">Sign in</label>
+                </div>
+                <div class="col" style="background-color: #ff5c33; height: 90px; width: 170px; margin-left: 5px; border-radius: 20px; ">
+                    <a href="#">
+                        <img src="~/Images/Group 48.png" height="70px" width="50px" hspace="20" style="float:left; margin-top:10px;">
+                        <label style="font-size:25px; margin-top:25px;">Sign Up</label>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background:linear-gradient(to right,  #c9f1f8 0%,#5fced9  100%); width: 500px; height: 540px; border-radius: 15px; text-align: center; margin-top:15px;">
+            <br /><br />
+            <label style="margin-bottom: -40px; font-size: 35px;">ADMIN LOGIN</label><br><br>
+            <center>
+                <div class="row" style="margin-top: -10px;">
+                    <div class="col">
+                        @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @placeholder = "Email Id(Optional)" })
+                        <br>
+                        @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Create Password" })
+                        <br />
+                        <a href="#" style="color:white; margin-top:-100px;">Forget Password</a>
+                    </div>
+                </div>
+            </center><br>
+            <center>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" class="form-control" name="submit" value="Login" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 150px;">
+                        <br/>
+                        <input type="submit" class="form-control" name="submit" value="Guest Signup" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 150px;">
+                    </div>
+                </div>
+            </center>
+        </div>
+    </center>
+
+}
+    <style>
+        .form-control{
+            width:210px;
+            border-radius:20px;
+        }
+        label
+        {
+            color:white;
+        }
+    </style>
+</body>
+</html>

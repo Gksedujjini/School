@@ -454,6 +454,7 @@
     <Content Include="Views\Home\Sginup.cshtml" />
     <Content Include="Views\Student\student.cshtml" />
     <Content Include="Views\Teacher\Teacher.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
