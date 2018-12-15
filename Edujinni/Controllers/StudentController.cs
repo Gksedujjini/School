@@ -9,10 +9,10 @@ namespace Edujinni.Controllers
     public class StudentController : Controller
     {
         // GET: Student
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
         public ActionResult student()
         {
             return View();
