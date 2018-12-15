@@ -23,6 +23,7 @@ namespace Edujinni.Models
         public string AreaCityState { get; set; }
         public Int32 PinCode { get; set; }
         public DateTime DateOfJoining { get; set; }
+        
 
     }
 }
