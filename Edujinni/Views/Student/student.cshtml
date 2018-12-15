@@ -1,4 +1,4 @@
-﻿
+﻿@model Edujinni.Models.StudentModel
 @{
     Layout = null;
 }
@@ -9,9 +9,297 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>student</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body>
-    <div> 
+
+<body id="page-top">
+    <div id="wrapper">
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <!-- <a href="#">Student Overview/</a> -->
+                    <li class="breadcrumb-item active"> Student Overview - Add Student</li>
+                </ol>
+
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <b>Generic Information</b>
+                            <form name="alm" action="#" method="post" onSubmit="call();">
+                                <div class="row mt-3">
+
+                                    <div class="col-md-3 " id="image">
+
+                                        <i class="fa fa-user fa-5x"></i>
+                                        <i class="fa fa-plus-circle upload-button"></i>
+                                        <input class="file-upload" type="file" accept="image/*" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <br>
+                                        @Html.RadioButtonFor(Model => Model.Gender, "Male")
+                                        Male<br>
+                                        @Html.RadioButtonFor(Model => Model.Gender, "FeMale")
+                                        Female                                       
+                                    </div>
+                                </div>
+                                <!--  -->
+
+
+
+                                <div class="row" style="margin-top: 30px;">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @placeholder = "FirstName" })                                                
+                                            </div>
+                                            <div class="col-md-3">
+                                                @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @placeholder = "Last Name" })                                                
+                                            </div>
+                                            <div class="col-md-3 ">
+                                                @Html.TextBoxFor(Model => Model.class1, new { @type = "select", @class = "form-control", @placeholder = "dropdown list" })
+                                                @*<select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
+                                                    <option selected="selected">Select class</option>
+                                                    <option>LKG</option>
+                                                    <option>UKG</option>
+                                                    <option>First Class</option>
+                                                    <option>Second Class</option>
+                                                </select>*@
+                                            </div>
+                                            <div class="col-md-3">
+                                                @Html.TextBoxFor(Model => Model.section, new { @type = "select", @class = "form-control", @placeholder = "dropdown list" })
+                                                @*<select name="section" class="form-control" id="section" placeholder="Section"  style="">
+                                                    <option selected="selected">Select Section</option>
+                                                    <option>A</option>
+                                                    <option>B</option>
+                                                    <option>C</option>
+                                                    <option>D</option>
+                                                </select>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                @Html.TextBoxFor(Model => Model.RoolNo, new { @class = "form-control", @placeholder = "Roll No" })
+                                            </div>
+                                            <div class="col-md-3">
+                                                @Html.TextBoxFor(Model => Model.StudentId, new { @class = "form-control", @placeholder = "Student Id" })
+                                            </div>
+                                            <div class="col-md-3">
+                                                @Html.TextBoxFor(Model => Model.Dob, new { @type = "Date", @class = "form-control", @placeholder = "Date of Birth" })
+                                            </div>
+                                        </div><br>
+                                        <hr>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <b>Family Information</b><br><br>
+                                        <div class="row">
+                                            <div class="col-md-4 mt-2">
+                                                @Html.TextBoxFor(Model => Model.FatherName, new {@class = "form-control", @placeholder = "Father Name" })                             
+                                            </div>
+                                            <div class="col-md-4 mt-2">
+                                                @Html.TextBoxFor(Model => Model.FatherMobileNo, new { @class = "form-control", @placeholder = "Father Mobile No" })                                                
+                                            </div>
+                                            <div class="col-md-4 mt-2">
+                                                @Html.TextBoxFor(Model => Model.FatherOccupation, new { @class = "form-control", @placeholder = "Father Occupation" })                                                
+                                            </div>
+                                        </div><br>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                @Html.TextBoxFor(Model => Model.MotherName, new { @class = "form-control", @placeholder = "Mother Name" })
+                                            </div>
+                                            <div class="col-md-4 mt-2">
+                                                @Html.TextBoxFor(Model => Model.MotherMobileNo, new { @class = "form-control", @placeholder = "Mother Occupation" })
+                                            </div>
+                                            <div class="col-md-4 mt-2">
+                                                @Html.TextBoxFor(Model => Model.MotherMobileNo, new { @class = "form-control", @placeholder = "Mother Occupation" })                                                
+                                            </div>
+                                        </div><br>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                @Html.TextBoxFor(Model => Model.SbilingName, new { @class = "form-control", @placeholder = "Sibbling Name" })
+                                            </div>
+                                            <div class="col-md-4">
+                                                @Html.TextBoxFor(Model => Model.Age, new { @class = "form-control", @placeholder = "Age" })                                                
+                                            </div><br>
+
+                                        </div><br>
+                                        <hr>
+                                    </div>
+
+                                    <div class="row" style="margin-left: 0px;">
+                                        <div class="col-md-11">
+                                            <b>Address</b><br><br>
+                                            <div class="row">
+                                                <div class="col-md-4 mt-2">
+                                                    @Html.TextBoxFor(Model => Model.FlatNo, new { @class = "form-control", @placeholder = "Flat No" })
+                                                </div>
+                                                <div class="col-md-4 mt-2">
+                                                    @Html.TextBoxFor(Model => Model.BulidingName, new { @class = "form-control", @placeholder = "Building Name" })
+                                                </div>
+                                                <div class="col-md-4 mt-2">
+                                                    @Html.TextBoxFor(Model => Model.street1, new { @class = "form-control", @placeholder = "Street-1" })
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    @Html.TextBoxFor(Model => Model.street2, new { @class = "form-control", @placeholder = "Street-2" })
+                                                </div>
+                                                <div class="col-md-4">
+                                                    @Html.TextBoxFor(Model => Model.Area, new { @class = "form-control", @placeholder = "Area" })
+                                                </div>
+                                                <div class="col-md-4">
+                                                    @Html.TextBoxFor(Model => Model.City, new { @class = "form-control", @placeholder = "City" })
+                                                </div>
+                                            </div><br>
+                                            <div class="row mb-4">
+                                                <div class="col-md-4">
+                                                    @Html.TextBoxFor(Model => Model.State, new { @class = "form-control", @placeholder = "State" })
+                                                </div>
+                                                <div class="col-md-4">
+                                                    @Html.TextBoxFor(Model => Model.AreaCode, new { @class = "form-control", @placeholder = "Area Code" })
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="submit" class="btn btn-success" style="height: 40px; width: 190px;border-radius: 20px;">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <!-- side social links -->
+                </div>
+            </div>
+
+        </div>
+
     </div>
+    <script src="http://localhost/school/assests/js/custom.js"></script>
+    <style type="text/css">
+        .scrollbar {
+            margin-left: auto;
+            float: left;
+            height: 300px;
+            width: 65px;
+            background: #fff;
+            overflow-y: scroll;
+            margin-bottom: 25px;
+        }
+
+        .force-overflow {
+            min-height: 400px;
+        }
+
+        .scrollbar-primary::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        .scrollbar-primary::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+            background-color: #4285F4;
+        }
+
+        input[type=text] {
+            background-color: #f5f5f0;
+            border-radius: 20px;
+        }
+
+        input[type=number] {
+            background-color: #f5f5f0;
+            border-radius: 20px;
+        }
+
+        input[type=date] {
+            background-color: #f5f5f0;
+            border-radius: 20px;
+        }
+
+        #classs, #section {
+            background-color: #f5f5f0;
+            border-radius: 20px;
+        }
+
+
+/*profile image*/
+       .profile-pic {
+           max-width: 200px;
+           max-height: 200px;
+           display: block;
+       }
+       .form-control{
+           border-radius:20px;
+           background-color: #ebebe0;
+       }
+
+       .file-upload {
+           display: none;
+       }
+
+       img {
+           max-width: 100%;
+           height: auto;
+       }
+
+       .p-image:hover {
+           transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+       }
+
+       .upload-button {
+           font-size: 1.6em;
+       }
+
+           .upload-button:hover {
+               transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+               color: blue;
+           }
+
+       .fa-user {
+           color: blue;
+       }
+   </style>
+   <script type="text/javascript">
+       $(document).ready(function() {
+
+
+  var readURL = function(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $('.profile-pic').attr('src', e.target.result);
+          }
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+  $(".upload-button").on('click', function() {
+     $(".file-upload").click();
+  });
+});
+   </script>
 </body>
 </html>

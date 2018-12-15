@@ -39,18 +39,16 @@
                         <br>
                         @Html.TextBoxFor(Model => Model.DOB, new {@type="Date",@class = "form-control", @placeholder = "Date of Birth" })
                         <br>
-                        @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Create Password" })
+                        @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Create Password" })
                         <br>
-                        @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Confirm Password" ,@style = "margin-bottom:50px;" })
+                        @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Confirm Password" ,@style = "margin-bottom:50px;" })
                         <br>
                        
                         @Html.RadioButtonFor(Model => Model.Gender, "Male")
                        Male
                          @Html.RadioButtonFor(Model => Model.Gender, "FeMale")
                         Female
-                        @*<input type="radio" name="gender" class="gender">Male&nbsp
-                        <input type="radio" name="gender" class="gender">Female*@
-                    </div>
+                      </div>
                 </div><br>
                 <div class="row">
                     <div class="col">
