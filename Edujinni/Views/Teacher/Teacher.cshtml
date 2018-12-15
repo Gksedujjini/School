@@ -1,18 +1,229 @@
-﻿
+﻿@model Edujinni.Models.Addteacher
 
 @{
     Layout = null;
 }
-
+@using (Html.BeginForm("Addteacher", "Home", FormMethod.Post))
+{
 <!DOCTYPE html>
 
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Teacher</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript"/>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>Add Teacher</title>
+    <style type="text/css">
+        .profile-pic {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+        }
+        .form-control{
+            border-radius:20px;
+            background-color: #ebebe0;
+        }
+
+        .file-upload {
+            display: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .p-image:hover {
+            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+        }
+
+        .upload-button {
+            font-size: 1.6em;
+        }
+
+            .upload-button:hover {
+                transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+                color: blue;
+            }
+
+        .fa-user {
+            color: blue;
+        }
+    </style>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+
+
+   var readURL = function(input) {
+       if (input.files && input.files[0]) {
+           var reader = new FileReader();
+
+           reader.onload = function (e) {
+               $('.profile-pic').attr('src', e.target.result);
+           }
+
+           reader.readAsDataURL(input.files[0]);
+       }
+   }
+
+
+   $(".file-upload").on('change', function(){
+       readURL(this);
+   });
+
+   $(".upload-button").on('click', function() {
+      $(".file-upload").click();
+   });
+});
+    </script>
 </head>
 <body>
-    <div> 
-    </div>
+
+    <div class="row mt-3">
+    <div class="col-md-9 mb-3" style="background-color: white;">
+
+
+    &nbsp;&nbsp;<span>Genric Information</span><hr>
+    
+        <div class="row">
+            <div class="col-md-5">
+                <div class="col-md-7" id="image">
+                    <i class="fa fa-user fa-5x"></i>
+                    <i class="fa fa-plus-circle upload-button" style="margin-left: -7px; color: blue;"></i>
+                    <input class="file-upload" type="file" accept="image/*" />
+                </div>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+        <div class="form-row mt-1" style="margin-left: 10px;">
+
+            <div class="form-row mt-3">
+                <div class="col-md-4 mt-2">
+                    @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                </div>
+                <div class="col-md-4 ml-auto mt-2">
+                    @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                </div>
+                <div class="col-md-4 ml-auto mt-2">
+                    @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @placeholder ="Email"})
+                </div>
+            </div>  <div class="form-row mt-3">
+                <div class="col-md-4 mt-2">
+                    @Html.TextBoxFor(Model => Model.PhoneNo, new { @class = "form-control", @placeholder = "Phone NO" })
+                </div>
+                <div class="col-md-4 ml-auto mt-2">
+                    @Html.TextBoxFor(Model => Model.DOB, new { @type="date", @class = "form-control", @placeholder = "Date of Birth" })
+                </div>
+                <div class="col-md-4 ml-auto mt-2">
+                    <div class="form-check form-check-inline ml-4">
+                        @*<input class="form-check-input" type="radio" name="gender" id="inlineCheckboxMale" value="Male">*@
+                        @Html.RadioButtonFor(Model => Model.Gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
+                        <label class="form-check-label" for="inlineCheckboxMale">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline ml-3">
+                        @Html.RadioButtonFor(Model => Model.Gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
+                        @*<input class="form-check-input" type="radio" name="gender" id="inlineCheckboxFemale" value="Female">*@
+                        <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
+                    </div>
+                </div>
+            </div>
+        </div><hr>
+        &nbsp;&nbsp;<span>Academic Information</span><br>
+            <div class="form-row mt-3" style="margin-left: 10px;">
+                <div class="form-row">
+                    <div class="col-md-4 mt-2">
+                        @Html.TextBoxFor(Model => Model.Qualification, new { @class = "form-control", @placeholder = "Qualification" })
+                    </div>
+                    <div class="dropdown col-md-4 ml-auto mt-2">
+                        <button style="background-color: #ebebe0; border-radius:20px; width: 205px;" class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Subject-1
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <div class="dropdown col-md-4 ml-auto mt-2">
+                        <button style="background-color: #ebebe0; border-radius:20px; width: 205px;" class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Subject-2
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row mt-4">
+                    <div class="col-md-5 mt-2">
+
+                    </div>
+                    <!-- <div class="col ml-4">
+                      <input type="text" class="form-control" placeholder="Date of birth" style="border-radius:20px; background-color: #ebebe0;">
+                    </div>  -->
+
+                    <div class="col-md-7 form-group">
+                        <div class="form-check form-check-inline ml-4 mt-2">
+                            <input class="form-check-input" type="radio" name="work" id="inlineRadio1" value="Teaching">
+                            <label class="form-check-label" for="inlineRadio1">Teaching</label>
+                        </div>
+                        <div class="form-check form-check-inline ml-4 mt-2">
+                            <input class="form-check-input" type="radio" name="work" id="inlineRadio2" value="Non-teaching">
+                            <label class="form-check-label" for="inlineRadio2">Non-teaching</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><hr>
+            &nbsp;&nbsp;<span>Address</span><br>
+            <form>
+                <div class="form-row mt-3" style="margin-left: 10px;">
+
+                    <div class="form-row">
+                        <div class="col-md-4 mt-2">
+                            <input type="text" class="form-control" placeholder="Flat No" style="border-radius:20px; background-color: #ebebe0;">
+                        </div>
+                        <div class="col-md-4 ml-auto mt-2">
+                            <input type="text" class="form-control" placeholder="Street" style="border-radius:20px; background-color: #ebebe0;">
+                        </div>
+                        <div class="col-md-4 ml-auto mt-2">
+                            <input type="text" class="form-control" placeholder="Area, City, State" style="border-radius:20px; background-color: #ebebe0;">
+                        </div>
+
+                    </div>
+
+                    <div class="form-row mt-4 mb-3">
+                        <div class="col-md-4 mb-2 mt-2">
+                            <input type="text" class="form-control" placeholder="Pincode" style="border-radius:20px; background-color: #ebebe0;">
+                        </div>
+                        <div class="col-md-4 ml-auto mt-2">
+                            <input type="date" class="form-control" placeholder="Date of Joining" style="border-radius:20px; background-color: #ebebe0;">
+                        </div>
+                        <div class="col-md-4 ml-auto mt-2">
+                            <input type="submit" class="form-control" name="submit" value="Add Teacher" style="border-radius:10px; background-color: #01BE66; color: white; min-width: 50px; width: 210px;">
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            </div>
+        </div>
 </body>
-</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/sb-admin.min.js"></script>
+}
