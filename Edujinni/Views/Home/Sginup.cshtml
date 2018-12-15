@@ -1,0 +1,78 @@
+﻿@model Edujinni.Models.Adminsignup
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("Sginup", "Home", FormMethod.Post))
+{
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <link href="Content/custom.css" rel="stylesheet">
+    <style type="text/css">
+        .form-control {
+            width: 200px;
+            height: 30px;
+            margin: auto;
+            margin-bottom: 10px;
+            border-radius: 20px;
+        }
+    </style>
+    <body >
+        <center>
+            <div class="container" style="background:linear-gradient(to right,  #c9f1f8 0%,#5fced9  100%); width: 500px; height: 540px; border-radius: 15px; text-align: center; margin-top:35px;">
+                <br /><br />
+                <label style="margin-bottom: -40px; font-size: 35px;">ADMIN SIGNUP</label><br><br>
+                <div class="row" style="margin-top: -10px;">
+                    <div class="col">
+                        @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @placeholder = "FirstName" })
+                        <br>
+                        @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @placeholder = "LastName" })
+                        <br>
+                        @Html.TextBoxFor(Model => Model.Mobile, new { @class = "form-control", @placeholder = "Mobile No" })
+                        <br>
+                        @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @placeholder = "Email Id(Optional)" })
+                        <br>
+                        @Html.TextBoxFor(Model => Model.DOB, new {@type="Date",@class = "form-control", @placeholder = "Date of Birth" })
+                        <br>
+                        @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Create Password" })
+                        <br>
+                        @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Confirm Password" ,@style = "margin-bottom:50px;" })
+                        <br>
+                       
+                        @Html.RadioButtonFor(Model => Model.Gender, "Male")
+                       Male
+                         @Html.RadioButtonFor(Model => Model.Gender, "FeMale")
+                        Female
+                        @*<input type="radio" name="gender" class="gender">Male&nbsp
+                        <input type="radio" name="gender" class="gender">Female*@
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" class="form-control" name="submit" value="submit" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 200px;">
+                    </div>
+                </div>
+            </div>
+        </center>
+    </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sb-admin.min.js"></script>
+
+}
+
+  @if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}  
