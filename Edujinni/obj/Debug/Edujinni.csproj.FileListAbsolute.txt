@@ -259,6 +259,6 @@ C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\bin\Microsoft.Owin.Security.OAuth
 C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
 C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\obj\Debug\Edujinni.dll
 C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\obj\Debug\Edujinni.pdb
+C:\Users\SAIKIRAN\Source\Repos\School\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache

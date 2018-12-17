@@ -19,17 +19,19 @@
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     <center>
-        <div class="container mt-5" style="width: 515px; margin-top: 50px; margin-bottom: -10px;">
+        <div class="container mt-5" style="width:500px; margin-top: 50px; margin-bottom: -10px;">
             <div class="row" style="margin-left: auto;">
-                <div class="col" style="background-color: #3333ff; height: 90px; width: 200px; border-radius: 20px; ">
-                    <img src="~/Images/Group 45.png"  height="70px" width="50px" hspace="20" style="float:left; margin-top:10px;">
+                <div class="col" style="background-color: #3333ff; height: 90px; width: 150px; margin-left:-10px; border-radius: 20px; ">
+                    <img src="~/Images/Group 45.png"  height="70" width="50" hspace="20" style="float:left; margin-top:10px;">
                     <label style="font-size:25px; margin-top:25px;">Sign in</label>
                 </div>
-                <div class="col" style="background-color: #ff5c33; height: 90px; width: 170px; margin-left: 5px; border-radius: 20px; ">
-                    <a href="#">
-                        <img src="~/Images/Group 48.png" height="70px" width="50px" hspace="20" style="float:left; margin-top:10px;">
-                        <label style="font-size:25px; margin-top:25px;">Sign Up</label>
-                    </a>
+                <div class="col" style="background-color: #ff5c33; height: 90px; width: 150px; margin-left: 10px; border-radius: 20px; ">                    
+                        <img src="~/Images/Group 48.png" height="70" width="50" hspace="20" style="float:left; margin-top:10px;">
+                    @*@Html.ActionLink("Signup","Sginup","Home");*@
+                    <br/>
+                    @*<a href="@Url.Action("Sginup","Home")" style="font-size:25px; color:white;">Signup                        
+                    </a>*@
+                    <a href="#" style="font-size:25px; color:white;">Signup</a>
                 </div>
             </div>
         </div>
@@ -52,7 +54,8 @@
                     <div class="col">
                         <input type="submit" class="form-control" name="submit" value="Login" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 150px;">
                         <br/>
-                        <input type="submit" class="form-control" name="submit" value="Guest Signup" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 150px;">
+                        <input type="button" class="form-control" name="submit" onclick="location.href='@Url.Action("Sginup","Home")'"
+                               value="Guest Signup" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 150px;">
                     </div>
                 </div>
             </center>
