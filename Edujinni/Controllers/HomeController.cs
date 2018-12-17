@@ -10,6 +10,10 @@ namespace Edujinni.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Main()
+        {
+            return View();
+        }
         public ActionResult Sginup()
         {
 
