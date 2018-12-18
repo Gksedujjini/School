@@ -16,7 +16,7 @@ namespace Edujinni.Models
         public string subject1 { get; set; }
         public string subject2 { get; set; }
         public string qualification { get; set; }
-
+       
         public string teacherid { get; set; }
         public string desigination { get; set; }
         public string flat_no { get; set; }
