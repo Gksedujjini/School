@@ -2,7 +2,8 @@
 @{
     Layout = null;
 }
-
+@using (Html.BeginForm("student", "Student", FormMethod.Post))
+{
 <!DOCTYPE html>
 
 <html>
@@ -15,8 +16,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-@using (Html.BeginForm("student", "Student", FormMethod.Post))
-{ 
+
 <body id="page-top">
     <div id="wrapper">
         <div id="content-wrapper">
@@ -112,7 +112,7 @@
                                         <b>Family Information</b><br><br>
                                         <div class="row">
                                             <div class="col-md-4 mt-2">
-                                                @Html.TextBoxFor(Model => Model.FatherName, new {@class = "form-control", @placeholder = "Father Name" })                             
+                                                @Html.TextBoxFor(Model => Model.FatherName, new { @class = "form-control", @placeholder = "Father Name" })                             
                                             </div>
                                             <div class="col-md-4 mt-2">
                                                 @Html.TextBoxFor(Model => Model.FatherMobileNo, new { @class = "form-control", @placeholder = "Father Mobile No" })                                                
@@ -305,6 +305,7 @@
   });
 });
    </script>
-    }
+   
 </body>
 </html>
+}
