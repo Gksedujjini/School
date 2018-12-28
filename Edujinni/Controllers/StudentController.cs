@@ -17,5 +17,14 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult editstudent()
+        {
+            return View();
+        }
+        public ActionResult test()
+        {
+            ViewBag.Message = "hello..this is test";
+            return View();
+        }
     }
 }

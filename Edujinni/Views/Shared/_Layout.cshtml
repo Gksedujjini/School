@@ -1,44 +1,357 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+﻿@{
+    Layout = null;
+}
+@using (Html.BeginForm("Main", "Home", FormMethod.Get))
+{
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+    <title> Home</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Custom fonts for this template-->
+    <style>
+        .navbar-brand
+        {
+           color:white;
+           font-size:medium;
+           height:40px;  
+           margin-top:5px;
+        }
+        .img
+        {
+            float:left;
+            margin-left:10px;
+            margin-top:10px;
+        }
+    </style>
+    <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/sb-admin.css" rel="stylesheet">
+    @*<link href="~/Content/custom.css" rel="stylesheet">*@
+    <body id="page-top">
+        <div class="row" style="margin-bottom:-10px; height:auto;">
+            <div class="col" id="logoBar" style="background-color: blue; margin-left: 0px; width:150px;">
+                <a class="navbar-brand mr-1" href="#" style="color: white; font-size:18px;">&nbsp&nbsp&nbsp Logo</a>
+                <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#" style="float: right; margin-top: 7px;">
+                    <i class="fas fa-bars" style="margin-left: -20px; font-size:20px;"></i>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+            <div class="col-md-10" style="background-color: white;">
+                <span style="margin-left: 00px; font-size: 17px; margin-top:5px;">Welcome to school management system</span>
+                <nav style="background-color: white; font-size:15px; margin-bottom:00px;" class="navbar navbar-expand navbar-dark navbar-right bg-grey static-top">
+
+                    <form id="search-box" class="d-block d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                        <div id="search-box" class="input-group" style="width: auto;">
+                            <input type="text" style="background-color: #ebebe0; border:none; border-radius: 20px 00px 00px 20px" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-default" type="button" style="background-color: #ebebe0;border-radius: 00px 20px 20px 00px">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                         </div>
+                    </form>
+                    <ul class="navbar-nav ml-auto ml-md-0">
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw" style="color: grey;"></i>
+                                <span class="badge badge-danger">7</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-circle fa-fw" style="color: grey; border-radius: 14px;"></i>
+                                @*<img src="images/Group 174.png" height="20px" width="20px">*@
+                            </a>
+                            <!-- <span style="margin-left: auto;">Admin name<br>Name</span> -->
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="#">Activity Log</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown no-arrow" style="margin-right: none;">
+                            <span style="margin-right: none;">Admin name<br>Name</span>
+                        </li>
+                        <!-- <span style="margin-left: -40px;">Admin name<br>Name</span> -->
+                    </ul>
+
+
+                </nav>
+            </div>
+
+        </div>
+
+        <div id="wrapper" style="font-size:12px;">
+
+            <!-- Sidebar -->
+            <ul class="sidebar navbar-nav" style="width: 0px;">
+
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">                  
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 289.png" height="20" width="20">
+                        <span>Academic Syllabus</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <img src="~/Images/Group 176@2x.png" height="20" width="20" class="img">
+                    <span>
+                        @Html.ActionLink("Edit Profile", "student", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                    </span>                   
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <span>
+                        <img src="~/Images/Group 232@2x.png" height="20" width="20" class="img">                   
+                     @Html.ActionLink("Teacher", "Teacher", "Teacher", new { area = "" }, new { @class = "navbar-brand" })
+                    </span>                
+                    @*<a class="nav-link" href="#">
+                        <img src="~/Images/Group 232@2x.png" height="20px" width="20px">
+                        <span>Teacher</span>
+                    </a>*@
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 235.png" height="20" width="20">
+                        <span>Add Subject</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/img.png" height="20" width="20">
+                        <span>View Achievements</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 289.png" height="20" width="20px">
+                        <span>ATT Records</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 204.png" height="20" width="20">
+                        <span>Message</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 243.png" height="20" width="20">
+                        <span>Fee Collection</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 246.png" height="20" width="20px">
+                        <span>Requested</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 180.png" height="20" width="20">
+                        <span>Assign Timetable</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 198.png" height="20" width="20">
+                        <span>Add Events</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 192@2x.png" height="20px" width="20px">
+                        <span>Leading Board</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 290.png" height="20" width="20">
+                        <span>Add Exam Schedules</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 210@2x.png" height="20px" width="20px">
+                        <span>Results</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 292.png" height="20px" width="20px">
+                        <span>Students Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 293.png" height="20px" width="20px">
+                        <span>Add Marks</span>
+                    </a>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <a class="nav-link" href="#">
+                        <img src="~/Images/Group 294.png" height="20px" width="20px">
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div id="content-wrapper" style="background-color: #ebebe0;">
+
+                <div class="container-fluid">
+
+                    <!-- Breadcrumbs-->
+                    <ol class="breadcrumb" style="background-color: #ebebe0; font-size: 12px; margin-top: -5px;">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <!-- <a href="#">Student Overview/</a> -->
+                        <li class="breadcrumb-item active"> Student Overview - Add Student</li>
+                    </ol>
+
+
+                    <div class="container mb-3">
+
+                        <div class="row" style="margin-top: -10px;">
+                            <div class="col-md-9 mb-3" style="background-color: white;">                              
+                                @RenderBody()
+                           </div>
+
+                            <!-- side social links -->
+                            <div class="col-md-3" style="margin-right: auto;">
+                                <div class="row ml-2" style="background-color: none;">
+                                    <div class="col-md-12" style="background-color: #3333ff; color: white; width: auto; border-radius: 5px;">
+                                        <center>
+                                            <span><img src="~/Images/Group 267.png" height="50px" width="50px" style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;"></span>
+                                            <span style="margin-left: 20px; font-size:15px;">Likes</span>
+                                            <span style="margin-left: 20px; font-size:15px;">35000</span>
+                                        </center>
+
+                                    </div>
+                                </div>
+                                <div class="row ml-2" style="">
+                                    <div class="col-md-12"
+                                         style="background-color: #33d6ff; color: white; width: auto; border-radius: 5px; margin-top: 5px;">
+                                        <center>
+                                            <span>
+                                                <img src="~/Images/Group 269.png" height="50px" width="50px"
+                                                     style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;">
+                                            </span>
+                                            <span style="margin-left: 20px; font-size:15px;">Likes</span>
+                                            <span style="margin-left: 20px; font-size:15px;">12000</span>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="row ml-2" style="">
+                                    <div class="col-md-12"
+                                         style="background-color: #804000; color: white; width: auto; border-radius: 5px; margin-top: 5px;">
+                                        <center>
+                                            <span>
+                                                <img src="~/Images/Group 276.png" height="50px" width="50px"
+                                                     style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;">
+                                            </span>
+                                            <span style="margin-left: 20px; font-size:15px;">Likes</span>
+                                            <span style="margin-left: 20px; font-size:15px;">67980</span>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-11 ml-auto" style="background-color: white;">
+                                        <br>
+                                        <span style="float: left;margin-top: 0px; font-size:20px; margin-top:-10px;">Notice Board</span>
+                                        <a href="#">
+                                            <span style="float: right;">
+                                                <img src="~/Images/Group 265.png" height="20px" width="20px" style="margin-right: ; float: right;" hspace="10">
+                                            </span>
+                                        </a>
+                                        <a href="#">
+                                            <span>
+                                                <img src="~/Images/Group 266.png" height="20px" width="20px" style="margin-left: auto; float: right;">
+                                            </span>
+                                        </a><br>
+                                        <hr>
+                                        <div class="scrollbar scrollbar-primary" style="width: auto; height: 500px;">
+                                            <div class="force-overflow">
+
+                                                <span>Notice board content will be here--</span>
+                                                <div>
+                                                    <br>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
-</html>
+        <!-- /.content-wrapper -->
+        <!-- /#wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="#/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="~/Scripts/jquery.min.js"></script>
+        <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+        <script src="~/Scripts/sb-admin.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <!-- <script src="js-easing/jquery.easing.min.js"></script> -->
+        <!-- Page level plugin JavaScript-->
+        <!-- <script src="vendor/chart.js/Chart.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
+        <!-- Custom scripts for all pages-->
+        <!-- Demo scripts for this page-->
+
+        <script src="~/Scripts/custom.js"></script>
+        <style type="text/css">
+        </style>
+
+    </body>
+}

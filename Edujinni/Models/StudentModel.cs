@@ -31,7 +31,7 @@ namespace Edujinni.Models
         public string Area { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        public string AreaCode { get; set; }    
+        public string AreaCode { get; set; }   //can be used for pin code in edit student 
         
         public string Insert(StudentModel Sm)
         {
@@ -42,5 +42,6 @@ namespace Edujinni.Models
             return result;
 
         } 
+        
     }
 }
