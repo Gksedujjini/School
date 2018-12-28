@@ -1,0 +1,44 @@
+﻿@model Edujinni.Models.Achievements
+@{
+//   Layout = null;
+}
+@using (Html.BeginForm("AddAchievements", "Admin", FormMethod.Post))
+{
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddAchievements</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #achievements
+        {
+            height: 45px;
+            width :270px;
+            border-radius:20px;   
+        }
+        p
+        {
+            text-align:center;            
+        }
+    </style>
+</head>
+ <body>     
+             <p style="font-size:30px;">Add Achievements</p>
+             <br />
+                 @Html.TextBoxFor(Model => Model.AchievementDate, new { @type = "Date", @class = "form-control", @placeholder = "Achievement Date", @id = "achievements" })
+                 <br />
+                 @* this is to create a drop down list *@
+                 @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "achievements" })
+                 <br />
+                 @Html.TextBoxFor(Model => Model.section, new { @class = "form-control", @placeholder = "Select Section", @id = "achievements" })
+                 <br />
+                 @Html.TextBoxFor(Model => Model.studentlist, new { @class = "form-control", @placeholder = "Select Student List", @id = "achievements" })
+                 <br />
+                 @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Achievement Type", @id = "achievements" })
+                 <br />
+                 <textarea name='comment' class="form-control" style="height:150px; width:270px; border-radius:20px;" placeholder="Suresh won first prize in football"></textarea>
+                 <br />
+                 <input type="button" value="Save" class="btn btn-success" style="width:270px; height:45px; border-radius:10px;" />      
+     
+ </body>
+}

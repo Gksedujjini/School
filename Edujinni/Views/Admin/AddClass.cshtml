@@ -1,0 +1,37 @@
+﻿@model Edujinni.Models.addclass
+@{
+//   Layout = null;
+}
+@using (Html.BeginForm("AddClass", "Admin", FormMethod.Post))
+{
+    <!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>AddAchievements</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            #achievements {
+                height: 45px;
+                width: 270px;
+                border-radius: 20px;
+            }
+
+            p {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <p style="font-size:30px;">Add Class</p>
+        <br />
+        @* this is to create a drop down list *@
+        @Html.TextBoxFor(Model => Model.classTeacher, new { @class = "form-control", @placeholder = "Add Class Teacher(select box)", @id = "achievements" })
+        <br />
+        @Html.TextBoxFor(Model => Model.ClassName, new { @class = "form-control", @placeholder = "Enter Class Name", @id = "achievements" })
+        <br />
+        @Html.TextBoxFor(Model => Model.SectionName, new { @class = "form-control", @placeholder = "Enter Section Name", @id = "achievements" })
+        <br />
+        <input type="button" value="Save" class="btn btn-success" style="width:270px; height:45px; border-radius:10px;" />
+
+    </body>
+}
