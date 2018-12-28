@@ -23,7 +23,7 @@
         .navbar-brand
         {
            color:white;
-           font-size:medium;
+           font-size:1.5rem;
            height:40px;  
            margin-top:5px;
         }
@@ -75,7 +75,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle fa-fw" style="color: grey; border-radius: 14px;"></i>
-                                @*<img src="images/Group 174.png" height="20px" width="20px">*@
+                                @*<img src="images/Group 174.png" height="20" width="20">*@
                             </a>
                             <!-- <span style="margin-left: auto;">Admin name<br>Name</span> -->
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -85,8 +85,8 @@
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown no-arrow" style="margin-right: none;">
-                            <span style="margin-right: none;">Admin name<br>Name</span>
+                        <li class="nav-item dropdown no-arrow" style="">
+                            <span style="">Admin name<br>Name</span>
                         </li>
                         <!-- <span style="margin-left: -40px;">Admin name<br>Name</span> -->
                     </ul>
@@ -111,34 +111,30 @@
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/Group 176@2x.png" height="20" width="20" class="img">
                     <span>
-                        @Html.ActionLink("Edit Profile", "student", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Edit Profile", "EditProfile", "Admin", new { area = "" }, new { @class = "navbar-brand" , style = "font-size:medium;" })
                     </span>                   
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <span>
                         <img src="~/Images/Group 232@2x.png" height="20" width="20" class="img">                   
-                     @Html.ActionLink("Teacher", "Teacher", "Teacher", new { area = "" }, new { @class = "navbar-brand" })
-                    </span>                
+                     @Html.ActionLink("Teacher", "ViewClass", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium;" })
+                    </span>
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <img src="~/Images/Group 235.png" height="20" width="20" class="img">
+                    @Html.ActionLink("Add Subject", "AddSubjects", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;" })               
+                </li>
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
+                    <img src="~/Images/img.png" height="20" width="20" class="img">
+                    @Html.ActionLink("Achievements", "ViewAchievements", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
                     @*<a class="nav-link" href="#">
-                        <img src="~/Images/Group 232@2x.png" height="20px" width="20px">
-                        <span>Teacher</span>
+                        <img src="~/Images/img.png" height="20" width="20">
+                        <span>View Achievements</span>
                     </a>*@
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
-                        <img src="~/Images/Group 235.png" height="20" width="20">
-                        <span>Add Subject</span>
-                    </a>
-                </li>
-                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
-                        <img src="~/Images/img.png" height="20" width="20">
-                        <span>View Achievements</span>
-                    </a>
-                </li>
-                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
-                        <img src="~/Images/Group 289.png" height="20" width="20px">
+                        <img src="~/Images/Group 289.png" height="20" width="20">
                         <span>ATT Records</span>
                     </a>
                 </li>
@@ -157,7 +153,7 @@
 
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
-                        <img src="~/Images/Group 246.png" height="20" width="20px">
+                        <img src="~/Images/Group 246.png" height="20" width="20">
                         <span>Requested</span>
                     </a>
                 </li>
@@ -175,7 +171,7 @@
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
-                        <img src="~/Images/Group 192@2x.png" height="20px" width="20px">
+                        <img src="~/Images/Group 192@2x.png" height="20" width="20">
                         <span>Leading Board</span>
                     </a>
                 </li>
@@ -187,25 +183,25 @@
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
-                        <img src="~/Images/Group 210@2x.png" height="20px" width="20px">
+                        <img src="~/Images/Group 210@2x.png" height="20" width="20">
                         <span>Results</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
-                        <img src="~/Images/Group 292.png" height="20px" width="20px">
+                        <img src="~/Images/Group 292.png" height="20" width="20">
                         <span>Students Overview</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
-                        <img src="~/Images/Group 293.png" height="20px" width="20px">
+                        <img src="~/Images/Group 293.png" height="20" width="20">
                         <span>Add Marks</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
-                        <img src="~/Images/Group 294.png" height="20px" width="20px">
+                        <img src="~/Images/Group 294.png" height="20" width="20">
                         <span>Logout</span>
                     </a>
                 </li>
@@ -219,18 +215,20 @@
                     <!-- Breadcrumbs-->
                     <ol class="breadcrumb" style="background-color: #ebebe0; font-size: 12px; margin-top: -5px;">
                         <li class="breadcrumb-item">
-                            <a href="#">Home</a>
+                            @*<a href="#">Home</a>*@
                         </li>
-                        <!-- <a href="#">Student Overview/</a> -->
-                        <li class="breadcrumb-item active"> Student Overview - Add Student</li>
+                         @*<a href="#">Student Overview/</a> 
+                        <li class="breadcrumb-item active"> Student Overview - Add Student</li>*@
                     </ol>
 
 
                     <div class="container mb-3">
-
                         <div class="row" style="margin-top: -10px;">
-                            <div class="col-md-9 mb-3" style="background-color: white;">                              
-                                @RenderBody()
+                            <div class="col-md-9 mb-3" style="background-color: white;">  
+                                <center>
+                                        @RenderBody()
+                                </center>                            
+                               
                            </div>
 
                             <!-- side social links -->
@@ -238,7 +236,7 @@
                                 <div class="row ml-2" style="background-color: none;">
                                     <div class="col-md-12" style="background-color: #3333ff; color: white; width: auto; border-radius: 5px;">
                                         <center>
-                                            <span><img src="~/Images/Group 267.png" height="50px" width="50px" style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;"></span>
+                                            <span><img src="~/Images/Group 267.png" height="50" width="50" style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;"></span>
                                             <span style="margin-left: 20px; font-size:15px;">Likes</span>
                                             <span style="margin-left: 20px; font-size:15px;">35000</span>
                                         </center>
@@ -250,7 +248,7 @@
                                          style="background-color: #33d6ff; color: white; width: auto; border-radius: 5px; margin-top: 5px;">
                                         <center>
                                             <span>
-                                                <img src="~/Images/Group 269.png" height="50px" width="50px"
+                                                <img src="~/Images/Group 269.png" height="50" width="50"
                                                      style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;">
                                             </span>
                                             <span style="margin-left: 20px; font-size:15px;">Likes</span>
@@ -263,7 +261,7 @@
                                          style="background-color: #804000; color: white; width: auto; border-radius: 5px; margin-top: 5px;">
                                         <center>
                                             <span>
-                                                <img src="~/Images/Group 276.png" height="50px" width="50px"
+                                                <img src="~/Images/Group 276.png" height="50" width="50"
                                                      style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;">
                                             </span>
                                             <span style="margin-left: 20px; font-size:15px;">Likes</span>
@@ -277,12 +275,12 @@
                                         <span style="float: left;margin-top: 0px; font-size:20px; margin-top:-10px;">Notice Board</span>
                                         <a href="#">
                                             <span style="float: right;">
-                                                <img src="~/Images/Group 265.png" height="20px" width="20px" style="margin-right: ; float: right;" hspace="10">
+                                                <img src="~/Images/Group 265.png" height="20" width="20" style="float: right;" hspace="10">
                                             </span>
                                         </a>
                                         <a href="#">
                                             <span>
-                                                <img src="~/Images/Group 266.png" height="20px" width="20px" style="margin-left: auto; float: right;">
+                                                <img src="~/Images/Group 266.png" height="20" width="20" style="margin-left: auto; float: right;">
                                             </span>
                                         </a><br>
                                         <hr>

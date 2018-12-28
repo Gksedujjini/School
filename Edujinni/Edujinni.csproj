@@ -206,6 +206,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -214,8 +215,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Achievements.cs" />
+    <Compile Include="Models\addclass.cs" />
+    <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\Adminsignup.cs" />
+    <Compile Include="Models\EditAdminProfile.cs" />
     <Compile Include="Models\Editprofile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -466,6 +471,13 @@
     <Content Include="Views\Teacher\Editprofile.cshtml" />
     <Content Include="Views\Student\editstudent.cshtml" />
     <Content Include="Views\Student\test.cshtml" />
+    <Content Include="Views\Admin\AddAchievements.cshtml" />
+    <Content Include="Views\Admin\ViewAchievements.cshtml" />
+    <Content Include="Views\Admin\EditProfile.cshtml" />
+    <Content Include="Views\Admin\AddSubjects.cshtml" />
+    <Content Include="Views\Admin\AddSubjectView.cshtml" />
+    <Content Include="Views\Admin\ViewClass.cshtml" />
+    <Content Include="Views\Admin\AddClass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
