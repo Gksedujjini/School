@@ -207,6 +207,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddSubjectController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\EditAdminProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -218,6 +220,7 @@
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\Adminsignup.cs" />
+    <Compile Include="Models\EditAdminProfile.cs" />
     <Compile Include="Models\Editprofile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -464,12 +467,13 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Teacher\Editprofile.cshtml" />
-    <Content Include="Views\Add Subject\AddSubjects.cshtml" />
-    <Content Include="Views\Add Subject\AddSubjectView.cshtml" />
+    <Content Include="Views\EditAdminProfile\EditAdminProfileView.cshtml" />
+    <Content Include="Views\Attendance\AttendanceView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\parent\" />
+    <Folder Include="Views\AddSubject\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
