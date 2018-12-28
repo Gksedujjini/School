@@ -1,0 +1,139 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>AddSubjects</title>
+    <style>
+        #cntnr{
+            background-color: #ebebe0; width:50%;
+        }
+        #dropdownMenuButton{
+            background-color: white; border-radius:20px; width: 83%;
+        }
+        #div1{
+            background-color: white;
+        }
+        #input1{
+            border-radius:10px; float:right; background-color: blue; color: white; min-width: 50px; width: 100px; margin-top:5px;
+        }
+        #input2{
+            border-radius:10px; float:right; background-color: red; color: white; min-width: 50px; width: 100px; margin-top:5px;
+        }
+        #upload-data{
+            margin-right: auto; float:right; font-size:55px; color:green; width:50px; margin-top: -8px;
+        }
+        #addDiv{
+            width:58px; float:right; margin-top:5px; border-radius:5px; margin-right:-5px; background-color:green; color:white;
+        }
+    </style>
+</head>
+<body> 
+    <div class="container" id="cntnr">
+        <div class="row mt-2">
+        <div class="dropdown col-md-6 ml-auto mt-2">
+            <center><button class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Class     
+            </button></center>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        <div class="dropdown col-md-6 ml-auto mt-2">
+            <center><button class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Section
+            </button></center>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        </div>
+        <label class="ml-4 mt-2" style="">Subject Lists</label><br />
+        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
+           <div class="col-md-6" style="background-color:white;border-radius:15px;">
+               <label style="font-size:13px;">Subject</label><br /><label>Science</label><br />
+               <label style="font-size:13px;">Type</label><br /><label>Theoretical</label>
+           </div>
+            <div class="col-md-5 mt-1" id="div1">
+                <div class="row">
+                    <div class="col ml-2">
+                <input type="submit" class="form-control" id="input1" name="submit" value="Edit"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col ml-2 mb-2">
+                        <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
+                    </div>
+                </div>
+            </div>
+          </div>
+        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
+            <div class="col-md-6" style="background-color:white;border-radius:15px;">
+                <label style="font-size:13px;">Subject</label><br /><label>Science</label><br />
+                <label style="font-size:13px;">Type</label><br /><label>Theoretical</label>
+            </div>
+            <div class="col-md-5 mt-1" id="div1">
+                <div class="row">
+                    <div class="col ml-2">
+                        <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col ml-2 mb-2">
+                        <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
+            <div class="col-md-6" style="background-color:white;border-radius:15px;">
+                <label style="font-size:13px;">Subject</label><br /><label>Science</label><br />
+                <label style="font-size:13px;">Type</label><br /><label>Theoretical</label>
+            </div>
+            <div class="col-md-5 mt-1" id="div1">
+                <div class="row">
+                    <div class="col ml-2">
+                        <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col ml-2 mb-2">
+                        <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="@Url.Action("AddSubjectView","AddSubject")">
+                    <i class="fa fa-plus-circle" id="upload-data"></i>
+                
+                <div id="addDiv"><label class="ml-2">Add</label></div>
+      </a>
+            </div>
+        <br />
+        </div> 
+        </div>
+</body>
+</html>
