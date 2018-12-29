@@ -1,0 +1,130 @@
+﻿@model Edujinni.Models.TimeTable
+@{
+//Layout = null;
+}
+@using (Html.BeginForm("AddTimeTable", "Admin", FormMethod.Post))
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous"></script>
+        <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+        <link href="Content/sb-admin.css" rel="stylesheet">
+        <title>AddSubjects</title>
+        <style>
+            #cntnr {
+                background-color: #ebebe0;
+                width: auto;
+            }
+
+            #dropdownMenuButton {
+                background-color: white;
+                border-radius: 20px;
+                width: 83%;
+            }
+
+            #div1 {
+                background-color: white;
+            }
+
+            #input1 {
+                border-radius: 10px;
+                float: right;
+                background-color: blue;
+                color: white;
+                min-width: 50px;
+                width: 100px;
+                margin-top: 5px;
+            }
+
+            #input2 {
+                border-radius: 10px;
+                float: right;
+                background-color: red;
+                color: white;
+                min-width: 50px;
+                width: 100px;
+                margin-top: 5px;
+            }
+
+            #upload-data {
+                margin-right: auto;
+                float: right;
+                font-size: 55px;
+                color: green;
+                width: 50px;
+                margin-top: -8px;
+            }
+
+            #addDiv {
+                width: 58px;
+                float: right;
+                margin-top: 5px;
+                border-radius: 5px;
+                margin-right: -5px;
+                background-color: green;
+                color: white;
+            }
+            #timetable{
+            width:inherit 250px; 
+            border-radius:20px;
+             height:40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row" style="background-color:blue;">
+            <div class="col-md ml-2 mt-2">
+                <i class="fa fa-user-circle fa-2x" style="color:silver;float:left;"></i>
+                <label style="color:white; font-size:20px; float:left;">Kakatiya Educational Society</label>
+                <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddTimeTable", "Admin")'"
+                       value="Add TimeTable" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:30px;   ">
+            </div>
+        </div>
+       
+        <div class="container mt-4 col-md-12 col-xs-12"  id="cntnr">
+                <div class="row ml-3 mt-3" style= "display: block; margin: 0 auto;">
+                    @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "timetable"})
+                    <br />
+                    @Html.TextBoxFor(Model => Model.section, new { @class = "form-control", @placeholder = "Select Section", @id = "timetable"})
+                    <br />
+                    @Html.TextBoxFor(Model => Model.date, new {@type="date", @class = "form-control", @placeholder = "Select Section", @id = "timetable" })
+                </div>
+            <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
+                <div class="col-md-6" style="background-color:white;border-radius:15px;">
+                    <label style="font-size:13px;">Subject</label><br /><label>Teacher</label><br />
+                    <label style="font-size:13px;">Timings</label>
+                </div>
+                <div class="col-md-5 mt-1" id="div1">
+                    <div class="row">
+                        <div class="col ml-2">
+                            <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col ml-2 mb-2">
+                            <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="@Url.Action("AddTimeTable", "Admin")">
+                        <i class="fa fa-plus-circle" id="upload-data"></i>
+                        <div id="addDiv"><label class="ml-2">Add</label></div>
+                    </a>
+                </div>
+                <br />
+            </div>
+        </div>
+    </body>
+</html>
+}

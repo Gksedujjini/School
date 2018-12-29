@@ -1,0 +1,71 @@
+﻿@model Edujinni.Models.TimeTable
+@{
+//   Layout = null;
+}
+@using (Html.BeginForm("AddTimeTable", "Admin", FormMethod.Post))
+{
+    <!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>AddAchievements</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+        @*<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+        <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+        <script src="~/Scripts/moment.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>*@
+        <style>
+            #achievements {
+                height: 45px;
+                width: auto 240px;
+                border-radius: 20px;
+            }
+            p {
+                text-align: center;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <p style="font-size:30px;">Add TimeTable</p>
+        <br />
+            <div class="row">
+                <div class="col align-self-center">
+                    
+                    @Html.TextBoxFor(m => m.selectday, new { @class = "form-control", @placeholder = "Select Day(select box)", @id = "achievements" })
+                </div>
+                <div class="col align-self-center">
+                    @Html.TextBoxFor(m => m.selectsubject, new { @class = "form-control", @placeholder = "Select Subject(select box)", @id = "achievements" })
+                </div>
+            </div>
+        <br />
+        <div class="row">
+            <div class="col align-self-center">
+                @Html.TextBoxFor(m => m.teachername, new { @class = "form-control", @placeholder = "TeacherName(select box)", @id = "achievements" })
+            </div>
+            <div class="col align-self-center">
+                @Html.TextBoxFor(m => m.classs, new { @class = "form-control", @placeholder = "Class(select box)", @id = "achievements" })
+            </div>
+            <div class="col align-self-center">
+                @Html.TextBoxFor(m => m.section, new { @class = "form-control", @placeholder = "Section(select box)", @id = "achievements" })
+            </div>
+        </div>
+        <br />
+        <div id="datetimepicker3">
+            HERE ONE TIME PICKERS WILL COME TO CHOOSE START DATE
+        </div>
+        <br />        
+        <div id="timepicker-spinbox">
+            HERE ONE TIME PICKERS WILL COME TO CHOOSE END DATE
+        </div>
+
+        <br />
+        <input type="button" value="Save" class="btn btn-success" style="width:270px; height:45px; border-radius:10px;" />
+
+    </body>
+}
