@@ -228,6 +228,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
+    <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -483,6 +484,8 @@
     <Content Include="Views\Admin\AttendanceView.cshtml" />
     <Content Include="Views\Events\EvetsView.cshtml" />
     <Content Include="Views\Events\AddEventsView.cshtml" />
+    <Content Include="Views\Admin\AddTimeTable.cshtml" />
+    <Content Include="Views\Admin\ViewTimeTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
