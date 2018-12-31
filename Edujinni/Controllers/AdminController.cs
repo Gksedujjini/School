@@ -59,5 +59,9 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult StudentsOverView()
+        {
+            return View();
+        }
     }
 }

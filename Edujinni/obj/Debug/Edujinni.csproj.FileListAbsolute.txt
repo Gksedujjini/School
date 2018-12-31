@@ -525,3 +525,4 @@ C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\bin\Micro
 C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
 C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\obj\Debug\Edujinni.dll
 C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\obj\Debug\Edujinni.pdb
+C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache

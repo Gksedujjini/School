@@ -74,42 +74,44 @@
             font-family: arial, sans-serif;
             //border-collapse: collapse;
             width: 100%;
-            border-radius:15px;
+            border-radius: 15px;
         }
-        td
-        {
-        text-align: center;
+
+        td {
+            text-align: center;
         }
+
         th {
-           
-            background-color:blue;
+            background-color: blue;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+    <br />
     <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
            value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">
-    <br /> 
-        
-        @*<div class="row" style="background-color:blue;"><div class="col-md ml-2 mt-2">
-        <i class="fa fa-user-circle fa-2x" style="color:silver;"></i>
-        <label style="color:white;">Kakatiya Educational Society</label>
-        <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
-               value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">
-    </div>    </div>*@
+    <br />
+
+    @*<div class="row" style="background-color:blue;"><div class="col-md ml-2 mt-2">
+            <i class="fa fa-user-circle fa-2x" style="color:silver;"></i>
+            <label style="color:white;">Kakatiya Educational Society</label>
+            <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
+                   value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">
+        </div>    </div>*@
 
     <div class="container mt-4" id="cntnr">
-
         <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
-            <div class="col-md-6" style="background-color:white;border-radius:15px;"><br />
-                <table class="table-responsive">
+            <div class="col-md-12" style="background-color:white;border-radius:15px;">
+                <br />
+                <table class="table">
                     <tbody>
                         <tr>
                             <th>
                                 Student ID
                             </th>
                             <th>
-                               Student Name
+                                Student Name
                             </th>
                             <th>
                                 Class
@@ -121,7 +123,7 @@
                                 Grade
                             </th>
                         </tr>
-                        <tr>
+                        <tr class="alert-dismissable">
                             <td>
                                 123456
                             </td>
@@ -132,7 +134,7 @@
                                 Class-3
                             </td>
                             <td>
-                               A
+                                A
                             </td>
                             <td>
                                 A
@@ -145,11 +147,20 @@
                             <td>
                                 Philippi
                             </td>
+                            <td>
+                                Class-5
+                            </td>
+                            <td>
+                                B
+                            </td>
+                            <td>
+                                C
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-                @*<div class="col-md-5 mt-1" id="div1">
+            @*<div class="col-md-5 mt-1" id="div1">
                     <div class="row">
                         <div class="col ml-2">
                             <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
