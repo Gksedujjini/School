@@ -41,7 +41,21 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult AttendanceView()
+        public ActionResult ATTRecords()
+        {
+            return View();
+        }
+
+        //ALL TIMETABLE CONTROLLERS  GOES HERE ////
+        public ActionResult ViewTimeTable()
+        {
+            return View();
+        }
+        public ActionResult AddTimeTable()
+        {
+            return View();
+        }
+        public ActionResult AddStudent()
         {
             return View();
         }
