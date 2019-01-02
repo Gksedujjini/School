@@ -19,8 +19,12 @@ namespace Edujinni.Models
         public string TeacherID { get; set; }
         public string WorkType { get; set; }
         public string FlatNO { get; set; }
-        public string Street { get; set; }
-        public string AreaCityState { get; set; }
+        public string BuildingName { get; set; }
+        public string Street1 { get; set; }
+        public string Street2 { get; set; }
+        public string Area { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
         public Int32 PinCode { get; set; }
         public DateTime DateOfJoining { get; set; }
         

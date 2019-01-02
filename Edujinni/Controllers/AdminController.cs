@@ -59,5 +59,21 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        //STUDENTS OVERVIEW MODULE //
+        public ActionResult StudentsOverView()
+        {
+            return View();
+        }
+
+        /// TEACHER MODULE ///
+       public ActionResult TeacherView()
+        {
+            return View();
+        } 
+        public ActionResult AddTeacher()
+        {
+            return View();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Edujinni.Models.StudentOverView
+@{
 //Layout = null;
 }
 <!DOCTYPE html>
@@ -74,103 +75,137 @@
             font-family: arial, sans-serif;
             //border-collapse: collapse;
             width: 100%;
-            border-radius:15px;
+            border-radius: 15px;
         }
-        td
-        {
-        text-align: center;
+
+        td {
+            text-align: center;
         }
+
         th {
-           
-            background-color:blue;
+            background-color: blue;
+            text-align: center;
         }
+        #basic-url
+        {
+            border-radius:20px;
+            height:30px;
+            background-color:#f2f2f2;
+        }
+
+
     </style>
 </head>
 <body>
-    <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
-           value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">
-    <br /> 
-        
-        @*<div class="row" style="background-color:blue;"><div class="col-md ml-2 mt-2">
-        <i class="fa fa-user-circle fa-2x" style="color:silver;"></i>
-        <label style="color:white;">Kakatiya Educational Society</label>
-        <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
-               value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">
-    </div>    </div>*@
-
-    <div class="container mt-4" id="cntnr">
-
-        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
-            <div class="col-md-6" style="background-color:white;border-radius:15px;"><br />
-                <table class="table-responsive">
-                    <tbody>
-                        <tr>
-                            <th>
-                                Student ID
-                            </th>
-                            <th>
-                               Student Name
-                            </th>
-                            <th>
-                                Class
-                            </th>
-                            <th>
-                                Section
-                            </th>
-                            <th>
-                                Grade
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                123456
-                            </td>
-                            <td>
-                                Andrea
-                            </td>
-                            <td>
-                                Class-3
-                            </td>
-                            <td>
-                               A
-                            </td>
-                            <td>
-                                A
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Section-B
-                            </td>
-                            <td>
-                                Philippi
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-                @*<div class="col-md-5 mt-1" id="div1">
-                    <div class="row">
-                        <div class="col ml-2">
-                            <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col ml-2 mb-2">
-                            <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
-                        </div>
-                    </div>
-                </div>*@
+    @*<div class="mt-3">
+        <a href="@Url.Action("Home-","#","Admin")"><label style="float:left;font-size:15px;">Home</label></a><span style="float:left;font-size:15px;">-Students Overview</span>
+    </div>*@
+    <div class="container">
+    <div class="row mt-4">
+        <div class="col-md-3">
+            @Html.TextBoxFor(Model => Model.Classs, new { @class = "form-control", @placeholder = "Class(Selelct box)", @id = "basic-url" })
         </div>
-        <div class="row">
-            <div class="col">
-                <a href="@Url.Action("Addstudent","Admin")">
-                    <i class="fa fa-plus-circle" id="upload-data"></i>
-                    <div id="addDiv"><label class="ml-2">Add</label></div>
-                </a>
+        <div class="col-md-3">
+            @Html.TextBoxFor(Model => Model.Section, new { @class = "form-control", @placeholder = "Section(Selelct box)", @id = "basic-url" })
+        </div>
+        <div class="col-md-6">
+            @*@Html.TextBoxFor(Model => Model.search, new { @class = "form-control", value = "Search Students", @id = "basic-url" })*@
+            <div class="form-group has-feedback">
+                <label for="search" class="sr-only">Search</label>  
+                    <input type="text" class="form-control" name="search" id="basic-url" placeholder="Search Students.....">
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
             </div>
-            <br />
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-md-5 ml-4 mr-1 mb-3" style="background-color: #f2f2f2; width:auto; border-radius:10px;">
+            <div class="row">
+                <div class="col-md-1 mt-3">
+                    <div class="mt-2 ml-3" id="image1">
+                        <center><i class="fa fa-user fa-5x" id="imguser"></i></center>
+                    </div>
+                    <div class="col-md-offset-2">
+                        <label>First Name</label>
+                    </div>
+                    @*<div class="col-md-offset-3">
+                            <div class="col-md-3 text-left mt-4">
+                                <label id="ename">First Name</label><br /><label id="edate">15-08-2018 - Thursday</label>
+                            </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12 text-left">
+                                <label id="ename">Event Name</label><br /><label id="edate">Independence Day</label>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+            <div class="row mt-4 ml-1">
+                <label id="ename">Event Description</label><br />
+                <label id="evtcontent">
+                    Theme unit test data is an XML data file that contains dummy content for WordPress theme development.
+                    It is used by WordPress theme developers to test their themes
+                </label>
+            </div>
+            <div class="row mt-3 ml-1 mb-3">
+                <div class="col align-se">
+
+                </div>
+                <div class="col align-self-end">
+                    <input class="btn btn-success" type="submit" name="submit" value="Edit" id="editbtn" />
+                </div>
+                <div class="col align-self-center">
+                    <input type="submit" class="btn btn-danger" name="submit" value="Delete" id="editbtn" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 ml-4 mb-3 mt-3" style="background-color: #f2f2f2; width:auto; border-radius:10px;">
+            <div class="row mt-3">
+                <div class="mt-2" id="image1">
+                    <center><i class="fa fa-user fa-5x" id="imguser"></i></center>
+                </div>
+                <div class="col ml-4">
+                    <div class="row ">
+                        <div class="col-md-1 text-left mt-4">
+                            <label id="ename">First Name</label><br /><label id="edate">15-08-2018 - Thursday</label>
+                            <span><label>Last Name</label></span>
+                        </div>
+                    </div> <div class="row mt-3">
+                        <div class="col-md-12 text-left">
+                            <label id="ename">Event Name</label><br /><label id="edate">Independence Day</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 ml-1">
+                <label id="ename">Event Description</label><br />
+                <label id="evtcontent">
+                    Theme unit test data is an XML data file that contains dummy content for WordPress theme development.
+                    It is used by WordPress theme developers to test their themes
+                </label>
+            </div>
+            <div class="row mt-3 ml-1 mb-3">
+                <div class="col align-se">
+                </div>
+                <div class="col align-self-end">
+                    <input class="btn btn-success" type="submit" name="submit" value="Edit" id="editbtn" />
+                </div>
+                <div class="col align-self-center">
+                    <input type="submit" class="btn btn-danger" name="submit" value="Delete" id="editbtn" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row mt-4">
+        @*<div class="col" id="divlast">
+            <a href="@Url.Action("AddEventsView","Events")">
+                <i class="fa fa-plus-circle" id="upload-data"></i>
+                <div id="addDiv"><label class="ml-2 mt-2">Add</label></div>
+            </a>
+        </div>*@
+        <br />
+    </div>
+        </div>  
 </body>
 </html>

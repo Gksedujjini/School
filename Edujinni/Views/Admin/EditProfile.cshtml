@@ -163,13 +163,18 @@
                                         @*@Html.TextBoxFor(Model => Model.PrincipalId, new { @class = "form-control", value = "12436576", @id = "basic-url"})*@
                                         <input type="text" name="" value="12436576" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                                     </div>
-                                </div> <div class="row mt-4">
-                                    <div class="col-md-12 input-group">
+                                </div> 
+                                <div class="row mt-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon3">School Name</span>
+                                    </div>
+                                    <input type="text" name="" value="Kakathiya School" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                    @*<div class="col-md-12 input-group">
                                         @*<div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon3">School Name</span>
-                                            </div>*@
+                                            </div>
                                         @Html.TextBoxFor(Model => Model.PhoneNo, new { @class = "form-control", @id = "phone", @placeholder = "Phone NO" })
-                                    </div>
+                                    </div>*@
                                 </div>
                                 <!--  <div class="row mt-4">
                                   <div class="col">

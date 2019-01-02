@@ -80,11 +80,11 @@
         }
 
         th {
-            text-align: center;
+            text-align: left;
             background-color:#A3FC77;
         }
         td{
-            text-align: center;
+            text-align: left;
         }
         #select{
             height:30px;
@@ -92,6 +92,9 @@
             border-radius:20px;
             margin-top:10px;
             margin-right:10px;
+        }
+          tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
     </style>
 </head>
@@ -104,10 +107,9 @@
     </div>
     <div class="container mt-4 ml-3" id="cntnr">
         <div class="row  mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
-            <div class="row ml-3" style="margin-left:40px;">
+            <div class="row ml-3" style="float:right;">
                 <input type="text" class="form-control" placeholder="Class(select)" id="select">
-                <input type="text" class="form-control" placeholder="Section(Select)" id="select">
-                <input type="text" class="form-control" placeholder="FirstHalf(select)" id="select">
+                <input type="text" class="form-control" placeholder="Section(Select)" id="select">               
             </div>  
             <br />
             <div class="col-md-12" style="background-color:white;border-radius:15px;">
@@ -130,13 +132,17 @@
                         </tr>
                         <tr class="alert-danger">
                             <td>
-                                Section-A
+                               123
                             </td>
                             <td>
                                 Andrea
                             </td>
-                            <td>Marinda</td>
-                            <td>Steve</td>
+                            <td>
+                            Marinda
+                            </td>
+                            <td>
+                            Present
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -145,10 +151,10 @@
         </div>
         <br />
         <div class="row">
-            <div class="col">
+            @*<div class="col">
                 <input type="button" class="btn btn-success" name="Save" onclick="location.href='@Url.Action("#","#")'"
                        value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 250px; height:auto;">
-             </div>
+             </div>*@
             <br />
             <br />            
         </div>
