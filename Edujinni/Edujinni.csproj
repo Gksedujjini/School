@@ -25,7 +25,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +34,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,7 +42,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -82,15 +79,17 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -131,7 +130,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -213,7 +211,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
-    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,6 +219,7 @@
     <Compile Include="Models\addclass.cs" />
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
+    <Compile Include="Models\AdminMain.cs" />
     <Compile Include="Models\Adminsignup.cs" />
     <Compile Include="Models\EditAdminProfile.cs" />
     <Compile Include="Models\Editprofile.cs" />
@@ -229,6 +227,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\StudentModel.cs" />
+    <Compile Include="Models\StudentOverView.cs" />
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -406,6 +405,7 @@
     <Content Include="Images\Rectangle 238.png" />
     <Content Include="Images\Rectangle 239%402x.png" />
     <Content Include="Images\Rectangle 239.png" />
+    <Content Include="Images\test\ic_launcher.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -470,10 +470,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Sginup.cshtml" />
     <Content Include="Views\Student\student.cshtml" />
-    <Content Include="Views\Teacher\Teacher.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
-    <Content Include="Views\Teacher\Editprofile.cshtml" />
     <Content Include="Views\Student\editstudent.cshtml" />
     <Content Include="Views\Student\test.cshtml" />
     <Content Include="Views\Admin\AddAchievements.cshtml" />
@@ -490,6 +488,12 @@
     <Content Include="Views\Admin\ViewTimeTable.cshtml" />
     <Content Include="Views\Admin\AddStudent.cshtml" />
     <Content Include="Views\Admin\StudentsOverView.cshtml" />
+    <Content Include="Views\Admin\TeacherView.cshtml" />
+    <Content Include="Views\Admin\AddTeacher.cshtml" />
+    <Content Include="Views\Admin\ATTRecords.cshtml" />
+    <Content Include="Views\Admin\TeacherInfo.cshtml" />
+    <Content Include="Views\Admin\test.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
