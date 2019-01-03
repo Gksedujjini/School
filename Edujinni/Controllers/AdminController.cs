@@ -59,9 +59,33 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        //STUDENTS OVERVIEW MODULE //
         public ActionResult StudentsOverView()
         {
             return View();
         }
+
+        /// TEACHER MODULE ///
+       public ActionResult TeacherView()
+        {
+            return View();
+        } 
+        public ActionResult AddTeacher()
+        {
+            return View();
+        }
+        public ActionResult TeacherInfo()
+        {
+            return View();  
+        }
+        //teacher module ends here
+
+
+            //USE IT FOR THE TESTING OF PAGES PURPOSE WHILE BUILDING IF REQUIRED
+        public ActionResult test()
+        {
+            return View();
+        }
+
     }
 }

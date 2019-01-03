@@ -1,5 +1,6 @@
-﻿@{
-    Layout = null;
+﻿@model Edujinni.Models.AdminMain
+@{
+Layout = null;
 }
 @using (Html.BeginForm("Main", "Home", FormMethod.Get))
 {
@@ -20,18 +21,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Custom fonts for this template-->
     <style>
-        .navbar-brand
-        {
-           color:white;
-           font-size:1.5rem;
-           height:40px;  
-           margin-top:5px;
+        .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            height: 40px;
+            margin-top: 5px;
         }
-        .img
-        {
-            float:left;
-            margin-left:10px;
-            margin-top:10px;
+
+        .img {
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
         }
     </style>
     <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
@@ -48,7 +48,6 @@
             <div class="col-md-10" style="background-color: white;">
                 <span style="margin-left: 00px; font-size: 17px; margin-top:5px;">Welcome to school management system</span>
                 <nav style="background-color: white; font-size:15px; margin-bottom:00px;" class="navbar navbar-expand navbar-dark navbar-right bg-grey static-top">
-
                     <form id="search-box" class="d-block d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                         <div id="search-box" class="input-group" style="width: auto;">
                             <input type="text" style="background-color: #ebebe0; border:none; border-radius: 20px 00px 00px 20px" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -57,7 +56,7 @@
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
-                         </div>
+                        </div>
                     </form>
                     <ul class="navbar-nav ml-auto ml-md-0">
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -91,18 +90,13 @@
                         <!-- <span style="margin-left: -40px;">Admin name<br>Name</span> -->
                     </ul>
 
-
                 </nav>
             </div>
-
         </div>
-
         <div id="wrapper" style="font-size:12px;">
-
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav" style="width: 0px;">
-
-                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">                  
+                <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
                         <img src="~/Images/Group 289.png" height="20" width="20">
                         <span>Academic Syllabus</span>
@@ -111,31 +105,27 @@
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/Group 176@2x.png" height="20" width="20" class="img">
                     <span>
-                        @Html.ActionLink("Edit Profile", "EditProfile", "Admin", new { area = "" }, new { @class = "navbar-brand" , style = "font-size:medium;" })
-                    </span>                   
+                        @Html.ActionLink("Edit Profile", "EditProfile", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium;" })
+                    </span>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <span>
-                        <img src="~/Images/Group 232@2x.png" height="20" width="20" class="img">                   
-                     @Html.ActionLink("Teacher", "TeacherView", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium;" })
+                        <img src="~/Images/Group 232@2x.png" height="20" width="20" class="img">
+                        @Html.ActionLink("Teacher", "TeacherView", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium;" })
                     </span>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/Group 235.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Add Subject", "AddSubjects", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;" })               
+                    @Html.ActionLink("Add Subject", "AddSubjects", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;" })
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/img.png" height="20" width="20" class="img">
                     @Html.ActionLink("Achievements", "ViewAchievements", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    @*<a class="nav-link" href="#">
-                        <img src="~/Images/img.png" height="20" width="20">
-                        <span>View Achievements</span>
-                    </a>*@
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/Group 289.png" height="20" width="20" class="img">
                     @Html.ActionLink("Attendance Records", "ATTRecords", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    
+
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
@@ -149,7 +139,6 @@
                         <span>Fee Collection</span>
                     </a>
                 </li>
-
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
                         <img src="~/Images/Group 246.png" height="20" width="20">
@@ -163,10 +152,7 @@
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/Group 198.png" height="20" width="20" class="img">
                     @Html.ActionLink("Add Events", "EvetsView", "Events", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    @*<a class="nav-link" href="#">
-                        <img src="~/Images/Group 198.png" height="20" width="20">
-                        <span>Add Events</span>
-                    </a>*@
+                    
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
@@ -202,116 +188,127 @@
                         <span>Logout</span>
                     </a>
                 </li>
-
             </ul>
-
             <div id="content-wrapper" style="background-color: #ebebe0;">
-
                 <div class="container-fluid">
-
                     <!-- Breadcrumbs-->
                     <ol class="breadcrumb" style="background-color: #ebebe0; font-size: 12px; margin-top: -5px;">
                         <li class="breadcrumb-item">
-                            @*<a href="#">Home</a>*@
-                        </li>
-                         @*<a href="#">Student Overview/</a> 
-                        <li class="breadcrumb-item active"> Student Overview - Add Student</li>*@
+                            <label>Home</label>
+                        <label>-Admin</label>
                     </ol>
-
 
                     <div class="container mb-3">
                         <div class="row" style="margin-top: -10px;">
-                            <div class="col-md-9 mb-3" style="background-color: white;">  
-                                <center>
-                                        @RenderBody()
-                                </center>                            
-                               
-                           </div>
+                            @* MY BODY COLOR GOES HERE *@
+                            <div class="col-md-12 mb-3">
+                                @* MAIN OF THE ADMIN PANEL *@
+                                <div class="row" style="min-height:80px;">
 
-                            <!-- side social links -->
-                            <div class="col-md-3" style="margin-right: auto;">
-                                <div class="row ml-2" style="background-color: none;">
-                                    <div class="col-md-12" style="background-color: #3333ff; color: white; width: auto; border-radius: 5px;">
-                                        <center>
-                                            <span><img src="~/Images/Group 267.png" height="50" width="50" style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;"></span>
-                                            <span style="margin-left: 20px; font-size:15px;">Likes</span>
-                                            <span style="margin-left: 20px; font-size:15px;">35000</span>
-                                        </center>
-
+                                    @* STUDENTS  *@
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 196.png">
                                     </div>
-                                </div>
-                                <div class="row ml-2" style="">
-                                    <div class="col-md-12"
-                                         style="background-color: #33d6ff; color: white; width: auto; border-radius: 5px; margin-top: 5px;">
-                                        <center>
-                                            <span>
-                                                <img src="~/Images/Group 269.png" height="50" width="50"
-                                                     style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;">
-                                            </span>
-                                            <span style="margin-left: 20px; font-size:15px;">Likes</span>
-                                            <span style="margin-left: 20px; font-size:15px;">12000</span>
-                                        </center>
+                                    <div class="col-md-1 mr-2" style="background-color:#4F91FF; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Students</label>
+                                        @Html.TextBoxFor(Model => Model.Students, new { @class = "form-control" })
+                                    </div>  
+
+                                    @* TEACHERS  *@   
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 255.png">
                                     </div>
-                                </div>
-                                <div class="row ml-2" style="">
-                                    <div class="col-md-12"
-                                         style="background-color: #804000; color: white; width: auto; border-radius: 5px; margin-top: 5px;">
-                                        <center>
-                                            <span>
-                                                <img src="~/Images/Group 276.png" height="50" width="50"
-                                                     style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;">
-                                            </span>
-                                            <span style="margin-left: 20px; font-size:15px;">Likes</span>
-                                            <span style="margin-left: 20px; font-size:15px;">67980</span>
-                                        </center>
+                                    <div class="col-md-1 mr-2" style="background-color:#F6BF07; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Teachers</label>
+                                        @Html.TextBoxFor(Model => Model.Teachers, new { @class = "form-control" })
+                                    </div>    
+                                    
+                                    @* ADMIN STAFF  *@
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 324.png">
                                     </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#242323; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Admin Staff</label>
+                                        @Html.TextBoxFor(Model => Model.AdminStaff, new { @class = "form-control" })
+                                    </div>  
+                                    
+                                    @* PARENTS  *@
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 258.png">
+                                    </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#56FF00; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Parents</label>
+                                        @Html.TextBoxFor(Model => Model.Parents, new { @class = "form-control" })
+                                    </div>   
+                                    
+                                    @* TOTAL EARNINGS  *@
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 259.png">
+                                    </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#FF0303; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Total Earnings</label>
+                                        @Html.TextBoxFor(Model => Model.TotalEarnings, new { @class = "form-control" })
+                                    </div>                                
                                 </div>
-                                <div class="row" style="margin-top: 10px;">
-                                    <div class="col-md-11 ml-auto" style="background-color: white;">
-                                        <br>
-                                        <span style="float: left;margin-top: 0px; font-size:20px; margin-top:-10px;">Notice Board</span>
-                                        <a href="#">
-                                            <span style="float: right;">
-                                                <img src="~/Images/Group 265.png" height="20" width="20" style="float: right;" hspace="10">
-                                            </span>
-                                        </a>
-                                        <a href="#">
+                                <br />
+
+                                @* SECOND ROW STARTS HERE *@
+                                <div class="row">
+                                    <div class="col-md-4 ml-2" style="background-color:white;">
+                                        <div class="row">
+                                            <label>Fee Collection & Expenses</label>
                                             <span>
-                                                <img src="~/Images/Group 266.png" height="20" width="20" style="margin-left: auto; float: right;">
+                                                //will place x symbol
                                             </span>
-                                        </a><br>
-                                        <hr>
-                                        <div class="scrollbar scrollbar-primary" style="width: auto; height: 500px;">
-                                            <div class="force-overflow">
-
-                                                <span>Notice board content will be here--</span>
-                                                <div>
-                                                    <br>
-
-
+                                        </div> 
+                                        <div class="row">
+                                            //a bar graph is displayed
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ml-2" style="background-color:white">
+                                       <div class="row">
+                                           <label>Achievements</label>
+                                           <span>
+                                               //will place x symbol
+                                           </span>
+                                       </div>
+                                        <div class="row">
+                                            <div class="col-md-3 ml-1" style="background-color:silver;">
+                                                <img src="~/Images/Group 282.png">
+                                                <div class="col" style="color:white;">
+                                                    <label>Top Students</label>
                                                 </div>
-
+                                            </div>
+                                            <div class="col-md-3 ml-1" style="background-color:silver;">
+                                                <img src="~/Images/Group 284.png">
+                                            </div>
+                                            <div class="col-md-3 ml-1" style="background-color:silver;">
+                                                <img src="~/Images/Group 286.png">
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-2 ml-2" style="background-color:white">
+                                        bajsjad
+                                    </div>
                                 </div>
+
+
+
+
+
+
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </div>
-
         <!-- /.content-wrapper -->
         <!-- /#wrapper -->
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
-
         <!-- Logout Modal-->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -330,7 +327,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Bootstrap core JavaScript-->
         <script src="~/Scripts/jquery.min.js"></script>
         <script src="~/Scripts/bootstrap.bundle.min.js"></script>
@@ -343,10 +339,8 @@
         <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
         <!-- Custom scripts for all pages-->
         <!-- Demo scripts for this page-->
-
         <script src="~/Scripts/custom.js"></script>
         <style type="text/css">
         </style>
-
     </body>
 }

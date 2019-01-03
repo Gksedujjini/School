@@ -20,7 +20,7 @@
         <link href="Content/all.min.css" rel="stylesheet" type="text/css">
         <link href="Content/sb-admin.css" rel="stylesheet">
         <title>Edit Profile</title>
-        @*<script>
+        <script>
             $(document).ready(function () {
                     $('#upload-data').click(function () {
                         $('#getfile').trigger('click');
@@ -44,7 +44,7 @@
                         $('#upload-data1').css('color', 'black');
                     });
                 });
-        </script>*@
+        </script>
         <style>
             .form-control {
                 border-radius: 20px;
@@ -132,77 +132,6 @@
                 color: white;
             }
         </style>
-        @*<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script language="javascript" type="text/javascript">
-$(function () {
-    $("#fileupload").change(function () {
-        $("#dvPreview").html("");
-        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
-        if (regex.test($(this).val().toLowerCase())) {
-            if ($.browser.msie && parseFloat(jQuery.browser.version) <= 9.0) {
-                $("#dvPreview").show();
-                $("#dvPreview")[0].filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = $(this).val();
-            }
-            else {
-                if (typeof (FileReader) != "undefined") {
-                    $("#dvPreview").show();
-                    $("#dvPreview").append("<img />");
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        $("#dvPreview img").attr("src", e.target.result);
-                    }
-                    reader.readAsDataURL($(this)[0].files[0]);
-                } else {
-                    alert("This browser does not support FileReader.");
-                }
-            }
-        } else {
-            alert("Please upload a valid image file.");
-        }
-    });
-});
-        </script>*@
-        @*<style type="text/css">
-            #dvPreview {
-                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
-                min-height: 400px;
-                min-width: 400px;
-                display: none;
-            }
-        </style>*@
-        <script>
-            $(document).ready(function ()
-            {
-                $("#imageBrowes").change(function(){
-                    var File =this.files;
-                    if(File && File[0]){
-                        ReadImage(File[0]);
-                    }
-                })
-            })
-            var ReadImage = function (file) {
-                var reader = new FileReader;
-                var image = new Image;
-                reader.readAsDataURL(file);
-                reader.onload = function (_file) {
-                    image.src = _file.target.result;
-                    image.onload = function () {
-                        var height = this.height;
-                        var width = this.width;
-                        var type = file.type;
-                        var size = ~~(file.size /1024) +"KB";
-
-                        $("#targetImg").attr('src', _file.target.result);
-                        $("description").text("Size:" + size + "," + height + "," + width + "");
-                        var ClearPreview = function () {
-                            $("#imageBrowes").val('');
-                            $("description").text('');
-
-                        }
-                    }
-                }
-            }
-        </script>
     </head>
 <body>
         <div>
@@ -210,15 +139,15 @@ $(function () {
                 <div class="col-md-12 mr-1">
                     <form action="#">
                         <div class="row mt-3">
-                            <input type="file" id="imageBrowes"/>
-                            <div class="col-md-4">
-                                <div id="imgPreview" class="thumbnail" style="display:none" >
-                                    <img class="img-responsive" id="targetImg" />
-                                    <div class="caption">
-                                        <a href="#" onclick="ClassPreview()"><i class="glyphicon glyphicon-trash"></i></a>
-                                        <p id="description"></p>
+                            <div class="ml-3 mt-2 mr-3" id="image">
+                                <center>
+                                    <div id="logodiv">
+                                        <label>School</label><br>
+                                        <label style="font-size: 20px;">Logo</label>
                                     </div>
-                                </div>
+                                </center>
+                                <i class="fa fa-plus-circle upload-data" id="upload-data"></i>
+                                <input class="getfile" id="getfile" style="display: none;" type="file" accept="image/*" />
                             </div>
                             <div class="mt-2" id="image1">
                                 <center><i class="fa fa-user fa-5x" style="color:blue;"></i></center>
@@ -234,13 +163,18 @@ $(function () {
                                         @*@Html.TextBoxFor(Model => Model.PrincipalId, new { @class = "form-control", value = "12436576", @id = "basic-url"})*@
                                         <input type="text" name="" value="12436576" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                                     </div>
-                                </div> <div class="row mt-4">
-                                    <div class="col-md-12 input-group">
+                                </div> 
+                                <div class="row mt-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon3">School Name</span>
+                                    </div>
+                                    <input type="text" name="" value="Kakathiya School" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                    @*<div class="col-md-12 input-group">
                                         @*<div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon3">School Name</span>
-                                            </div>*@
+                                            </div>
                                         @Html.TextBoxFor(Model => Model.PhoneNo, new { @class = "form-control", @id = "phone", @placeholder = "Phone NO" })
-                                    </div>
+                                    </div>*@
                                 </div>
                                 <!--  <div class="row mt-4">
                                   <div class="col">

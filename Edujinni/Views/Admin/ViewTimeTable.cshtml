@@ -91,7 +91,9 @@
        
         <div class="container mt-4 col-md-12 col-xs-12"  id="cntnr">
                 <div class="row ml-3 mt-3" style= "display: block; margin: 0 auto;">
-                    @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "timetable"})
+                    <div class="col-md-3">
+                    @Html.TextBoxFor(Model => Model.classs, new { @class = "form-control", @placeholder = "Select Class", @id = "timetable" })
+                    </div>
                     <br />
                     @Html.TextBoxFor(Model => Model.section, new { @class = "form-control", @placeholder = "Select Section", @id = "timetable"})
                     <br />
