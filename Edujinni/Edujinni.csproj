@@ -494,6 +494,10 @@
     <Content Include="Views\Admin\test.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\test2.cshtml" />
+<<<<<<< HEAD
+=======
+    <Content Include="Views\Account\Register - Copy.cshtml" />
+>>>>>>> 5a96380e9383ecf359c87e63418a9354c937bea1
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

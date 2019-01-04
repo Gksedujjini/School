@@ -1,6 +1,13 @@
 ﻿@model Edujinni.Models.AdminMain
 @{
-Layout = null;
+    Layout = null;
+}
+@{
+//using system.data;
+//Sqlconnection com = null;
+//var db = Database.Open("test");
+//var selectedData = db.Query("SELECT * FROM Movies");
+//var grid = new WebGrid(source: selectedData);
 }
 @using (Html.BeginForm("Main", "Home", FormMethod.Get))
 {
@@ -13,27 +20,14 @@ Layout = null;
     <title> Home</title>
 
     <!-- Bootstrap core CSS-->
-<<<<<<< HEAD
-    
-=======
->>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<<<<<<< HEAD
-
-    <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/sb-admin.css" rel="stylesheet">
-    <style>
-        
-<!-- Custom fonts for this template-->
-=======
     <!-- Custom fonts for this template-->
     <style>
->>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
         .navbar-brand {
             color: white;
             font-size: 1.5rem;
@@ -46,8 +40,7 @@ Layout = null;
             margin-left: 10px;
             margin-top: 10px;
         }
-<<<<<<< HEAD
-   
+
         /*CSS CODE FOR MAIN PAGE FIRST ROW TO DISPLAY STUDENTS ,PARENTS AND ALL INFO*/
         * {
             box-sizing: border-box;
@@ -55,10 +48,8 @@ Layout = null;
 
         /* Create two equal columns that floats next to each other */
         #col {
-            float: left;
-            width: 110px;
-            padding: 10px;   
-                    
+            width: 100px;
+            padding: 10px;
         }
 
         /* Clear floats after the columns */
@@ -67,13 +58,19 @@ Layout = null;
             display: table;
             clear: both;
         }
-    </style>
-=======
+
+        #border {
+            border-radius: 10px;
+        }
+
+        h3 {
+            margin-left: 2px;
+            margin-top: 2px;
+        }
     </style>
     <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/sb-admin.css" rel="stylesheet">
     @*<link href="~/Content/custom.css" rel="stylesheet">*@
->>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
     <body id="page-top">
         <div class="row" style="margin-bottom:-10px; height:auto;">
             <div class="col" id="logoBar" style="background-color: blue; margin-left: 0px; width:150px;">
@@ -158,6 +155,10 @@ Layout = null;
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/img.png" height="20" width="20" class="img">
                     @Html.ActionLink("Achievements", "ViewAchievements", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
+                    @*<a class="nav-link" href="#">
+                            <img src="~/Images/img.png" height="20" width="20">
+                            <span>View Achievements</span>
+                        </a>*@
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/Group 289.png" height="20" width="20" class="img">
@@ -189,7 +190,10 @@ Layout = null;
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <img src="~/Images/Group 198.png" height="20" width="20" class="img">
                     @Html.ActionLink("Add Events", "EvetsView", "Events", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    
+                    @*<a class="nav-link" href="#">
+                            <img src="~/Images/Group 198.png" height="20" width="20">
+                            <span>Add Events</span>
+                        </a>*@
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
                     <a class="nav-link" href="#">
@@ -226,218 +230,494 @@ Layout = null;
                     </a>
                 </li>
             </ul>
-            <div id="content-wrapper" style="background-color: #ebebe0;">
-                <div class="container-fluid">
-                    <!-- Breadcrumbs-->
-                    <ol class="breadcrumb" style="background-color: #ebebe0; font-size: 12px; margin-top: -5px;">
-                        <li class="breadcrumb-item">
-                            <label>Home</label>
-                        <label>-Admin</label>
-                    </ol>
-
-                    <div class="container mb-3">
-                        <div class="row" style="margin-top: -10px;">
-                            @* MY BODY COLOR GOES HERE *@
-<<<<<<< HEAD
-=======
-                            <div class="col-md-12 mb-3">
->>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
-                                @* MAIN OF THE ADMIN PANEL *@
-                                <div class="row" style="min-height:80px;">
-
-                                    @* STUDENTS  *@
-<<<<<<< HEAD
-                                    <div class="row mb-2" id="row">
-                                        <div class="column" id="col" style="background-color:white;">
-                                            <img src="~/Images/Group 196.png">
-                                        </div>
-                                        <div class="column"  id="col" style="background-color:#4F91FF; color:white; margin-right:50px;">
-                                            <label>Students</label>
-                                            @Html.TextBoxFor(Model => Model.Students, new { @class = "form-control" })
-                                        </div>
-                                    </div>
-
-                                    @* TEACHERS  *@  
-                                    
-                                    <div class="row mb-2" id="row">
-                                        <div class="column" id="col"  style="background-color:white;">
-                                            <img src="~/Images/Group 255.png">
-                                        </div>
-                                        <div class="column" id="col"  style="background-color:#F6BF07; color:white;  margin-right:50px;">
-                                            <label>Teachers</label>
-                                            @Html.TextBoxFor(Model => Model.Teachers, new { @class = "form-control" })
-                                        </div>
-                                    </div> 
-                                   
-                                    
-                                    @* ADMIN STAFF  *@
-                                    <div class="row mb-2" id="row">
-                                        <div class="column" id="col"  style="background-color:white;">
-                                            <img src="~/Images/Group 324.png">
-                                        </div>
-                                        <div class="column" id="col"  style="background-color:#242323; color:white;  margin-right:50px;">
-                                            <label>Admin Staff</label>
-                                            @Html.TextBoxFor(Model => Model.AdminStaff, new { @class = "form-control" })
-                                        </div>
-                                    </div> 
-
-                                    @* PARENTS  *@
-                                    <div class="row mb-2" id="row">
-                                        <div class="column" id="col"  style="background-color:white;">
-                                            <img src="~/Images/Group 258.png">
-                                        </div>
-                                        <div class="column" id="col"  style="background-color:#56FF00; color:white;  margin-right:50px;">
-                                            <label>Parents</label>
-                                            @Html.TextBoxFor(Model => Model.Parents, new { @class = "form-control" })
-                                        </div>
-                                    </div> 
-                                    
-                                    @* TOTAL EARNINGS  *@
-                                    <div class="row mb-2" id="row">
-                                        <div class="column" id="col"  style="background-color:white;">
-                                            <img src="~/Images/Group 259.png">
-                                        </div>
-                                        <div class="column"  id="col" style="background-color:#FF0303; color:white;">
-                                            <label>Total Earnings</label>
-                                            @Html.TextBoxFor(Model => Model.TotalEarnings, new { @class = "form-control" })
-                                        </div>
-                                    </div>                  
-                                </div>
-                            </div>
-                                <br />
-
-
-
-
-                                @* SECOND ROW STARTS HERE *@
-                            <div class="row mt-4" style="margin-left:-35px;">
-                                    <div class="col-md-4" style="background-color:white;">
-                                        <div class="row">
-                                            <label>Fee Collection & Expenses</label>
-                                            <span>
-                                                //will place x symbol 
-                                            </span>
-                                        </div>
-=======
-                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+        </div>
+        <div id="content-wrapper" style="background-color: #ebebe0;">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb" style="background-color: #ebebe0; font-size: 12px; margin-top: -5px;">
+                    <li class="breadcrumb-item">
+                        @*<a href="#">Home</a>*@
+                    </li>
+                    @*<a href="#">Student Overview/</a>
+                        <li class="breadcrumb-item active"> Student Overview - Add Student</li>*@
+                </ol>
+                @* DIV CONTENT STARTS FROM DOWN *@
+                <div class="container-fluid mb-3">
+                    <div class="row" style="margin-top: -10px;">
+                        @* THE BODY CONTENT STARTS FROM DOWN *@
+                        <div class="col-md-4 mt-3">
+                            <div class="row">
+                                @* STUDENTS  *@
+                                <div class="row mb-2" id="row" style="margin-left:7px;">
+                                    <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
                                         <img src="~/Images/Group 196.png">
                                     </div>
-                                    <div class="col-md-1 mr-2" style="background-color:#4F91FF; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                    <div class="column" id="col" style="background-color:#4F91FF; color:white; margin-right:10px; border-top-right-radius:10px; border-bottom-right-radius:10px;">
                                         <label>Students</label>
                                         @Html.TextBoxFor(Model => Model.Students, new { @class = "form-control" })
-                                    </div>  
-
-                                    @* TEACHERS  *@   
-                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                    </div>
+                                    @* TEACHERS  *@
+                                    <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
                                         <img src="~/Images/Group 255.png">
                                     </div>
-                                    <div class="col-md-1 mr-2" style="background-color:#F6BF07; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                    <div class="column" id="col" style="background-color:#F6BF07; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
                                         <label>Teachers</label>
                                         @Html.TextBoxFor(Model => Model.Teachers, new { @class = "form-control" })
-                                    </div>    
-                                    
-                                    @* ADMIN STAFF  *@
-                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                    </div>
+                                </div>
+                            </div>
+                            @* FEE COLLECTION STARTS HERE *@
+                            <div class="row mt-2">
+                                <div class="col" style="background-color:white; height:200px;" id="border">
+                                    <div class="row">
+                                        <h3>
+                                            Fee Collection & Expenses
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        Here the bar graph is fetched from database
+                                        Here the bar graph is fetched from database
+                                        Here the bar graph is fetched from database
+                                        Here the bar graph is fetched from database
+                                        Here the bar graph is fetched from database
+                                    </div>
+                                </div>
+                            </div>
+                            @* FEE COLLECTION ENDS HERE *@
+
+                            @* EVENT CALENDAR STARTS HERE *@
+                            <div class="row mt-4">
+                                <div class="col" style="background-color:white; height:200px;" id="border">
+                                    <div class="row">
+                                        <h3>
+                                            Event Calendar
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        Calendar is shown
+                                    </div>
+                                </div>
+                            </div>
+                            @* EVENT CALENDAR ENDS HERE *@
+
+                            @* EDIT PROFILE ,STUDENT,TEACHER SECTION GOES HERE *@
+
+                            <div class="row mt-4">
+                                <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 176@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Edit Profile", "EditProfile", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 228@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Student", "StudentsOverView", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 232@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Teacher", "TeacherView", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            @* EDIT PROFILE ,STUDENT,TEACHER SECTION ENDS HERE *@
+
+                            @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION STARTS HERE *@
+
+
+                            <div class="row mt-4">
+                                <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 242@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Add Classes", "EditProfile", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 196@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Attendance", "ATTRecords", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 204@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Message", "TeacherView", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+
+                            @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION ENDS HERE *@
+
+                            @* EDUCATION VIDEOS STARTS HERE *@
+                            <div class="row mt-4">
+                                <div class="col" style="background-color:white; height:auto;" id="border">
+                                    <div class="row">
+                                        <h3>
+                                            Robotic Education Videos
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row" style="margin-bottom:10px;">
+                                        <div class="col-md-6 col-sm-2">
+                                            <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                        </div>
+                                        <div class="col-md-4 mr-4 col-sm-2">
+                                            <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @* EDUCATION VIDEOS ENDS HERE *@
+
+                        @* /////////////////////////////////////SECOND COLUMN STARTS////////////////////////  *@
+                        <div class="col-md-4 mt-3" style="margin-left:15px">
+                            <div class="row">
+                                @* ADMIN STAFF  *@
+                                <div class="row mb-2" id="row" style="margin-left:7px;">
+                                    <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
                                         <img src="~/Images/Group 324.png">
                                     </div>
-                                    <div class="col-md-1 mr-2" style="background-color:#242323; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                    <div class="column" id="col" style="background-color:#4F91FF; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
                                         <label>Admin Staff</label>
                                         @Html.TextBoxFor(Model => Model.AdminStaff, new { @class = "form-control" })
-                                    </div>  
-                                    
+                                    </div>
                                     @* PARENTS  *@
-                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                    <div class="column" id="col" style="background-color:white; margin-left:8px; border-top-left-radius:10px; border-bottom-left-radius:10px;">
                                         <img src="~/Images/Group 258.png">
                                     </div>
-                                    <div class="col-md-1 mr-2" style="background-color:#56FF00; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                    <div class="column" id="col" style="background-color:#56FF00; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
                                         <label>Parents</label>
                                         @Html.TextBoxFor(Model => Model.Parents, new { @class = "form-control" })
-                                    </div>   
-                                    
-                                    @* TOTAL EARNINGS  *@
-                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
-                                        <img src="~/Images/Group 259.png">
-                                    </div>
-                                    <div class="col-md-1 mr-2" style="background-color:#FF0303; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
-                                        <label>Total Earnings</label>
-                                        @Html.TextBoxFor(Model => Model.TotalEarnings, new { @class = "form-control" })
-                                    </div>                                
-                                </div>
-                                <br />
-
-                                @* SECOND ROW STARTS HERE *@
-                                <div class="row">
-                                    <div class="col-md-4 ml-2" style="background-color:white;">
-                                        <div class="row">
-                                            <label>Fee Collection & Expenses</label>
-                                            <span>
-                                                //will place x symbol
-                                            </span>
-                                        </div> 
->>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
-                                        <div class="row">
-                                            //a bar graph is displayed
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 ml-2" style="background-color:white">
-<<<<<<< HEAD
-                                        <div class="row">
-                                            <label>Achievements</label>
-                                            <span>
-                                                //will place x symbol
-                                            </span>
-                                        </div>
-=======
-                                       <div class="row">
-                                           <label>Achievements</label>
-                                           <span>
-                                               //will place x symbol
-                                           </span>
-                                       </div>
->>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
-                                        <div class="row">
-                                            <div class="col-md-3 ml-1" style="background-color:silver;">
-                                                <img src="~/Images/Group 282.png">
-                                                <div class="col" style="color:white;">
-                                                    <label>Top Students</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 ml-1" style="background-color:silver;">
-                                                <img src="~/Images/Group 284.png">
-                                            </div>
-                                            <div class="col-md-3 ml-1" style="background-color:silver;">
-                                                <img src="~/Images/Group 286.png">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 ml-2" style="background-color:white">
-                                        bajsjad
                                     </div>
                                 </div>
-<<<<<<< HEAD
-                                
-                            @* SECOND ROW ENDS HERE *@
-
-
-
                             </div>
+                            @* ACHIEVEMENTS STARTS HERE *@
+                            <div class="row mt-2">
+                                <div class="col" style="background-color:white; height:200px;" id="border">
+                                    <div class="row">
+                                        <h3>
+                                            Achievements
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col">
+                                            <center>
+                                                <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 282.png"></div>
+                                                <div style="padding: 30px; background-color: #f97ca2;">Div Two</div>
+                                            </center>
+                                        </div>
+                                        <div class="col">
+                                            <center>
+                                                <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 284.png"></div>
+                                                <div style="padding: 30px; background-color: #225be8 ;">Div Two</div>
+                                            </center>
+                                        </div>
+                                        <div class="col">
+                                            <center>
+                                                <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 286.png"></div>
+                                                <div style="padding: 30px; background-color: #fa9337;">Div Two</div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @* ACHIEVEMENTS ENDS HERE *@
+
+                            @* LEADING BOARD STARTS HERE *@
+                            <div class="row mt-4">
+                                <div class="col" style="background-color:white; height:200px;" id="border">
+                                    <div class="row">
+                                        <h3>
+                                            Leading Board
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="row ml-2">
+                                            //GRID VIEW
+                                            @*@grid.GetHtml()*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @* LEADING BOARD ENDS HERE *@
+
+                            @* EDIT PROFILE ,STUDENT,TEACHER SECTION GOES HERE *@
+
+                            <div class="row mt-4">
+                                <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 288@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Add Subject", "AddSubjects", "Admin")
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 240@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Student Fee", "StudentsFee", "Admin")
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 237@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Attendance Records", "ATTRecords", "Admin")
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            @* EDIT PROFILE ,STUDENT,TEACHER SECTION ENDS HERE *@
+
+                            @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION STARTS HERE *@
+
+                            <div class="row mt-4">
+                                <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 242@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Fee Collection", "FeeCollection", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 196@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Assign TimeTable", "ViewTimeTable", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                                <div class="col ml-2" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 204@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Requested", "Requested", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+
+                            @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION ENDS HERE *@
+
+                            @* EDUCATION VIDEOS STARTS HERE *@
+                            <div class="row mt-4">
+                                <div class="col" style="background-color:white; height:auto;" id="border">
+                                    <div class="row">
+                                        <h3>
+                                            Daily Existing Videos
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row" style="margin-bottom:10px;">
+                                        <div class="col-md-6 col-sm-2">
+                                            <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                        </div>
+                                        <div class="col-md-4 mr-4 col-sm-2">
+                                            <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                        </div>
+                                    </div>
+                                    @* EDUCATION VIDEOS ENDS HERE *@
+                                </div>
                             </div>
                         </div>
-                    </div>
-=======
+                        @* //////////////////////////////////SECOND COLUMN ENDS //////////////////////////////// *@
 
 
 
-
-
-
+                        @* /////////////////////////////////////THIRD COLUMN STARTS////////////////////////  *@
+                        <div class="col-md-3 mt-3" style="margin-left:15px;">
+                            <div class="row">
+                                @* TOTAL EARNINGS  *@
+                                <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
+                                    <img src="~/Images/Group 258.png">
+                                </div>
+                                <div class="column" id="col" style="background-color:#FF0303; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
+                                    <label>Total Earnings</label>
+                                    @Html.TextBoxFor(Model => Model.TotalEarnings, new { @class = "form-control" })
+                                </div>
                             </div>
+                            @* ACHIEVEMENTS STARTS HERE *@
+                            <div class="row mt-3">
+                                <div class="col" id="border" style="margin-bottom:10px;">
+                                    @***HERE DEFINE WHITE COLOR TO SEE DIV CLASS***@
+                                    @* FACEBOOK PAGE LIKES *@
+                                    <div class="row mt-3" style="background-color: #1700bb ;  border-radius:10px; color:white; margin-bottom:15px;">
+                                        <div class="col" style="width:240px; margin-bottom:7px;">
+                                            <img src="~/Images/Group 267.png" height="45">
+                                        </div>
+                                        <div class="col">
+                                            <h2>Likes</h2>
+                                        </div>
+                                        <div class="col">
+                                            @Html.TextBoxFor(Model => Model.fblikes, new { @class = "form-control", @style = "width:120px;" })
+                                        </div>
+                                    </div>
+                                    @* TWITTER PAGE LIKES *@
+                                    <div class="row" style="background-color: #10c0f4 ;  border-radius:10px; color:white; margin-bottom:15px;">
+                                        <div class="col" style="width:240px; margin-bottom:7px;">
+                                            <img src="~/Images/Group 269.png" height="45">
+                                        </div>
+                                        <div class="col">
+                                            <h2>Likes</h2>
+                                        </div>
+                                        <div class="col">
+                                            @Html.TextBoxFor(Model => Model.twitterlikes, new { @class = "form-control", @style = "width:120px;" })
+                                        </div>
+                                    </div>
+                                    @* INSTAGRAM PAGE LIKES *@
+                                    <div class="row" style="background-color: #900C3F ;  border-radius:10px; color:white;">
+                                        <div class="col" style="width:240px; margin-bottom:7px;">
+                                            <img src="~/Images/Group 304@2x.png" height="45">
+                                        </div>
+                                        <div class="col">
+                                            <h2>Likes</h2>
+                                        </div>
+                                        <div class="col">
+                                            @Html.TextBoxFor(Model => Model.instalikes, new { @class = "form-control", @style = "width:120px;" })
+                                        </div>
+                                    </div>
+                                    @* SOCIAL NETWORKS ENDS UP *@
+                                </div>
+                            </div>
+                            @* ACHIEVEMENTS ENDS HERE *@
+
+                            @* LEADING BOARD STARTS HERE *@
+                            <div class="row mt-4">
+                                <div class="col" style="background-color:white; height:200px;" id="border">
+                                    @*<div id="kryesore" style="overflow-x: scroll;">*@
+                                    <div class="row">
+                                        <h3>
+                                            Notice Board
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="row ml-2">
+                                            //GRID VIEW
+                                            @*@grid.GetHtml()*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @* LEADING BOARD ENDS HERE *@
+
+                            @* EDIT PROFILE ,STUDENT,TEACHER SECTION GOES HERE *@
+
+                            <div class="row mt-4">
+                                <div class="col mr-4" style="background-color:white;border-radius:10px; ">
+                                    <center>
+                                        <img src="~/Images/Group 288@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("View Achievements", "ViewAchievements", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+                            @* EDIT PROFILE ,STUDENT,TEACHER SECTION ENDS HERE *@
+
+                            @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION STARTS HERE *@
+
+                            <div class="row mt-4">
+                                <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                    <center>
+                                        <img src="~/Images/Group 242@2x.png" height="50" width="50" style="margin-top:10px;">
+                                        <br />
+                                        @Html.ActionLink("Add Events", "EvetsView", "Admin")
+                                        <br />
+                                        <br />
+                                    </center>
+                                </div>
+                            </div>
+
+                            @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION ENDS HERE *@
+
+                            @* EDUCATION VIDEOS STARTS HERE *@
+                            <div class="row mt-4">
+                                <div class="col " style="background-color:white; height:auto;" id="border">
+                                    <div class="row">
+                                        <h3>
+                                            Career Guidance Videos
+                                        </h3>
+                                        <span>
+                                            X & Reload symbol
+                                        </span>
+                                    </div>
+                                    <hr />
+                                    <div class="row" style="margin-bottom:10px;">
+                                        <div class="col-md-6 col-sm-2" style="width:auto;">
+                                            <iframe width="270" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @* EDUCATION VIDEOS ENDS HERE *@
                         </div>
+                        @* //////////////////////////////////THIRD COLUMN ENDS //////////////////////////////// *@
+
+
+
+
                     </div>
+                    @* THE BODY CONTENT ENDS HERE *@
                 </div>
+                <!-- side social links -->
             </div>
         </div>
->>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
         <!-- /.content-wrapper -->
         <!-- /#wrapper -->
         <!-- Scroll to Top Button-->
