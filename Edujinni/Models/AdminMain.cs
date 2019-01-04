@@ -12,5 +12,11 @@ namespace Edujinni.Models
         public string AdminStaff { get; set; }
         public string Parents { get; set; }
         public string TotalEarnings { get; set; }
+<<<<<<< HEAD
+        public string fblikes { get; set; }
+        public string instalikes { get; set; }
+        public string twitterlikes { get; set; }
+=======
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
     }
 }

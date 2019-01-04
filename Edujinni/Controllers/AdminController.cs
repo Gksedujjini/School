@@ -90,6 +90,13 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
+        public ActionResult test2()
+        {
+            return View();
+        }
+=======
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
 
     }
 }

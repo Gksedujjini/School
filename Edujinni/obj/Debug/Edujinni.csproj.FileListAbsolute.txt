@@ -522,6 +522,12 @@ C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\bin\Microsoft.Owin.Security.OAuth.xm
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+<<<<<<< HEAD
+C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
+C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.dll
+C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.pdb
+=======
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.dll
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.pdb
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
