@@ -527,7 +527,4 @@ C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.csprojResolveAsse
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.dll
 C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.pdb
 =======
-C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.dll
-C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.pdb
-C:\Users\SAIKIRAN\Desktop\Edujinni\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
 >>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
