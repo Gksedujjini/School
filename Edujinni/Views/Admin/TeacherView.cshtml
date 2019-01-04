@@ -1,5 +1,12 @@
 ﻿@{
-//Layout = null;
+//Layout = null;   
+}
+@{
+//using system.data;
+//Sqlconnection com = null;
+//var db = Database.Open("test");
+//var selectedData = db.Query("SELECT * FROM Movies");
+//var grid = new WebGrid(source: selectedData);
 }
 <!DOCTYPE html>
 <html>
@@ -18,7 +25,7 @@
     <style>
         #cntnr {
             background-color: #ebebe0;
-            width: 95%;
+            width: auto;
         }
 
         #dropdownMenuButton {
@@ -70,9 +77,9 @@
             color: white;
         }
 
-        table {
+        /*table {
             font-family: arial, sans-serif;
-            //border-collapse: collapse;
+            border-collapse: collapse;
             width: 100%;
             border-radius: 15px;
         }
@@ -87,7 +94,7 @@
         }
         tr:nth-child(even) {
             background-color: #f2f2f2;
-        }
+        }*/
     </style>
 </head>
 <body>
@@ -110,85 +117,30 @@
 
     <div class="container mt-3" id="cntnr">
         <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
-            <div class="col-md-12" style="background-color:white;border-radius:15px;">
-                <br />
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>
-                                Teacher ID
-                            </th>
-                            <th>
-                                Student Name
-                            </th>
-                            <th>
-                                Subject 1
-                            </th>
-                            <th>
-                                Subject 2
-                            </th>
-                            <th>
-                                Phone No
-                            </th>
-                            <th>
-                                
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                               123
-                            </td>
-                            <td>
-                                Andrea
-                            </td>
-                            <td>
-                                Physics
-                            </td>
-                            <td>
-                                Biology
-                            </td>
-                            <td>
-                               999944448
-                            </td>
-                            <td>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                               321
-                            </td>
-                            <td>
-                                Philippi
-                            </td>
-                            <td>
-                                Telugu
-                            </td>
-                            <td>
-                                Hindhi
-                            </td>
-                            <td>
-                                789456123
-                            </td>
-                            <td>
-
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            @*<div class="col-md-5 mt-1" id="div1">
-                    <div class="row">
-                        <div class="col ml-2">
-                            <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
-                        </div>
+            <div class="col-md-12" style="background-color:white;border-radius:15px;">  
+                @*@grid.GetHtml(
+                 columns: grid.Columns(
+                            grid.Column("Teacher Id"),
+                            grid.Column("Student Name"),
+                            grid.Column("Subject 1"),
+                            grid.Column("Subject 1"),
+                            grid.Column("Phone No")                           
+                        )
+                    )*@              
+                @* THE CODE FOR THE RETREIVAL PURPOSE IS WRITTEN ON THE TOP IN BETWEEN { } BRACES *@
+              
+                @*/////GOES SOME DATA HERE FROM THE DATABASE////*@
+                <div class="row ml-1 mr-1">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        // IN THIS SECTION THE DATA IS SHOWN
+                    @*@grid.GetHtml()*@
                     </div>
-                    <div class="row mt-2">
-                        <div class="col ml-2 mb-2">
-                            <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
-                        </div>
-                    </div>
-                </div>*@
+                         
+                </div>
+                <div class="mt-2 ml-1 mr-1">
+                    @* this is for space at the bottom of the table *@
+                </div>
+            </div>           
         </div>
         <div class="row">
             <div class="col">
@@ -199,6 +151,11 @@
             </div>
             <br />
         </div>
+        @* FOR TESTING PURPOSE  *@
+        <div class="row">
+           @Html.ActionLink("Teacher Details", "TeacherInfo", "Admin")
+        </div>
     </div>
+    <br />
 </body>
 </html>

@@ -211,7 +211,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
-    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +219,7 @@
     <Compile Include="Models\addclass.cs" />
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
+    <Compile Include="Models\AdminMain.cs" />
     <Compile Include="Models\Adminsignup.cs" />
     <Compile Include="Models\EditAdminProfile.cs" />
     <Compile Include="Models\Editprofile.cs" />
@@ -234,6 +234,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminMain.css" />
     <Content Include="Content\all.css" />
     <Content Include="Content\all.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -405,6 +406,7 @@
     <Content Include="Images\Rectangle 238.png" />
     <Content Include="Images\Rectangle 239%402x.png" />
     <Content Include="Images\Rectangle 239.png" />
+    <Content Include="Images\test\ic_launcher.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -469,10 +471,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Sginup.cshtml" />
     <Content Include="Views\Student\student.cshtml" />
-    <Content Include="Views\Teacher\Teacher.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
-    <Content Include="Views\Teacher\Editprofile.cshtml" />
     <Content Include="Views\Student\editstudent.cshtml" />
     <Content Include="Views\Student\test.cshtml" />
     <Content Include="Views\Admin\AddAchievements.cshtml" />
@@ -492,6 +492,10 @@
     <Content Include="Views\Admin\TeacherView.cshtml" />
     <Content Include="Views\Admin\AddTeacher.cshtml" />
     <Content Include="Views\Admin\ATTRecords.cshtml" />
+    <Content Include="Views\Admin\TeacherInfo.cshtml" />
+    <Content Include="Views\Admin\test.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\test2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
