@@ -70,20 +70,20 @@ namespace Edujinni.Controllers
         }
 
         /// TEACHER MODULE ///
-       public ActionResult TeacherView()
+        public ActionResult TeacherView()
         {
             return View();
-        } 
+        }
         public ActionResult AddTeacher()
         {
             return View();
         }
         public ActionResult TeacherInfo()
         {
-            return View();  
+            return View();
         }
         //teacher module ends here
-            //USE IT FOR THE TESTING OF PAGES PURPOSE WHILE BUILDING IF REQUIRED
+        //USE IT FOR THE TESTING OF PAGES PURPOSE WHILE BUILDING IF REQUIRED
         public ActionResult test()
         {
             return View();
@@ -92,9 +92,5 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
-}
-=======
     }
->>>>>>> 5a96380e9383ecf359c87e63418a9354c937bea1
 }
