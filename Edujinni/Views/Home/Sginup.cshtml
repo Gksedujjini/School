@@ -39,9 +39,9 @@
                         <br>
                         @Html.TextBoxFor(Model => Model.DOB, new {@type="Date",@class = "form-control", @placeholder = "Date of Birth" })
                         <br>
-                        @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Create Password" })
+                        @Html.PasswordFor(Model => Model.createPassword, new { @class = "form-control", @placeholder = "Create Password" })
                         <br>
-                        @Html.PasswordFor(Model => Model.Password, new { @class = "form-control", @placeholder = "Confirm Password" ,@style = "margin-bottom:50px;" })
+                        @Html.PasswordFor(Model => Model.confirm_pswd, new { @class = "form-control", @placeholder = "Confirm Password" ,@style = "margin-bottom:50px;" })
                         <br>
                        
                         @Html.RadioButtonFor(Model => Model.Gender, "Male")
