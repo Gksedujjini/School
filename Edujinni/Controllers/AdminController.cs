@@ -55,6 +55,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult AttendanceView()
+        {
+            return View();
+        }
         public ActionResult AddStudent()
         {
             return View();
