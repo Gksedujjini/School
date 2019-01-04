@@ -495,7 +495,10 @@
     <Content Include="Views\Admin\TeacherInfo.cshtml" />
     <Content Include="Views\Admin\test.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Admin\test2.cshtml" />
+=======
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

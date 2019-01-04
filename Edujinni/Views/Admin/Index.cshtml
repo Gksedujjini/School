@@ -13,19 +13,27 @@ Layout = null;
     <title> Home</title>
 
     <!-- Bootstrap core CSS-->
+<<<<<<< HEAD
     
+=======
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<<<<<<< HEAD
 
     <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/sb-admin.css" rel="stylesheet">
     <style>
         
 <!-- Custom fonts for this template-->
+=======
+    <!-- Custom fonts for this template-->
+    <style>
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
         .navbar-brand {
             color: white;
             font-size: 1.5rem;
@@ -38,6 +46,7 @@ Layout = null;
             margin-left: 10px;
             margin-top: 10px;
         }
+<<<<<<< HEAD
    
         /*CSS CODE FOR MAIN PAGE FIRST ROW TO DISPLAY STUDENTS ,PARENTS AND ALL INFO*/
         * {
@@ -59,6 +68,12 @@ Layout = null;
             clear: both;
         }
     </style>
+=======
+    </style>
+    <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/sb-admin.css" rel="stylesheet">
+    @*<link href="~/Content/custom.css" rel="stylesheet">*@
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
     <body id="page-top">
         <div class="row" style="margin-bottom:-10px; height:auto;">
             <div class="col" id="logoBar" style="background-color: blue; margin-left: 0px; width:150px;">
@@ -223,10 +238,15 @@ Layout = null;
                     <div class="container mb-3">
                         <div class="row" style="margin-top: -10px;">
                             @* MY BODY COLOR GOES HERE *@
+<<<<<<< HEAD
+=======
+                            <div class="col-md-12 mb-3">
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
                                 @* MAIN OF THE ADMIN PANEL *@
                                 <div class="row" style="min-height:80px;">
 
                                     @* STUDENTS  *@
+<<<<<<< HEAD
                                     <div class="row mb-2" id="row">
                                         <div class="column" id="col" style="background-color:white;">
                                             <img src="~/Images/Group 196.png">
@@ -298,17 +318,83 @@ Layout = null;
                                                 //will place x symbol 
                                             </span>
                                         </div>
+=======
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 196.png">
+                                    </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#4F91FF; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Students</label>
+                                        @Html.TextBoxFor(Model => Model.Students, new { @class = "form-control" })
+                                    </div>  
+
+                                    @* TEACHERS  *@   
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 255.png">
+                                    </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#F6BF07; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Teachers</label>
+                                        @Html.TextBoxFor(Model => Model.Teachers, new { @class = "form-control" })
+                                    </div>    
+                                    
+                                    @* ADMIN STAFF  *@
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 324.png">
+                                    </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#242323; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Admin Staff</label>
+                                        @Html.TextBoxFor(Model => Model.AdminStaff, new { @class = "form-control" })
+                                    </div>  
+                                    
+                                    @* PARENTS  *@
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 258.png">
+                                    </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#56FF00; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Parents</label>
+                                        @Html.TextBoxFor(Model => Model.Parents, new { @class = "form-control" })
+                                    </div>   
+                                    
+                                    @* TOTAL EARNINGS  *@
+                                    <div class="col-md-1 ml-4" style="height:auto;width:auto; background-color:white; border-bottom-left-radius:10px; border-top-left-radius:10px;">
+                                        <img src="~/Images/Group 259.png">
+                                    </div>
+                                    <div class="col-md-1 mr-2" style="background-color:#FF0303; border-bottom-right-radius:10px; border-top-right-radius:10px; color:white;">
+                                        <label>Total Earnings</label>
+                                        @Html.TextBoxFor(Model => Model.TotalEarnings, new { @class = "form-control" })
+                                    </div>                                
+                                </div>
+                                <br />
+
+                                @* SECOND ROW STARTS HERE *@
+                                <div class="row">
+                                    <div class="col-md-4 ml-2" style="background-color:white;">
+                                        <div class="row">
+                                            <label>Fee Collection & Expenses</label>
+                                            <span>
+                                                //will place x symbol
+                                            </span>
+                                        </div> 
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
                                         <div class="row">
                                             //a bar graph is displayed
                                         </div>
                                     </div>
                                     <div class="col-md-4 ml-2" style="background-color:white">
+<<<<<<< HEAD
                                         <div class="row">
                                             <label>Achievements</label>
                                             <span>
                                                 //will place x symbol
                                             </span>
                                         </div>
+=======
+                                       <div class="row">
+                                           <label>Achievements</label>
+                                           <span>
+                                               //will place x symbol
+                                           </span>
+                                       </div>
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
                                         <div class="row">
                                             <div class="col-md-3 ml-1" style="background-color:silver;">
                                                 <img src="~/Images/Group 282.png">
@@ -328,6 +414,7 @@ Layout = null;
                                         bajsjad
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 
                             @* SECOND ROW ENDS HERE *@
 
@@ -337,6 +424,20 @@ Layout = null;
                             </div>
                         </div>
                     </div>
+=======
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+>>>>>>> bbe0e9e997bff5306febc37333a3c61a725eb687
         <!-- /.content-wrapper -->
         <!-- /#wrapper -->
         <!-- Scroll to Top Button-->
