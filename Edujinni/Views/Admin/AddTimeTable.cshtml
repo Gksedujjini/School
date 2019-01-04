@@ -1,71 +1,147 @@
 ﻿@model Edujinni.Models.TimeTable
 @{
-//   Layout = null;
+  //Layout = null;
 }
 @using (Html.BeginForm("AddTimeTable", "Admin", FormMethod.Post))
 {
     <!DOCTYPE html>
     <head>
         <meta name="viewport" content="width=device-width" />
-        <title>AddAchievements</title>
+        <title>AddTimeTable</title>
+        <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="~/Content/wickedpicker.js"></script>
+        <link href="~/Content/wickedpicker.css" rel="stylesheet" />
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
-        @*<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
-        <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
-        <script src="~/Scripts/moment.js"></script>
         <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
-                });
-            });
-        </script>*@
+           
+        </script>
         <style>
-            #achievements {
-                height: 45px;
-                width: auto 240px;
+            #cntnr{
+                margin:0;
+            }
+           #dropdownMenuButton {
+                background-color: white;
                 border-radius: 20px;
+                width: 83%;
             }
-            p {
-                text-align: center;
+             #dropdown1 {
+                height:30px;
+                width:225px;
+                background-color: lightgray;
+                color: black;
+                border-radius: 15px;
             }
-        
+            #dropdown2 {
+                height:30px;
+                width:225px;
+                background-color: lightgray;
+                color: black;
+                border-radius: 15px;
+                margin-right:58px;
+            }
+        #dropdown3 {
+                height:30px;
+                width:100px;
+                background-color: lightgray;
+                color: black;
+                border-radius: 15px;
+                margin-right:-45px;
+            }
+        #dropdown4 {
+                height:30px;
+                width:100px;
+                background-color: lightgray;
+                color: black;
+                border-radius: 15px;
+                margin-right:40px;
+            }
         </style>
     </head>
     <body>
-        <p style="font-size:30px;">Add TimeTable</p>
-        <br />
-            <div class="row">
-                <div class="col align-self-center">
-                    
-                    @Html.TextBoxFor(m => m.selectday, new { @class = "form-control", @placeholder = "Select Day(select box)", @id = "achievements" })
+        <div class="container mt-4 col-md-12 col-xs-12" id="cntnr">
+            <div class="row mt-2">
+                <div class="col-md-6 mt-2">
+                    <div class="col dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown">
+                            Selcet Day
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col align-self-center">
-                    @Html.TextBoxFor(m => m.selectsubject, new { @class = "form-control", @placeholder = "Select Subject(select box)", @id = "achievements" })
+                <div class="col-md-6 mt-2">
+                    <div class="col dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdown2" data-toggle="dropdown">
+                            Select Subject
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        <br />
-        <div class="row">
-            <div class="col align-self-center">
-                @Html.TextBoxFor(m => m.teachername, new { @class = "form-control", @placeholder = "TeacherName(select box)", @id = "achievements" })
+            <div class="row mt-2">
+                <div class="col-md-6 mt-2">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown">
+                            Teacher Name
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-5 mt-2">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdown3" data-toggle="dropdown">
+                                    Class
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-5 mt-2">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdown4" data-toggle="dropdown">
+                                    Section
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col align-self-center">
-                @Html.TextBoxFor(m => m.classs, new { @class = "form-control", @placeholder = "Class(select box)", @id = "achievements" })
+            <div class="row mt-2">
+                <div class="col-md-6 mt-2">
+                    time picker1
+                </div>
+                <div class="col-md-6 mt-2">
+                    time picker 2
+                </div>
             </div>
-            <div class="col align-self-center">
-                @Html.TextBoxFor(m => m.section, new { @class = "form-control", @placeholder = "Section(select box)", @id = "achievements" })
+            <div class="row mt-2">
+                <div class="col-md-12 align-self-center">
+                <input type="button" value="Save" class="btn btn-success" style="width:270px; height:45px; border-radius:10px;" />
+                </div>
             </div>
         </div>
-        <br />
-        <div id="datetimepicker3">
-            HERE ONE TIME PICKERS WILL COME TO CHOOSE START DATE
-        </div>
-        <br />        
-        <div id="timepicker-spinbox">
-            HERE ONE TIME PICKERS WILL COME TO CHOOSE END DATE
-        </div>
-
-        <br />
-        <input type="button" value="Save" class="btn btn-success" style="width:270px; height:45px; border-radius:10px;" />
+        
 
     </body>
 }

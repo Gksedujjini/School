@@ -1,0 +1,20 @@
+diff a/Edujinni/Edujinni.csproj b/Edujinni/Edujinni.csproj	(rejected hunks)
+@@ -211,7 +211,6 @@
+     <Compile Include="Controllers\HomeController.cs" />
+     <Compile Include="Controllers\ManageController.cs" />
+     <Compile Include="Controllers\StudentController.cs" />
+-    <Compile Include="Controllers\TeacherController.cs" />
+     <Compile Include="Global.asax.cs">
+       <DependentUpon>Global.asax</DependentUpon>
+     </Compile>
+@@ -492,6 +492,10 @@
+     <Content Include="Views\Admin\TeacherView.cshtml" />
+     <Content Include="Views\Admin\AddTeacher.cshtml" />
+     <Content Include="Views\Admin\ATTRecords.cshtml" />
++    <Content Include="Views\Admin\TeacherInfo.cshtml" />
++    <Content Include="Views\Admin\test.cshtml" />
++    <Content Include="Views\Admin\Index.cshtml" />
++    <Content Include="Views\Admin\test2.cshtml" />
+   </ItemGroup>
+   <ItemGroup>
+     <Folder Include="App_Data\" />

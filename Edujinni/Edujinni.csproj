@@ -405,7 +405,6 @@
     <Content Include="Images\Rectangle 238.png" />
     <Content Include="Images\Rectangle 239%402x.png" />
     <Content Include="Images\Rectangle 239.png" />
-    <Content Include="Images\test\ic_launcher.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -494,6 +493,8 @@
     <Content Include="Views\Admin\TeacherInfo.cshtml" />
     <Content Include="Views\Admin\test.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\test2.cshtml" />
+    <Content Include="Views\Account\Register - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
