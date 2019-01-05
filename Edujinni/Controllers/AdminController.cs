@@ -92,5 +92,15 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+
+        //LEADING BOARD CONTROLLERS 
+        public ActionResult LeadingBoardView()
+        {
+            return View();
+        }
+        public ActionResult AddLeadingBoard()
+        {
+            return View();
+        }
     }
 }

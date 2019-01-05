@@ -33,6 +33,9 @@
             margin-left:10px;
             margin-top:10px;
         }
+        #aa:hover{
+            background-color:blue;
+        }
     </style>
     <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/sb-admin.css" rel="stylesheet">
@@ -102,101 +105,104 @@
             <ul class="sidebar navbar-nav" style="width: 0px;">
 
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">                  
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 289.png" height="20" width="20">
                         <span>Academic Syllabus</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 176@2x.png" height="20" width="20" class="img">
-                    <span>
-                        @Html.ActionLink("Edit Profile", "EditProfile", "Admin", new { area = "" }, new { @class = "navbar-brand" , style = "font-size:medium;" })
-                    </span>                   
+                        <a class="nav-link" href="@Url.Action("EditProfile","Admin")" id="aa">
+                            <img src="~/Images/Group 176@2x.png" height="20" width="20">
+                            <span>Edit Profile</span>
+                        </a>                 
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <span>
-                        <img src="~/Images/Group 232@2x.png" height="20" width="20" class="img">                   
-                     @Html.ActionLink("Teacher", "TeacherView", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium;" })
-                    </span>
+                    <a class="nav-link" href="@Url.Action("TeacherView","Admin")" id="aa">
+                        <img src="~/Images/Group 232@2x.png" height="20" width="20">
+                        <span>Teacher</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 235.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Add Subject", "AddSubjects", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;" })               
+                    <a class="nav-link" href="@Url.Action("AddSubjects","Admin")" id="aa">
+                        <img src="~/Images/Group 235.png" height="20" width="20">
+                        <span>Add Subjects</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/img.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Achievements", "ViewAchievements", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    @*<a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("ViewAchievements","Admin")" id="aa">
                         <img src="~/Images/img.png" height="20" width="20">
-                        <span>View Achievements</span>
-                    </a>*@
+                        <span>Achievements</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 289.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Attendance Records", "ATTRecords", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    
+                    <a class="nav-link" href="@Url.Action("ATTRecords","Admin")" id="aa">
+                        <img src="~/Images/Group 289.png" height="20" width="20">
+                        <span>Attendance Records</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 204.png" height="20" width="20">
                         <span>Message</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 243.png" height="20" width="20">
                         <span>Fee Collection</span>
                     </a>
                 </li>
 
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 246.png" height="20" width="20">
                         <span>Requested</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 180.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Assign TimeTable", "ViewTimeTable", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
+                    <a class="nav-link" href="@Url.Action("ViewTimeTable","Admin")" id="aa">
+                        <img src="~/Images/Group 180.png" height="20" width="20">
+                        <span>Assign TimeTable</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 198.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Add Events", "EvetsView", "Events", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    @*<a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("EvetsView","Events")" id="aa">
                         <img src="~/Images/Group 198.png" height="20" width="20">
                         <span>Add Events</span>
-                    </a>*@
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("LeadingBoardView","Admin")" id="aa">
                         <img src="~/Images/Group 192@2x.png" height="20" width="20">
                         <span>Leading Board</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 290.png" height="20" width="20">
                         <span>Add Exam Schedules</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 210@2x.png" height="20" width="20">
                         <span>Results</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 292.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Students OverView", "StudentsOverView", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
+                    <a class="nav-link" href="@Url.Action("StudentsOverView","Admin")" id="aa">
+                        <img src="~/Images/Group 292.png" height="20" width="20">
+                        <span>Students OverView</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 293.png" height="20" width="20">
                         <span>Add Marks</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 294.png" height="20" width="20">
                         <span>Logout</span>
                     </a>
