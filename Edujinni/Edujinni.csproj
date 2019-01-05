@@ -495,8 +495,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\test2.cshtml" />
     <Content Include="Views\Account\Register - Copy.cshtml" />
-    <Content Include="Views\Admin\LeadingBoardView.cshtml" />
-    <Content Include="Views\Admin\AddLeadingBoard.cshtml" />
+    <Content Include="Views\Admin\AddResultView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
