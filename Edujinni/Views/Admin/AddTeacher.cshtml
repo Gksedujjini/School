@@ -1,9 +1,9 @@
 ﻿@model Edujinni.Models.Addteacher
 @{
-// Layout = null;
+ Layout = null;
 }
-@*@using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post))
-    {*@
+@using (Html.BeginForm("AddTeacher", "Admin", FormMethod.Post))
+    {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -155,11 +155,11 @@
                             <div class="row mt-2">
                                 <div class="col-md-6 mt-4 input-group">
                                     <div class="form-check form-check-inline ml-3">
-                                        @Html.RadioButtonFor(m => m.Gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
+                                        @Html.RadioButtonFor(m => m.teacher_gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
                                         <label class="form-check-label" for="inlineCheckboxMale"style="margin-right:20px;">Male</label>
                                     </div>
                                     <div class="form-check form-check-inline ml-3">
-                                        @Html.RadioButtonFor(m => m.Gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
+                                        @Html.RadioButtonFor(m => m.teacher_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
                                         <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                     </div>
                                 </div>
@@ -167,11 +167,11 @@
                             <div class="row mt-2">
                                 <div class="col-md-6 mt-4 input-group">
                                     <div class="form-check form-check-inline ml-3">
-                                        @Html.RadioButtonFor(m => m.WorkType, "Teaching", new { @class = "form-check-input", @id = "inlineCheckboxTeaching" })
+                                        @Html.RadioButtonFor(m => m.teacher_department, "Teaching", new { @class = "form-check-input", @id = "inlineCheckboxTeaching" })
                                         <label class="form-check-label" for="inlineCheckboxMale">Teaching</label>
                                     </div>
                                     <div class="form-check form-check-inline ml-3">
-                                        @Html.RadioButtonFor(Model => Model.WorkType, "Non Teaching", new { @class = "form-check-input", @id = "inlineCheckboxNonTeaching" })
+                                        @Html.RadioButtonFor(Model => Model.teacher_department, "Non Teaching", new { @class = "form-check-input", @id = "inlineCheckboxNonTeaching" })
                                         <label class="form-check-label" for="inlineCheckboxFemale">Non Teaching</label>
                                     </div>
                                 </div>
@@ -182,13 +182,13 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                                    @Html.TextBoxFor(Model => Model.teacher_first_name, new { @class = "form-control", @placeholder = "First Name" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                                    @Html.TextBoxFor(Model => Model.teacher_last_name, new { @class = "form-control", @placeholder = "Last Name" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @placeholder = "Email" })
+                                    @Html.TextBoxFor(Model => Model.teacher_email, new { @class = "form-control", @placeholder = "Email" })
                                 </div>
                                 
                             </div>
@@ -198,13 +198,13 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.PhoneNo, new { @class = "form-control", @placeholder = "Phone No" })
+                                    @Html.TextBoxFor(Model => Model.teacher_phone_no, new { @class = "form-control", @placeholder = "Phone No" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.TeacherID, new { @class = "form-control", @placeholder = "Teacher ID" })
+                                    @Html.TextBoxFor(Model => Model.teacher_teacherid, new { @class = "form-control", @placeholder = "Teacher ID" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.TeacherID, new { @type = "date", @class = "form-control", @placeholder = "Date Of Birth" })
+                                    @Html.TextBoxFor(Model => Model.teacher_dob, new { @type = "date", @class = "form-control", @placeholder = "Date Of Birth" })
                                 </div>
                             </div><br>
                             <hr>
@@ -216,18 +216,18 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.Subject1, new { @class = "form-control", @placeholder = "Subject 1" })
+                                    @Html.TextBoxFor(Model => Model.teacher_subject1, new { @class = "form-control", @placeholder = "Subject 1" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.Subject2, new { @class = "form-control", @placeholder = "Subject 2" })
+                                    @Html.TextBoxFor(Model => Model.teacher_subject2, new { @class = "form-control", @placeholder = "Subject 2" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.Qualification, new { @class = "form-control", @placeholder = "Qualification" })
+                                    @Html.TextBoxFor(Model => Model.teacher_qualification, new { @class = "form-control", @placeholder = "Qualification" })
                                 </div>
                             </div><br>
                             <div class="row">
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.DateOfJoining, new { @type = "date", @class = "form-control", @placeholder = "Date of Joining" })
+                                    @Html.TextBoxFor(Model => Model.teacher_date_of_joining, new { @type = "date", @class = "form-control", @placeholder = "Date of Joining" })
                                 </div>
                             </div><br>
                             <hr>
@@ -238,33 +238,33 @@
                         <div class="col-md-12 mt-3">
                             <div class="row">
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.FlatNO, new { @class = "form-control", @placeholder = "Flat No" })
+                                    @Html.TextBoxFor(Model => Model.teacher_flat_no, new { @class = "form-control", @placeholder = "Flat No" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.BuildingName, new { @class = "form-control", @placeholder = "Building Name" })
+                                    @Html.TextBoxFor(Model => Model.teacher_buildingname, new { @class = "form-control", @placeholder = "Building Name" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.Street1, new { @class = "form-control", @placeholder = "Street 1" })
+                                    @Html.TextBoxFor(Model => Model.teacher_street, new { @class = "form-control", @placeholder = "Street 1" })
                                 </div>
                             </div>
                             <br>
                             <div class="row">
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.Street2, new { @class = "form-control", @placeholder = "Street 2" })
+                                    @Html.TextBoxFor(Model => Model.teacher_street1, new { @class = "form-control", @placeholder = "Street 2" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.Area, new { @class = "form-control", @placeholder = "Area" })
+                                    @Html.TextBoxFor(Model => Model.teacher_area, new { @class = "form-control", @placeholder = "Area" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.City, new { @class = "form-control", @placeholder = "City" })
+                                    @Html.TextBoxFor(Model => Model.teacher_city, new { @class = "form-control", @placeholder = "City" })
                                 </div>
                             </div><br>
                             <div class="row">
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.State, new { @class = "form-control", @placeholder = "State" })
+                                    @Html.TextBoxFor(Model => Model.teacher_state, new { @class = "form-control", @placeholder = "State" })
                                 </div>
                                 <div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.PinCode, new { @class = "form-control", @placeholder = "Area Code" })
+                                    @Html.TextBoxFor(Model => Model.teacher_pincode, new { @class = "form-control", @placeholder = "Area Code" })
                                 </div>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-success" style="height: 40px; width: 200px;border-radius: 10px;">Submit</button>
@@ -280,4 +280,13 @@
     </div>
 
 </body>
-@*}*@
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}  

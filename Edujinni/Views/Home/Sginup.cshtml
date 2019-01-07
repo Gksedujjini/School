@@ -1,4 +1,5 @@
-﻿@model Edujinni.Models.Adminsignup
+﻿
+@model Edujinni.Models.Adminsignup
 @{
     Layout = null;
 }
@@ -29,24 +30,24 @@
                 <label style="margin-bottom: -40px; font-size: 35px;">GUEST SIGNUP</label><br><br>
                 <div class="row" style="margin-top: -10px;">
                     <div class="col">
-                        @Html.TextBoxFor(Model => Model.FirstName, new { @class = "form-control", @placeholder = "FirstName" })
+                        @Html.TextBoxFor(Model => Model.first_name, new { @class = "form-control", @placeholder = "FirstName" })
                         <br>
-                        @Html.TextBoxFor(Model => Model.LastName, new { @class = "form-control", @placeholder = "LastName" })
+                        @Html.TextBoxFor(Model => Model.last_name, new { @class = "form-control", @placeholder = "LastName" })
                         <br>
-                        @Html.TextBoxFor(Model => Model.Mobile, new { @class = "form-control", @placeholder = "Mobile No" })
+                        @Html.TextBoxFor(Model => Model.mobile_no, new { @class = "form-control", @placeholder = "Mobile No" })
                         <br>
-                        @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @placeholder = "Email Id(Optional)" })
+                        @*@Html.TextBoxFor(Model => Model.email, new { @class = "form-control", @placeholder = "Email Id(Optional)" })*@
                         <br>
-                        @Html.TextBoxFor(Model => Model.DOB, new {@type="Date",@class = "form-control", @placeholder = "Date of Birth" })
+                        @Html.TextBoxFor(Model => Model.dateof_birth, new {@type="Date",@class = "form-control", @placeholder = "Date of Birth" })
                         <br>
-                        @Html.PasswordFor(Model => Model.createPassword, new { @class = "form-control", @placeholder = "Create Password" })
+                        @Html.PasswordFor(Model => Model.create_pswd, new { @class = "form-control", @placeholder = "Create Password" })
                         <br>
                         @Html.PasswordFor(Model => Model.confirm_pswd, new { @class = "form-control", @placeholder = "Confirm Password" ,@style = "margin-bottom:50px;" })
                         <br>
                        
-                        @Html.RadioButtonFor(Model => Model.Gender, "Male")
+                        @Html.RadioButtonFor(Model => Model.gender, "Male")
                        Male
-                         @Html.RadioButtonFor(Model => Model.Gender, "FeMale")
+                         @Html.RadioButtonFor(Model => Model.gender, "FeMale")
                         Female
                       </div>
                 </div><br>
