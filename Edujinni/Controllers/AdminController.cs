@@ -92,5 +92,9 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult AddResultView()
+        {
+            return View();
+        }
     }
 }

@@ -85,3 +85,4 @@ C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\bin\Micro
 C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\obj\Debug\Edujinni.dll
 C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\obj\Debug\Edujinni.pdb
+C:\Users\gundlamallaiah\Source\Repos\School 27-12-2018\School\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
