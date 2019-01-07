@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
@@ -31,27 +32,63 @@ namespace Edujinni.Controllers
             client.DefaultRequestHeaders.Accept.Clear();
 
             HttpResponseMessage response = await client.PostAsJsonAsync("guestSignUp", admin);
-             
+
             if (response.IsSuccessStatusCode == true)
             {
+                Response.Cookies.Clear();
+                ModelState.Clear();
                 return View();
             }
-            //Adminsignup admin = new Adminsignup();
-            //SqlConnection con = null;
-            //con = new SqlConnection("Data Source=.;Initial Catalog=sample;Integrated Security=true");
-            //SqlCommand cmd = new SqlCommand("Insert Into REGISTRATION (FIRSTNAME,LASTNAME,PASSWORD) VALUES(@FirstName,@LastName,@Email)",con);
-            //con.Open();
-            //cmd.Parameters.AddWithValue("@FirstName",admin.FirstName);
-            //cmd.Parameters.AddWithValue("@LastName",admin.LastName);
-            //cmd.Parameters.AddWithValue("@Email",admin.Email);
-            //cmd.ExecuteNonQuery();
-            //con.Close();
-            return View();
+            return View(admin);
         }
-
-
-        public ActionResult Login()
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
+        [HttpPost]
+        public async Task<ActionResult> Login(string Name,string password)
         {
+            Adminsignup A = new Adminsignup();
+            AddAdmin admin = new AddAdmin();
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:52995/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Clear();
+            //HttpResponseMessage response, response1;
+            //if (Name ==A.first_name ||password == A.confirm_pswd)
+            //{
+            //     response = await client.PostAsJsonAsync("guestLogin", A);
+            //    if (response.IsSuccessStatusCode == true)
+            //    {
+            //        Response.Cookies.Clear();
+            //        ModelState.Clear();
+            //        // return View("_Layout.cshtml");
+            //        return View();
+            //    }
+            //}
+            //else
+            //{
+
+            //}
+            //if (Name == admin.full_name || password == admin.password)
+            //{
+            //    response1 = await client.PostAsJsonAsync("AdminLogin", A);
+            //    if (response1.IsSuccessStatusCode == true)
+            //    {
+            //        Response.Cookies.Clear();
+            //        ModelState.Clear();
+            //        //  return View("_Layout.cshtml");
+            //        return View();
+            //    }
+            //}
+            HttpResponseMessage response = await client.PostAsJsonAsync("guestLogin", A);
+            if (response.IsSuccessStatusCode == true)
+            {
+                Response.Cookies.Clear();
+                ModelState.Clear();
+                // return View("_Layout.cshtml");
+                return View();
+            }
             return View();
         }
     }
