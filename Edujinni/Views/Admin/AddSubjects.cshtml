@@ -17,15 +17,12 @@
     <style>
         #cntnr {
             background-color: #ebebe0;
-            width: 50%;
+            width: 60%;
         }
-
-        #dropdownMenuButton {
-            background-color: white;
-            border-radius: 20px;
-            width: 83%;
-        }
-
+        .form-control {
+                border-radius: 20px;
+                background-color: white;
+            }
         #div1 {
             background-color: white;
         }
@@ -36,8 +33,8 @@
             background-color: blue;
             color: white;
             min-width: 50px;
-            width: 100px;
-            margin-top: 5px;
+            width: 80px;
+            margin-top: 15px;
         }
 
         #input2 {
@@ -46,7 +43,7 @@
             background-color: red;
             color: white;
             min-width: 50px;
-            width: 100px;
+            width: 80px;
             margin-top: 5px;
         }
 
@@ -62,7 +59,7 @@
         #addDiv {
             width: 58px;
             float: right;
-            margin-top: 5px;
+            margin-top: 10px;
             border-radius: 5px;
             margin-right: -5px;
             background-color: green;
@@ -71,70 +68,26 @@
     </style>
 </head>
 <body>
-    <div class="container" id="cntnr">
+    <div class="container mt-5" id="cntnr">
         <div class="row mt-2">
-            <div class="dropdown col-md-6 ml-auto mt-2">
-                <center>
-                    <button class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Class
-                    </button>
-                </center>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+            <div class="col-md-6">
+                <div class="col">
+                    <select class="form-control">
+                        <option>Class</option>
+                        <option>class2</option>
+                    </select>
                 </div>
             </div>
-            <div class="dropdown col-md-6 ml-auto mt-2">
-                <center>
-                    <button class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Section
-                    </button>
-                </center>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+            <div class="col-md-6">
+                <div class="col">
+                    <select class="form-control">
+                        <option>Section</option>
+                        <option>class2</option>
+                    </select>
                 </div>
             </div>
         </div>
         <label class="ml-4 mt-2" style="">Subject Lists</label><br />
-        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
-            <div class="col-md-6" style="background-color:white;border-radius:15px;">
-                <label style="font-size:13px;">Subject</label><br /><label>Science</label><br />
-                <label style="font-size:13px;">Type</label><br /><label>Theoretical</label>
-            </div>
-            <div class="col-md-5 mt-1" id="div1">
-                <div class="row">
-                    <div class="col ml-2">
-                        <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col ml-2 mb-2">
-                        <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
-            <div class="col-md-6" style="background-color:white;border-radius:15px;">
-                <label style="font-size:13px;">Subject</label><br /><label>Science</label><br />
-                <label style="font-size:13px;">Type</label><br /><label>Theoretical</label>
-            </div>
-            <div class="col-md-5 mt-1" id="div1">
-                <div class="row">
-                    <div class="col ml-2">
-                        <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col ml-2 mb-2">
-                        <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">
             <div class="col-md-6" style="background-color:white;border-radius:15px;">
                 <label style="font-size:13px;">Subject</label><br /><label>Science</label><br />
