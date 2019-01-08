@@ -210,6 +210,7 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PopupsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -397,6 +398,12 @@
     <Content Include="Images\Image 2.png" />
     <Content Include="Images\img.png" />
     <Content Include="Images\instaImage.png" />
+    <Content Include="Images\popups\Group 590%402x.png" />
+    <Content Include="Images\popups\Group 590.png" />
+    <Content Include="Images\popups\Group 649%402x.png" />
+    <Content Include="Images\popups\Group 649.png" />
+    <Content Include="Images\popups\Group 662%402x.png" />
+    <Content Include="Images\popups\Group 662.png" />
     <Content Include="Images\Rectangle 141%402x.png" />
     <Content Include="Images\Rectangle 141.png" />
     <Content Include="Images\Rectangle 142%402x.png" />
@@ -496,6 +503,13 @@
     <Content Include="Views\Admin\test2.cshtml" />
     <Content Include="Views\Account\Register - Copy.cshtml" />
     <Content Include="Views\Admin\AddResultView.cshtml" />
+    <Content Include="Views\Admin\AddLeadingBoard.cshtml" />
+    <Content Include="Views\Admin\LeadingBoardView.cshtml" />
+    <Content Include="Views\Popups\DeleteStudentPopup.cshtml" />
+    <Content Include="Views\Popups\TeacherDeletePopup.cshtml" />
+    <Content Include="Views\Popups\ProfileEditPopup.cshtml" />
+    <Content Include="Views\Popups\EventAddPopup.cshtml" />
+    <Content Include="Views\Popups\ExamScheduleDeletePopup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

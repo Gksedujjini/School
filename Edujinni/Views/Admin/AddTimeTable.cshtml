@@ -19,6 +19,10 @@
             #cntnr{
                 margin:0;
             }
+             .form-control {
+                border-radius: 20px;
+                background-color: #ebebe0;
+            }
            #dropdownMenuButton {
                 background-color: white;
                 border-radius: 20px;
@@ -60,84 +64,68 @@
     <body>
         <div class="container mt-4 col-md-12 col-xs-12" id="cntnr">
             <div class="row mt-2">
-                <div class="col-md-6 mt-2">
-                    <div class="col dropdown">
-                        <button class="btn dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown">
-                            Selcet Day
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">HTML</a></li>
-                            <li><a href="#">CSS</a></li>
-                            <li><a href="#">JavaScript</a></li>
-                        </ul>
+                <div class="col-md-5 mt-2">
+                    <div class="col">
+                        <select name="section" class="form-control">
+                            <option>Select Day</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-md-6 mt-2">
-                    <div class="col dropdown">
-                        <button class="btn dropdown-toggle" type="button" id="dropdown2" data-toggle="dropdown">
-                            Select Subject
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">HTML</a></li>
-                            <li><a href="#">CSS</a></li>
-                            <li><a href="#">JavaScript</a></li>
-                        </ul>
+                <div class="col-md-5 mt-2">
+                    <div class="col">
+                        <select name="section" class="form-control">
+                            <option>Select Subject</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-md-6 mt-2">
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown">
-                            Teacher Name
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">HTML</a></li>
-                            <li><a href="#">CSS</a></li>
-                            <li><a href="#">JavaScript</a></li>
-                        </ul>
+                <div class="col-md-5 mt-2">
+                    <div class="col">
+                        <select name="section" class="form-control">
+                            <option>Select Teacher Name</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-5 mt-2">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdown3" data-toggle="dropdown">
-                                    Class
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
+                            <div class="col">
+                                <select name="section" class="form-control">
+                                    <option>Class</option>
+                                    <option>Section</option>
+                                    <option>Section</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-5 mt-2">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdown4" data-toggle="dropdown">
-                                    Section
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
+                            <div class="col">
+                                <select name="section" class="form-control">
+                                    <option>Section</option>
+                                    <option>Section</option>
+                                    <option>Section</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-md-6 mt-2">
+                <div class="col-md-6 align-self-start mt-2">
                     time picker1
-                </div>
-                <div class="col-md-6 mt-2">
-                    time picker 2
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-md-12 align-self-center">
-                <input type="button" value="Save" class="btn btn-success" style="width:270px; height:45px; border-radius:10px;" />
+                <div class="col-md-5 align-self-start">
+                    <div class="col">
+                <input type="button" value="Save" class="form-control" style="border-radius:10px;" />
+                        </div>
                 </div>
             </div>
         </div>
