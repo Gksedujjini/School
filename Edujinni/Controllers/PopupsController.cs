@@ -29,5 +29,25 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult ExamAdded()
+        {
+            return View();
+        }
+        public ActionResult TimeTable()
+        {
+            return View();
+        }
+        public ActionResult StudentAdded()
+        {
+            return View();
+        }
+        public ActionResult TeacherAdded()
+        {
+            return View();
+        }
+        public ActionResult Notification()
+        {
+            return View();
+        }
     }
 }
