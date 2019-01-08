@@ -217,10 +217,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Achievements.cs" />
-    <Compile Include="Models\AddAdmin.cs" />
     <Compile Include="Models\addclass.cs" />
-    <Compile Include="Models\AddSchool.cs" />
-    <Compile Include="Models\addstudent.cs" />
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\AdminMain.cs" />
@@ -505,11 +502,14 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\test2.cshtml" />
     <Content Include="Views\Account\Register - Copy.cshtml" />
-    <Content Include="Views\Popups\ExamAdded.cshtml" />
-    <Content Include="Views\Popups\TimeTable.cshtml" />
-    <Content Include="Views\Popups\StudentAdded.cshtml" />
-    <Content Include="Views\Popups\TeacherAdded.cshtml" />
-    <Content Include="Views\Popups\Notification.cshtml" />
+    <Content Include="Views\Admin\AddResultView.cshtml" />
+    <Content Include="Views\Admin\AddLeadingBoard.cshtml" />
+    <Content Include="Views\Admin\LeadingBoardView.cshtml" />
+    <Content Include="Views\Popups\DeleteStudentPopup.cshtml" />
+    <Content Include="Views\Popups\TeacherDeletePopup.cshtml" />
+    <Content Include="Views\Popups\ProfileEditPopup.cshtml" />
+    <Content Include="Views\Popups\EventAddPopup.cshtml" />
+    <Content Include="Views\Popups\ExamScheduleDeletePopup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,27 +9,23 @@ namespace Edujinni.Controllers
     public class PopupsController : Controller
     {
         // GET: Popups
-        public ActionResult Index()
+        public ActionResult DeleteStudentPopup()
         {
             return View();
         }
-        public ActionResult ExamAdded()
+        public ActionResult TeacherDeletePopup()
         {
             return View();
         }
-        public ActionResult TimeTable()
+        public ActionResult ExamScheduleDeletePopup()
         {
             return View();
         }
-        public ActionResult StudentAdded()
+        public ActionResult EventAddPopup()
         {
             return View();
         }
-        public ActionResult TeacherAdded()
-        {
-            return View();
-        }
-        public ActionResult Notification()
+        public ActionResult ProfileEditPopup()
         {
             return View();
         }

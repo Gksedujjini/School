@@ -1,10 +1,6 @@
-﻿using Edujinni.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -82,24 +78,6 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public async Task<ActionResult> AddTeacher(Addteacher teacher)
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:52995/");
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Accept.Clear();
-
-            HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", teacher);
-
-            if (response.IsSuccessStatusCode == true)
-            {
-                Response.Cookies.Clear();
-                ModelState.Clear();
-                return View();
-            }
-            return View(teacher);
-        }
         public ActionResult TeacherInfo()
         {
             return View();
@@ -118,13 +96,11 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-
-        //LEADING BOARD
-        public ActionResult LeadingBoardView()
+        public ActionResult AddLeadingBoard()
         {
             return View();
         }
-        public ActionResult AddLeadingBoard()
+        public ActionResult LeadingBoardView()
         {
             return View();
         }
