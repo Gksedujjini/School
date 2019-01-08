@@ -1,4 +1,4 @@
-﻿@model Edujinni.Models.EditAdminProfile
+﻿@model Edujinni.Models.addstudent
 @{
 // Layout = null;
 }
@@ -148,11 +148,11 @@
                             <div class="row mt-2">
                                 <div class="col-md-2 mt-4 input-group">
                                     <div class="form-check form-check-inline ml-auto">
-                                        @Html.RadioButtonFor(Model => Model.Gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
+                                        @Html.RadioButtonFor(Model => Model.gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
                                         <label class="form-check-label" for="inlineCheckboxMale">Male</label>
                                     </div>
-                                    <div class="form-check form-check-inline ml-3">
-                                        @Html.RadioButtonFor(Model => Model.Gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
+                                    <div class="form-check form-check-inline ml-auto">
+                                        @Html.RadioButtonFor(Model => Model.gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
                                         <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                     </div>
                                 </div>
@@ -163,10 +163,10 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.firstname, new { @class = "form-control", @placeholder = "First Name" })
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.lastname, new { @class = "form-control", @placeholder = "Last Name" })
                                 </div>
                                 <div class="col-md-3">
                                     <select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
@@ -193,13 +193,13 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control" name="rollno" id="rollno" placeholder="Roll No"  style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.rollno,new { @class="form-control",@placeholder="Roll No"})
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control" name="studentid" id="studentid" placeholder="Student Id" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.studentid, new { @class = "form-control", @placeholder = "Student ID" })
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="date" class="form-control" name="dob" id="dob" placeholder="Date of birth"  style="">
+                                    @Html.TextBoxFor(Model => Model.rollno, new { @type="date",@class = "form-control", @placeholder = "Date of Birth" })
                                 </div>
                             </div><br>
                             <hr>
@@ -210,87 +210,83 @@
                     
                     <div class="row">
                         <b>Family Information</b>
-                        <div class="col-md-9">
-                            
+                        <div class="col-md-12"><br />                              
                             <div class="row">
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="fathername" id="fathername" placeholder="Father Name" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.fathername, new { @class = "form-control", @placeholder = "Father Name" })
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="father mobile" id="fathermobile" placeholder="Father Mobile No" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.fathermobile, new { @class = "form-control", @placeholder = "Father Mobile No" })
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="foccupation" id="foccupation" placeholder="Occupation">
+                                    @Html.TextBoxFor(Model => Model.studentid, new { @class = "form-control", @placeholder = "Father Occupation" })                                    
                                 </div>
                             </div><br>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="mothername" id="mothername" placeholder="Mother Name" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.mothername, new { @class = "form-control", @placeholder = "Mother Name" })
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="mothermobile" id="mothermobile" placeholder="Mother Mobile No" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.mothermobile, new { @class = "form-control", @placeholder = "Mother Mobile No" })
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="moccupation" id="moccupation" placeholder="Occupation" >
+                                    @Html.TextBoxFor(Model => Model.motheroccupation, new { @class = "form-control", @placeholder = "Mother Occupation" })
                                 </div>
-                            </div><br>
+                            </div>
+                        <br>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="sibblingname" id="sibblingname" placeholder="Sibbling Name" style="margin-right: 20px;">
+                                    @Html.TextBoxFor(Model => Model.sibblingname, new { @class = "form-control", @placeholder = "Sibbling Name" })
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="number" class="form-control" name="age" id="age" placeholder="Age" >
+                                    @Html.TextBoxFor(Model => Model.sibblingage, new { @class = "form-control", @placeholder = "Age" })
                                 </div><br>
 
                             </div><br>
                             <hr>
                         </div>
                         </div>
-                        <div class="row" style="margin-left: 10px;">
+                        <div class="row">
                             <label><b>Address</b></label>
-                            <div class="col-md-12">
-                                
+                            <div class="col-md-12"><br />                             
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <input type="text" name="flatno" id="flatno" placeholder="Flat No" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.flatno, new { @class = "form-control", @placeholder = "Flat No" })
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" name="buildingname" id="buildingname" placeholder="Building Name" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.buildingname, new { @class = "form-control", @placeholder = "Building Name" })
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" name="street1" id="street1" placeholder="Street-1" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.street1, new { @class = "form-control", @placeholder = "Street 1" })
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <input type="text" name="street2" id="street2" placeholder="Street-2" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.street2, new { @class = "form-control", @placeholder = "Street 2" })
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" name="area" id="area" placeholder="Area" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.area, new { @class = "form-control", @placeholder = "Area" })
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" name="city" id="city" placeholder="City" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.city, new { @class = "form-control", @placeholder = "City" })
                                     </div>
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <input type="text" name="state" id="state" placeholder="State" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.state, new { @class = "form-control", @placeholder = "State" })
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="number" name="areacode" id="areacode" placeholder="Area Code" class="form-control" style="width: 177px;">
+                                        @Html.TextBoxFor(Model => Model.areacode, new { @class = "form-control", @placeholder = "Area Code" })
                                     </div>
                                     <div class="col-md-4">
                                         <button type="submit" class="btn btn-success" style="height: 40px; width: 190px;border-radius: 20px;">Submit</button>
                                     </div>
-                                </div>
-                                <!-- <input type="submit" class="btn btn-success" id="submit" value="submit" onclick="call();" style="height: 30px; width: 130px;"><br> -->
+                                </div>                                
                             </div>
                         </div>
                 </form>
             </div>
-           
-        </div>
         </div>
     
 </body>

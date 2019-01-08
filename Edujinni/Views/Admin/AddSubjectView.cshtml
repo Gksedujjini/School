@@ -23,18 +23,14 @@
             background-color: #ebebe0;
             width: 50%;
         }
-
-        #dropdownMenuButton {
-            background-color: white;
-            border-radius: 20px;
-            width: 98%;
-        }
-
+        .form-control {
+                border-radius: 20px;
+                background-color: white;
+            }
         #inputSub {
             background-color: white;
             border-radius: 20px;
         }
-
         #submit {
             border-radius: 20px;
             background-color: #01BE66;
@@ -43,63 +39,62 @@
     </style>
 </head>
 <body>
-    <div class="container" id="cntnr">
+    <div class="container mt-5" id="cntnr">
         <div class="row mt-3">
             <div class="col mt-3">Add Subject</div>
-
         </div>
         <div class="row mt-3">
             <div class="col-md-5">
-                <center>
-                    <button class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Class
-                    </button>
-                </center>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col align-self-center">
+                <div class="col">
+                    <select name="section" class="form-control">
+                        <option>Section</option>
+                        <option>Section</option>
+                        <option>Section</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-md-5">
-                <center>
-                    <button class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Class
-                    </button>
-                </center>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+            <div class="col align-self-center">
+                <div class="col">
+                    <select name="section" class="form-control">
+                        <option>Section</option>
+                        <option>Section</option>
+                        <option>Section</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-md-5">
-                <center>
-                    <button class="btn dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select Class
-                    </button>
-                </center>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+            <div class="col align-self-center">
+                <div class="col">
+                    <select name="section" class="form-control">
+                        <option>Section</option>
+                        <option>Section</option>
+                        <option>Section</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div class="row mt-3">
 
-            <div class="col-md-5 text-center">
+            <div class="col align-self-center text-center">
+                <div class="col">
                 @Html.TextBoxFor(Model => Model.SubjectName, new { @class = "form-control", @id = "inputSub", @placeholder = "Input Subject Name" })
+                </div>
             </div>
 
         </div>
         <div class="row mt-3">
-            <div class="col-md-5 mt-2 mb-1">
+            <div class="col">
+                <div class="col align-self-center mt-2 mb-1">
                 <input type="button" class="form-control" value="Save" id="submit">
+                </div>
             </div>
         </div><br />
     </div>
