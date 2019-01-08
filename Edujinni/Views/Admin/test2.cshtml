@@ -319,14 +319,26 @@
                             </div>
                         </div>
                     @* FIRST ROW ENDS HERE *@
-                    <div class="row">
-                        <div class="col-md-12">
-
-                        </div>
+                    <b-col cols="4">
+                        <b-container class="bv-example-row">
+                            <b-row>
+                                <b-col style="background-color:aqua;">
+                                            <center>
+                                                <img src="~/Images/Group 196.png" class="img-responsive" />
+                                            </center>
+                                    <b-col>
+                                        <label>Students</label>
+                                        @Html.TextBoxFor(Model => Model.Students, new { @class = "form-control" })
+                                    </b-col>                                
+                                </b-col>
+                                <b-col style="background-color:red;">2 of 3</b-col>
+                                <b-col style="background-color:orange;">3 of 3</b-col>
+                            </b-row>
+                        </b-container>
+                        </b-col>
                     </div>
                     </div>
                 </div>
-            </div>
             @* THE DIV CONTENT ENDS UP HERE *@
             <!-- /.content-wrapper -->
             <!-- /#wrapper -->

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -16,18 +17,19 @@ namespace Edujinni.Models
         public string subject1 { get; set; }
         public string subject2 { get; set; }
         public string qualification { get; set; }
-       
+
         public string teacherid { get; set; }
         public string desigination { get; set; }
         public string flat_no { get; set; }
-        public string street_1{ get; set; }
+        public string street_1 { get; set; }
         public string Builing_Name { get; set; }
-        public string street_2{ get; set; }
+        public string street_2 { get; set; }
         public string area { get; set; }
         public string city { get; set; }
         public string state { get; set; }
         public Int32 pincode { get; set; }
         public DateTime dateofjoining { get; set; }
         public string image { get; set; }
+
     }
 }
