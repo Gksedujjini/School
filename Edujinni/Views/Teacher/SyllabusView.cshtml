@@ -1,0 +1,117 @@
+﻿@{
+// Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>AddSubjects</title>
+    <style>
+        .form-control {
+            border-radius: 15px;
+            background-color: white;
+            height:35px;
+            font-size:15px;
+        }
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 50px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+        #addDiv {
+            width: 58px;
+            height:25px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+        #headingunit{background-color:green; color:white; border-radius:5px; height:35px;}
+        #dataunit{background-color:#e6ffff; color:black; height:35px;}
+        #dataunit1{background-color:#ffffe6; color:black; height:35px;}
+    </style>
+</head>
+<body>
+    <div class="row ml-0 mr-2 mt-3" style="width:95%;">
+        <div class="col-md-12 col-md-offset-0 mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
+            <div class="row mt-4">
+                <div class="col-md-6 mt-2">
+                <div class="col">
+                    <select name="Class" class="form-control">
+                        <option>Class</option>
+                        <option>Section</option>
+                        <option>Section</option>
+                    </select>
+                </div>
+                    </div>
+                <div class="col-md-6 mt-2">
+                <div class="col">
+                    <select name="Unit" class="form-control">
+                        <option>Unit</option>
+                        <option>Section</option>
+                        <option>Section</option>
+                    </select>
+                </div>
+                    </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                    <select name="Subject" class="form-control">
+                        <option>Subject</option>
+                        <option>Section</option>
+                        <option>Section</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <label>Sub Units</label>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                <div class="col text-left" id="headingunit">
+                    <label style="margin-top:5px;">Sub Units</label>
+                </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col text-left" id="dataunit">
+                        <label style="margin-top:5px;">Sub Units Data List</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col text-left" id="dataunit1">
+                        <label style="margin-top:5px;">Sub Units Data List</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col" id="divlast">
+                    <a href="@Url.Action("AddSyllabusView","Teacher")">
+                        <i class="fa fa-plus-circle" id="upload-data"></i>
+
+                        <div id="addDiv"><label class="ml-2 mt-2">Add</label></div>
+                    </a>
+                </div>
+                <br />
+            </div>
+            
+          </div>
+    </div>
+</body>
+</html>

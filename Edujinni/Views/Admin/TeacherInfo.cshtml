@@ -141,7 +141,7 @@
             @Html.TextBoxFor(Model => Model.pincode, new { @class = "form-control", @id = "fn" })
         </div>
         <div class="col-md-2 col-sm-12 col-xs-12 mt-4">
-            <button type="submit" class="btn" style="width:110px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>
+            <button type="submit" onclick="location.href='@Url.Action("TeacherEditProfileView","Admin")'" class="btn" style="width:110px; border-radius:5px; height:35px;  background-color:#5A5C59; color:white;">Edit</button>
         </div>
         <div class="col-md-2 col-sm-12 col-xs-12 mt-4">
             <button type="button" class="btn btn-danger" style="width:110px; border-radius:5px; height:35px;">Delete</button>

@@ -212,12 +212,15 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PopupsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Achievements.cs" />
+    <Compile Include="Models\AddAdmin.cs" />
     <Compile Include="Models\addclass.cs" />
+    <Compile Include="Models\AddSchool.cs" />
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\AdminMain.cs" />
@@ -229,6 +232,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\StudentOverView.cs" />
+    <Compile Include="Models\SyllabusModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -510,6 +514,9 @@
     <Content Include="Views\Popups\ProfileEditPopup.cshtml" />
     <Content Include="Views\Popups\EventAddPopup.cshtml" />
     <Content Include="Views\Popups\ExamScheduleDeletePopup.cshtml" />
+    <Content Include="Views\Teacher\SyllabusView.cshtml" />
+    <Content Include="Views\Teacher\AddSyllabusView.cshtml" />
+    <Content Include="Views\Admin\TeacherEditProfileView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
