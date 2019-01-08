@@ -210,14 +210,17 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PopupsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Achievements.cs" />
+    <Compile Include="Models\AddAdmin.cs" />
     <Compile Include="Models\addclass.cs" />
     <Compile Include="Models\AddSchool.cs" />
+    <Compile Include="Models\addstudent.cs" />
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\AdminMain.cs" />
@@ -398,6 +401,12 @@
     <Content Include="Images\Image 2.png" />
     <Content Include="Images\img.png" />
     <Content Include="Images\instaImage.png" />
+    <Content Include="Images\popups\Group 590%402x.png" />
+    <Content Include="Images\popups\Group 590.png" />
+    <Content Include="Images\popups\Group 649%402x.png" />
+    <Content Include="Images\popups\Group 649.png" />
+    <Content Include="Images\popups\Group 662%402x.png" />
+    <Content Include="Images\popups\Group 662.png" />
     <Content Include="Images\Rectangle 141%402x.png" />
     <Content Include="Images\Rectangle 141.png" />
     <Content Include="Images\Rectangle 142%402x.png" />
@@ -496,6 +505,11 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\test2.cshtml" />
     <Content Include="Views\Account\Register - Copy.cshtml" />
+    <Content Include="Views\Popups\ExamAdded.cshtml" />
+    <Content Include="Views\Popups\TimeTable.cshtml" />
+    <Content Include="Views\Popups\StudentAdded.cshtml" />
+    <Content Include="Views\Popups\TeacherAdded.cshtml" />
+    <Content Include="Views\Popups\Notification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
