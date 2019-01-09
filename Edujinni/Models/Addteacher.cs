@@ -9,7 +9,7 @@ namespace Edujinni.Models
     public class Addteacher
     {
         public int teacher_id { get; set; }
-        public byte[] teacher_image { get; set; }
+        public string teacher_image { get; set; }
         [Required]
         [StringLength(25)]
         public string teacher_first_name { get; set; }
