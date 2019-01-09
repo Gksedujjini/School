@@ -72,13 +72,12 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-
-        /// TEACHER MODULE ///
-        public ActionResult TeacherView()
+        public ActionResult StudentInfo()
         {
             return View();
         }
-        public ActionResult AddTeacher()
+        /// TEACHER MODULE ///
+        public ActionResult TeacherView()
         {
             return View();
         }
@@ -99,15 +98,15 @@ namespace Edujinni.Controllers
             addTech.class_id = 1;
             addTech.school_id = 1;
 
-            HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", addTech);
-            if (response.IsSuccessStatusCode==true)
+            HttpResponseMessage response = await client.PostAsJsonAsync("addTeacher", addTech);
+            if (response.IsSuccessStatusCode == true)
             {
                 Response.Cookies.Clear();
                 ModelState.Clear();
                 return View();
             }
 
-            return View();
+            return View(addTech);
         }
 
         public ActionResult TeacherInfo()
@@ -136,10 +135,7 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult TeacherEditProfileView()
-        {
-            return View();
-        }
+       
         
     }
 }
