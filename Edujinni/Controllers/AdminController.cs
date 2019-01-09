@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Edujinni.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -68,7 +72,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-
+        public ActionResult StudentInfo()
+        {
+            return View();
+        }
         /// TEACHER MODULE ///
         public ActionResult TeacherView()
         {
@@ -76,10 +83,13 @@ namespace Edujinni.Controllers
         }
         public ActionResult AddTeacher()
         {
-
             return View();
         }
         public ActionResult TeacherInfo()
+        {
+            return View();
+        }
+        public ActionResult TeacherEditProfileView()
         {
             return View();
         }
@@ -105,10 +115,7 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult TeacherEditProfileView()
-        {
-            return View();
-        }
+       
         
     }
 }

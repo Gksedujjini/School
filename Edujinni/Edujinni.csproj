@@ -206,12 +206,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddSubjectController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\EditAdminProfileController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PopupsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +229,7 @@
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\AdminMain.cs" />
     <Compile Include="Models\Adminsignup.cs" />
+    <Compile Include="Models\DiaryModel.cs" />
     <Compile Include="Models\EditAdminProfile.cs" />
     <Compile Include="Models\Editprofile.cs" />
     <Compile Include="Models\EventsModel.cs" />
@@ -519,6 +524,8 @@
     <Content Include="Views\Popups\StudentAdded.cshtml" />
     <Content Include="Views\Popups\TeacherAdded.cshtml" />
     <Content Include="Views\Popups\TimeTable.cshtml" />
+    <Content Include="Views\Admin\TeacherEditProfileView.cshtml" />
+    <Content Include="Views\Admin\StudentInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
