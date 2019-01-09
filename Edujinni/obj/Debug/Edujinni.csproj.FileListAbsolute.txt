@@ -349,3 +349,4 @@ F:\DotNetAll\Edujinni\bin\Microsoft.Owin.Security.Twitter.xml
 F:\DotNetAll\Edujinni\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\DotNetAll\Edujinni\obj\Debug\Edujinni.dll
 F:\DotNetAll\Edujinni\obj\Debug\Edujinni.pdb
+F:\DotNetAll\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache

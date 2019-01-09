@@ -78,6 +78,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult AddTeacher()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<ActionResult> AddTeacher(Addteacher addTech)
         {
@@ -95,15 +99,15 @@ namespace Edujinni.Controllers
             addTech.class_id = 1;
             addTech.school_id = 1;
 
-            HttpResponseMessage response = await client.PostAsJsonAsync("addTeacher", addTech);
-            if (response.IsSuccessStatusCode == true)
+            HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", addTech);
+            if (response.IsSuccessStatusCode==true)
             {
                 Response.Cookies.Clear();
                 ModelState.Clear();
                 return View();
             }
 
-            return View(addTech);
+            return View();
         }
 
         public ActionResult TeacherInfo()
