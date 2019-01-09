@@ -146,13 +146,13 @@
                         </div>
                         <div class="col ml-4">
                             <div class="row mt-2">
-                                <div class="col-md-2 mt-4 input-group">
-                                    <div class="form-check form-check-inline ml-auto">
+                                <div class="col-md-4 mt-5 input-group">
+                                    <div class="form-check form-check-inline ml-auto mt-1">
                                         @Html.RadioButtonFor(Model => Model.gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
                                         <label class="form-check-label" for="inlineCheckboxMale">Male</label>
                                     </div>
-                                    <div class="form-check form-check-inline ml-auto">
-                                        @Html.RadioButtonFor(Model => Model.gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
+                                    <div class="form-check form-check-inline ml-auto mt-1">
+                                        @Html.RadioButtonFor(Model => Model.gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" ,@style = "margin-left:15px"})
                                         <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                     </div>
                                 </div>

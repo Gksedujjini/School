@@ -220,6 +220,7 @@
     <Compile Include="Models\AddAdmin.cs" />
     <Compile Include="Models\addclass.cs" />
     <Compile Include="Models\AddSchool.cs" />
+    <Compile Include="Models\addstudent.cs" />
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\AdminMain.cs" />
