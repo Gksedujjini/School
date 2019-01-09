@@ -98,7 +98,7 @@ namespace Edujinni.Controllers
             addTech.class_id = 1;
             addTech.school_id = 1;
 
-            HttpResponseMessage response = await client.PostAsJsonAsync("addTeacher", addTech);
+            HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", addTech);
             if (response.IsSuccessStatusCode == true)
             {
                 Response.Cookies.Clear();
