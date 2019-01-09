@@ -68,7 +68,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-
+        public ActionResult StudentInfo()
+        {
+            return View();
+        }
         /// TEACHER MODULE ///
         public ActionResult TeacherView()
         {
@@ -79,6 +82,10 @@ namespace Edujinni.Controllers
             return View();
         }
         public ActionResult TeacherInfo()
+        {
+            return View();
+        }
+        public ActionResult TeacherEditProfileView()
         {
             return View();
         }
@@ -104,10 +111,7 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult TeacherEditProfileView()
-        {
-            return View();
-        }
+       
         
     }
 }
