@@ -28,29 +28,33 @@
             border-radius: 20px;
         }
     </style>
-    //background: linear - gradient(to right,  #c9f1f8 0%,#5fced9  100%);
-    //background: linear - gradient(to right,  #FF5819 0%,#FF2700  100%);
     <body>
         <center>
             <div class="container" style="background-color:#FF2700; width: 500px; height: 540px; border-radius: 15px; text-align: center; margin-top:35px;">
-                <br /><br />
+                <br /><br />@*#FF2700*@
                 <label style="font-size:35px;">GUEST SIGNUP</label><br><br>
                 <div class="row">
                     <div class="col">
                         @Html.TextBoxFor(Model => Model.first_name, new { @class = "form-control", @placeholder = "FirstName" })
 
+                        @*@Html.ValidationMessageFor(Model => Model.first_name)*@ 
+                        
                         @Html.TextBoxFor(Model => Model.last_name, new { @class = "form-control", @placeholder = "LastName" })
-
+                        
+    @*@Html.ValidationMessageFor(Model => Model.last_name)*@
+    
                         @Html.TextBoxFor(Model => Model.mobile_no, new { @class = "form-control", @placeholder = "Mobile No" })
-
+    
+                                            @*@Html.ValidationMessageFor(Model => Model.mobile_no)*@
                         @*@Html.TextBoxFor(Model => Model.email, new { @class = "form-control", @placeholder = "Email Id(Optional)" })*@
-
                         @Html.TextBoxFor(Model => Model.dateof_birth, new { @type = "Date", @class = "form-control", @placeholder = "Date of Birth" })
-
+                      
                         @Html.PasswordFor(Model => Model.create_pswd, new { @class = "form-control", @placeholder = "Create Password" })
-
+                        
+    @*Html.ValidationMessageFor(Model => Model.create_pswd)*@
                         @Html.PasswordFor(Model => Model.confirm_pswd, new { @class = "form-control", @placeholder = "Confirm Password" })
-
+    
+                                            @*@Html.ValidationMessageFor(Model => Model.confirm_pswd)*@
 
                         @Html.RadioButtonFor(Model => Model.gender, "Male")
                         Male

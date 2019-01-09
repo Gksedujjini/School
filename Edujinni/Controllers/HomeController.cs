@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -26,19 +27,26 @@ namespace Edujinni.Controllers
         [HttpPost]
         public async Task<ActionResult> Sginup(Adminsignup admin)
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:52995/");
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Accept.Clear();
-
-            HttpResponseMessage response = await client.PostAsJsonAsync("guestSignUp", admin);
-
-            if (response.IsSuccessStatusCode == true)
+            Regex re = new Regex(@"^[a-zA-Z ]+$");
+            if (re.IsMatch(admin.first_name))
             {
-                Response.Cookies.Clear();
-                ModelState.Clear();
-                return View();
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://localhost:52995/");
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Accept.Clear();
+                HttpResponseMessage response = await client.PostAsJsonAsync("guestSignUp", admin);
+                if (response.IsSuccessStatusCode == true)
+                {
+                    Response.Cookies.Clear();
+                    ModelState.Clear();
+                    return View();
+                }
             }
+            else
+            {
+                ModelState.AddModelError("first_name", "enter correct name");
+            }
+           
             return View(admin);
         }
         //public ActionResult Login()

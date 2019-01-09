@@ -224,6 +224,7 @@
     <Compile Include="Models\AddAdmin.cs" />
     <Compile Include="Models\addclass.cs" />
     <Compile Include="Models\AddSchool.cs" />
+    <Compile Include="Models\addstudent.cs" />
     <Compile Include="Models\AddSubject.cs" />
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\AdminMain.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Models\Editprofile.cs" />
     <Compile Include="Models\EventsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\StudentOverView.cs" />
@@ -256,7 +258,6 @@
     <Content Include="Content\editstudent.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
-    <Content Include="Content\mainpage.css" />
     <Content Include="Content\regular.css" />
     <Content Include="Content\regular.min.css" />
     <Content Include="Content\sb-admin.css" />
