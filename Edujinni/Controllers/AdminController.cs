@@ -76,6 +76,7 @@ namespace Edujinni.Controllers
         }
         public ActionResult AddTeacher()
         {
+
             return View();
         }
         public ActionResult TeacherInfo()
