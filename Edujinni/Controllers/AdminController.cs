@@ -84,20 +84,16 @@ namespace Edujinni.Controllers
         [HttpPost]
         public async Task<ActionResult> AddTeacher(Addteacher addTech)
         {
-
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://www.edujinni.in/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Accept.Clear();
-
             addTech.insert_by = "ganesh";
             addTech.insert_date = DateTime.Now;
             addTech.update_by = "gani";
             addTech.update_date = DateTime.Now;
-
             addTech.class_id = 1;
             addTech.school_id = 1;
-
             HttpResponseMessage response = await client.PostAsJsonAsync("addTeacher", addTech);
             if (response.IsSuccessStatusCode == true)
             {
