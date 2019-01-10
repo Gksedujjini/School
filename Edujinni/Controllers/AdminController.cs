@@ -81,6 +81,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult AddTeacher()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<ActionResult> AddTeacher(Addteacher addTech)
         {
@@ -100,7 +104,7 @@ namespace Edujinni.Controllers
             {
                 Response.Cookies.Clear();
                 ModelState.Clear();
-                return View();
+                return ViewBag.Message();
             }
 
             return View(addTech);

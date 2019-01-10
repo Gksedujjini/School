@@ -7,30 +7,37 @@ namespace Edujinni.Models
 {
     public class addstudent
     {
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string classs { get; set; }
-        public string gender { get; set; }
-        public string section { get; set; }
-        public string rollno { get; set; }
-        public string studentid { get; set; }
-        public string dob { get; set; }
-        public string fathername { get; set; }
-        public string fathermobile { get; set; }
-        public string fatheroccupation { get; set; }
-        public string mothername { get; set; }
-        public string mothermobile { get; set; }
-        public string motheroccupation { get; set; }
-        public string sibblingname { get; set; }
-        public string sibblingage { get; set; }
-        public string flatno { get; set; }
-        public string buildingname { get; set; }
-        public string street1 { get; set; }
-        public string street2 { get; set; }
-        public string area { get; set; }
-        public string city { get; set; }
-        public string state { get; set; }
-        public string areacode { get; set; }
-
+        public int student_id { get; set; }
+        public byte[] student_image { get; set; }
+        public string student_section { get; set; }
+        public string student_first_name { get; set; }
+        public string student_last_name { get; set; }
+        public string student_roll_no { get; set; }
+        public int student_chiled_no { get; set; }
+        public DateTime student_dob { get; set; }
+        public string student_gender { get; set; }
+        public string student_father_name { get; set; }
+        public string student_father_mobile_no { get; set; }
+        public string student_father_occupation { get; set; }
+        public string student_mother_name { get; set; }
+        public string student_mother_mobile_no { get; set; }
+        public string student_mother_occupation { get; set; }
+        public int student_no_of_siblings { get; set; }
+        public string student_flat_no { get; set; }
+        public string student_buliding_name { get; set; }
+        public string student_street { get; set; }
+        public string student_street1 { get; set; }
+        public string student_area { get; set; }
+        public string student_city { get; set; }
+        public string student_state { get; set; }
+        public int student_pincode { get; set; }
+        public string insert_by { get; set; }
+        public DateTime insert_date { get; set; }
+        public string update_by { get; set; }
+        public DateTime update_date { get; set; }
+        public DateTime student_admission_date { get; set; }
+        public int school_id { get; set; }
+        public string Student_status { get; set; }
+        public string student_class { get; set; }
     }
 }
