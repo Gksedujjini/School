@@ -1,0 +1,103 @@
+﻿@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
+    <title>Diary View</title>
+    <style>
+        .form-control {
+            border-radius: 15px;
+            background-color: white;
+            height: 35px;
+            font-size: 15px;
+        }
+
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 50px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+        #addDiv {
+            width: 58px;
+            height: 25px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="row ml-0 mr-2 mt-3 justify-content-center" style="width:80%;">
+        <div class="col-md-10 align-self-center mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
+            <div class="row mt-4">
+                <div class="col-md-4 mt-2 text-lef">
+                    <label>Class</label>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Class-7" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-2 text-lef">
+                    <label>Section</label>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="A"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        <select name="work" class="form-control">
+                            <option>Type of Work</option>
+                            <option>work1</option>
+                            <option>work2</option>
+                            <option>work3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                       Calender will come here
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 mb-3">
+                <div class="col" id="divlast">
+                    <a href="@Url.Action("AddDiary","Teacher")">
+                        <i class="fa fa-plus-circle" id="upload-data"></i>
+
+                        <div id="addDiv"><label class="ml-2 mt-2">Add</label></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

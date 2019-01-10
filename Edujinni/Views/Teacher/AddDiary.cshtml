@@ -1,4 +1,4 @@
-﻿@model Edujinni.Models.SyllabusModel
+﻿@model Edujinni.Models.DiaryModel
 @{
 //Layout = null;
 }
@@ -17,7 +17,7 @@
             crossorigin="anonymous"></script>
     <link href="Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="Content/sb-admin.css" rel="stylesheet">
-    <title>AddSubjects</title>
+    <title>Add Diary</title>
     <style>
         .form-control {
             border-radius: 15px;
@@ -25,17 +25,50 @@
             height: 35px;
             font-size: 15px;
         }
-        #btnsave{ background-color:forestgreen; color:white;}
+
+        #btnsave {
+            background-color: forestgreen;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="row ml-0 mr-2 mt-3" style="width:80%;">
         <div class="col-md-12 col-md-offset-0 mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
+            <br />
+            <center><b>Add Work</b></center>
             <div class="row mt-4">
                 <div class="col-md-6 mt-2">
                     <div class="col">
                         <select name="Class" class="form-control">
-                            <option>Class</option>
+                            <option>Select Class</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <select name="Section" class="form-control">
+                            <option>Section</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        @Html.TextBoxFor(Model => Model.Date, new { @type="date", @class = "form-control", @placeholder = "Select Date" })
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <select name="Subject" class="form-control">
+                            <option>Subject</option>
                             <option>Section</option>
                             <option>Section</option>
                         </select>
@@ -52,28 +85,23 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-md-6 mt-2">
+                <div class="col-md-12 mt-2">
                     <div class="col">
-                        @Html.TextBoxFor(Model => Model.Unit, new { @class = "form-control", @placeholder = "Unit" })
-                    </div>
-                </div>
-                <div class="col-md-6 mt-2">
-                    <div class="col">
-                        @Html.TextBoxFor(Model => Model.SubUnit, new { @class = "form-control", @placeholder = "Sub-Unit" })
+                        @Html.TextAreaFor(Model => Model.ClassRelatedTest, new { @class = "form-control", @placeholder = "Today class related test..." })
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-12 mt-2">
                     <div class="col">
-                        @Html.TextAreaFor(Model => Model.Topics, new { @class = "form-control", @placeholder = "Enter the topic name" })
+                        @Html.TextAreaFor(Model => Model.HomeWork, new { @class = "form-control", @placeholder = "Enter homework here" })
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-12 mt-2">
                     <div class="col">
-                        <input type="submit" value="Save" class="form-control" id="btnsave"/>
+                        <input type="submit" value="Save" class="form-control" id="btnsave" />
                     </div>
                 </div>
             </div>
