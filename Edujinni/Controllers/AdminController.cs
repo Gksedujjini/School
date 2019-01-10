@@ -136,7 +136,14 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-       
-        
+        public ActionResult TeacherEditProfileView()
+        {
+            return View();
+        }
+        public ActionResult NewLayout()
+        {
+            return View();
+        }
+
     }
 }
