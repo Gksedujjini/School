@@ -30,11 +30,17 @@ namespace Edujinni.Controllers
             Regex re = new Regex(@"^[a-zA-Z ]+$");
             if (re.IsMatch(admin.first_name))
             {
+               
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://localhost:52995/");
+                client.BaseAddress = new Uri("http://www.edujinni.in/");
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Accept.Clear();
+                admin.insert_by = "Srikar";
+                admin.insert_date = DateTime.Now;
+                admin.update_by = "srikar";
+                admin.update_date = DateTime.Now;
                 HttpResponseMessage response = await client.PostAsJsonAsync("guestSignUp", admin);
+                
                 if (response.IsSuccessStatusCode == true)
                 {
                     Response.Cookies.Clear();
