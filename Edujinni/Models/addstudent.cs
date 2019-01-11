@@ -49,7 +49,7 @@ namespace Edujinni.Models
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Accept.Clear();
           //  ViewBag.classdetails = "";
-            HttpResponseMessage response = await client.GetAsync("classNames/classDetailsList");
+           // HttpResponseMessage response = await client.GetAsync("classNames/classDetailsList");
         }
     }
     
