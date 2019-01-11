@@ -17,5 +17,13 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult DiaryView()
+        {
+            return View();
+        }
+        public ActionResult AddDiary()
+        {
+            return View();
+        }
     }
 }

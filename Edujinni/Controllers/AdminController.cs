@@ -79,7 +79,11 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        //[HttpPost]
+        public ActionResult AddTeacher()
+        {
+            return View();
+        }
+        [HttpPost]
         public async Task<ActionResult> AddTeacher(Addteacher addTech)
         {
             HttpClient client = new HttpClient();
@@ -99,7 +103,7 @@ namespace Edujinni.Controllers
             {
                 Response.Cookies.Clear();
                 ModelState.Clear();
-                return View();
+                return ViewBag.Message();
             }
 
             return View();
@@ -203,5 +207,14 @@ namespace Edujinni.Controllers
             return View();
         }
        
+        public ActionResult TeacherEditProfileView()
+        {
+            return View();
+        }
+        public ActionResult NewLayout()
+        {
+            return View();
+        }
+
     }
 }
