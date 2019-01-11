@@ -1,4 +1,5 @@
 ﻿using Edujinni.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,8 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-
 namespace Edujinni.Controllers
+
 {
     public class AdminController : Controller
     {
@@ -41,10 +42,7 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult AddClass()
-        {
-            return View();
-        }
+       
         public ActionResult ATTRecords()
         {
             return View();
@@ -81,7 +79,7 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        [HttpPost]
+        //[HttpPost]
         public async Task<ActionResult> AddTeacher(Addteacher addTech)
         {
             HttpClient client = new HttpClient();
@@ -96,6 +94,7 @@ namespace Edujinni.Controllers
             addTech.school_id = 1;
 
             HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", addTech);
+            Console.WriteLine(response);
             if (response.IsSuccessStatusCode == true)
             {
                 Response.Cookies.Clear();
@@ -103,8 +102,13 @@ namespace Edujinni.Controllers
                 return View();
             }
 
-            return View(addTech);
+            return View();
         }
+        //public ActionResult AddTeacher()
+        //{
+        //    return View();
+        //}
+
 
         public ActionResult TeacherInfo()
         {
@@ -132,7 +136,72 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        //public ActionResult AddClass()
+        //{
+        //    return View();
+        //}
+
+        //GET REQUEST
+        //public ActionResult AddClass()
+        //{
+        //    List<addclass> Teacherlist = new List<addclass>();
+        //    HttpClient client = new HttpClient();
+        //    var result = client.GetAsync("http://www.Edujinni.com/classdetailslist").Result;
+        //    if (result.IsSuccessStatusCode)
+        //    {
+        //        Teacherlist = result.Content.ReadAsAsync<List<addclass>>().Result;
+        //    }
+        //    return View(Teacherlist);
+        //}
+
+        //[HttpPost]
+        //public ActionResult AddClass(addclass add)
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri("http://www.Edujinni.com/addingclassdetails");
+        //        //HTTP POST
+        //        var postTask = client.PostAsJsonAsync<addclass>("add", add);
+        //        postTask.Wait();
+        //        var result = postTask.Result;
+        //        if (result.IsSuccessStatusCode)
+        //        {
+        //            // return RedirectToAction("Index");
+        //            Console.WriteLine("okk");
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("error");
+        //        }
+        //    }
+
+        //    ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+        //    return View(add);
+        //}
+
+
+        //public async Task<ActionResult> AddClass(addclass add)
+        public async Task<ActionResult> AddClass(addclass add)
+        {
+            add.gettingdetails();
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://www.edujinni.in/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Clear();
+            HttpResponseMessage response = await client.PostAsJsonAsync("classNames/classDetailsList", add);
+            //add.insert_by = "Srikar";
+            //add.insert_date = DateTime.Now;
+            //add.update_by = "srikar";
+            //add.update_date = DateTime.Now;
+            if (response.IsSuccessStatusCode == true)
+            {
+                Response.Cookies.Clear();
+                ModelState.Clear();
+                return View();
+            }
+
+            return View();
+        }
        
-        
     }
 }
