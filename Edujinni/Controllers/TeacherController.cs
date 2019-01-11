@@ -25,5 +25,9 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult TeacherDashboard()
+        {
+            return View();
+        }
     }
 }
