@@ -1,6 +1,6 @@
 ﻿@model Edujinni.Models.Addteacher
 @{
-// Layout = null;
+//Layout = null;
 }
 @using (Html.BeginForm("AddTeacher", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -235,6 +235,14 @@
 
             </div>
         </div>
+</body>
+ }
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
 
-    </body>
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
 }
