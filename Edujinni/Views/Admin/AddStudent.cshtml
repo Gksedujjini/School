@@ -2,7 +2,7 @@
 @{
  Layout = null;
 }
-@using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post))
+@using (Html.BeginForm("AddStudent", "Admin", FormMethod.Post))
 {
 <head>
     <meta charset="utf-8">
@@ -183,7 +183,9 @@
                                         <option>First Class</option>
                                         <option>Second Class</option>
                                     </select>*@
-                                    @Html.DropDownListFor(Model =>Model.student_class, listitem, new { @class = "form-control" })
+                                    @*@Html.DropDownListFor(Model =>Model.student_class, listitem, new { @class = "form-control" })*@
+                                    @*@Html.DropDownList("--Select Class--", new SelectList(ViewBag.classdetails, "class_name"))*@
+                                    @Html.TextBoxFor(Model =>Model.student_class,new {@class ="from-control", @placeholder ="Classname" })
                                 </div>
                                 @{ 
                                     List<SelectListItem> list = new List<SelectListItem>();
@@ -196,7 +198,8 @@
                                         <option>C</option>
                                         <option>D</option>
                                     </select>*@
-                                    @Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control" })
+                                    @*@Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control" })*@
+                                    @Html.TextBoxFor(Model => Model.student_section, new { @class = "from-control", @placeholder = "sectionname" })
                                 </div>
                             </div>
                         </div>
@@ -293,12 +296,27 @@
                                         @Html.TextBoxFor(Model => Model.student_pincode, new { @class = "form-control", @placeholder = "Area Code" })
                                     </div>
                                     <div class="col-md-4">
-                                        @Html.TextBoxFor(Model => Model.student_pincode, new {@type="date", @class = "form-control", @placeholder = "Area Code" })
+                                        @Html.TextBoxFor(Model => Model.student_admission_date, new {@type="date", @class = "form-control", @placeholder = "Admissiondate" })
                                     </div>
                                 </div><br />
+                                @{
+                                    List<SelectListItem> lis = new List<SelectListItem>();
+                                    lis.Add(new SelectListItem
+                                    {
+                                        Text = "Active",
+                                        Value = "Active",
+                                        Selected = true
+                                    });
+                                    lis.Add(new SelectListItem
+                                    {
+                                        Text = "InActive",
+                                        Value = "InActive"
+                                        
+                                    });
+                                }
                             <div class="row" style="margin-bottom:40px;">
                                 <div class="col-md-4">
-                                    @Html.DropDownListFor(Model => Model.student_pincode,list, new {@class = "form-control" })
+                                    @Html.DropDownListFor(Model => Model.Student_status,lis, new {@class = "form-control" })
                                 </div>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-success form-control" style="border-radius: 20px; background-color:green;">Submit</button>
