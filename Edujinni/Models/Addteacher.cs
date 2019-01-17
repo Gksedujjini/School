@@ -55,7 +55,8 @@ namespace Edujinni.Models
         public string teacher_pincode { get; set; }
         [Required]
         public DateTime teacher_date_of_joining { get; set; }
-       
+        public string Password { get; set; }
+        public string Confirm_password { get; set; }
         public string insert_by { get; set; }
         public DateTime insert_date { get; set; }
         public string update_by { get; set; }

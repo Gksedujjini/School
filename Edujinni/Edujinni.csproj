@@ -230,6 +230,7 @@
     <Compile Include="Models\Addteacher.cs" />
     <Compile Include="Models\AdminMain.cs" />
     <Compile Include="Models\Adminsignup.cs" />
+    <Compile Include="Models\AssignmentModel.cs" />
     <Compile Include="Models\DiaryModel.cs" />
     <Compile Include="Models\EditAdminProfile.cs" />
     <Compile Include="Models\Editprofile.cs" />
@@ -237,6 +238,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\StudentEditModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\StudentOverView.cs" />
     <Compile Include="Models\SyllabusModel.cs" />
@@ -533,6 +535,20 @@
     <Content Include="Views\Teacher\AddDiary.cshtml" />
     <Content Include="Views\Admin\NewLayout.cshtml" />
     <Content Include="Views\Teacher\TeacherDashboard.cshtml" />
+    <Content Include="Views\Teacher\AttendanceView.cshtml" />
+    <Content Include="Views\Teacher\AttendanceAdd.cshtml" />
+    <Content Include="Views\Teacher\Results.cshtml" />
+    <Content Include="Views\Teacher\ResultView.cshtml" />
+    <Content Include="Views\Teacher\Achievements.cshtml" />
+    <Content Include="Views\Teacher\AddAchievement.cshtml" />
+    <Content Include="Views\Teacher\Assignment.cshtml" />
+    <Content Include="Views\Teacher\AddAssignment.cshtml" />
+    <Content Include="Views\Teacher\LeadingBoard.cshtml" />
+    <Content Include="Views\Teacher\Events.cshtml" />
+    <Content Include="Views\Teacher\AddEvent.cshtml" />
+    <Content Include="Views\Teacher\StudentOverview.cshtml" />
+    <Content Include="Views\Student\StudentDashboard.cshtml" />
+    <Content Include="Views\Student\EditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
