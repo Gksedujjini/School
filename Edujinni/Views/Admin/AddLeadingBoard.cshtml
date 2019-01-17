@@ -19,41 +19,13 @@
         <title>ViewTimeTAb</title>
         <style>
             #cntnr {
-                width: auto;
+                width: 90%;
             }
-
-            #dropdownMenuButton {
-                background-color: white;
-                border-radius: 20px;
-                width: 83%;
-            }
-
-            #dropdown1 {
-                height: 40px;
-                /*width: 170px;*/
+            .form-control {
                 background-color: lightgray;
                 color: black;
                 border-radius: 10px;
             }
-
-            #dropdown2 {
-                height: 40px;
-                /*width: 340px;*/
-                background-color: lightgray;
-                color: black;
-                border-radius: 10px;
-                margin-right: 58px;
-            }
-
-            #upload-data {
-                margin-right: auto;
-                float: right;
-                font-size: 55px;
-                color: green;
-                width: 50px;
-                margin-top: -8px;
-            }
-
             #addDiv {
                 width: 58px;
                 float: right;
@@ -72,95 +44,67 @@
         </style>
     </head>
     <body>        
-        <div class="container">
-            <div class="row mt-4">
-                <div class="col-md-12">
-                    <center>
-                        <div class="col-md-12">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle col-md-offset-3 col-md-3" type="button" id="dropdown1" data-toggle="dropdown">
-                                    Class
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle col-md-3 ml-1" type="button" id="dropdown1" data-toggle="dropdown">
-                                    Section
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-                <div class="col-md-12 mt-2">
-                    <center>
-                        <div class="col-md-12">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle col-md-offset-3 col-md-6" type="button" id="dropdown2" data-toggle="dropdown">
-                                    Select Name
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-                <div class="col-md-12 mt-2">
-                    <center>
-                        <div class="col-md-12">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle col-md-offset-3 col-md-3" type="button" id="dropdown1" data-toggle="dropdown">
-                                    Select Exam
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle col-md-3 ml-1" type="button" id="dropdown1" data-toggle="dropdown">
-                                    Select Rank
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-                <div class="col-md-12 mt-2" >
-                    <center>
-                        <div class="col-md-12">
-                            <div class="dropdown">
-                                <button class="btn btn-success col-md-offset-6 col-md-3" type="button" value="Save" style="height:40px; border-radius:10px;">
-                                    Select Name
-                                </button>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-
+        <div class="container mt-4 col-md-12 col-xs-12" id="cntnr">
+    <div class="row mt-2">
+        <div class="col-md-5">
+            <div class="col">
+                <select name="Class" class="form-control">
+                    <option>Class</option>
+                    <option>Section</option>
+                    <option>Section</option>
+                </select>
             </div>
-
         </div>
+        <div class="col-md-5">
+            <div class="col">
+                <select name="Section" class="form-control">
+                    <option>Section</option>
+                    <option>Section</option>
+                    <option>Section</option>
+                </select>
+            </div>
+        </div>
+    </div>
+             <div class="row mt-2">
+                 <div class="col-md-10">
+                     <div class="col">
+                         <select name="Name" class="form-control">
+                             <option>Select Name</option>
+                             <option>Section</option>
+                             <option>Section</option>
+                         </select>
+                     </div>
+                 </div>
+                 
+             </div>
+             <div class="row mt-2">
+                 <div class="col-md-5">
+                     <div class="col">
+                         <select name="section" class="form-control">
+                             <option>Select Exam</option>
+                             <option>Section</option>
+                             <option>Section</option>
+                         </select>
+                     </div>
+                 </div>
+                 <div class="col-md-5">
+                     <div class="col">
+                         <select name="section" class="form-control">
+                             <option>Select Rank</option>
+                             <option>Section</option>
+                             <option>Section</option>
+                         </select>
+                     </div>
+                 </div>
+             </div>
+            <div class="row mt-2">
+                <div class="col-md-10">
+                    <div class="col align-self-center">
+                        <input type="button" class="form-control" style="background-color:forestgreen; color:white;" value="Select"/>
+                    </div>
+                </div>
+            </div>
+</div>
     </body>
 </html>
 }
