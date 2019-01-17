@@ -18,7 +18,7 @@ namespace Edujinni.Models
         public string class_name { get; set; }
         public string class_section_name { get; set; }
         public string teacher_id { get; set; }
-        public object ViewBag { get; private set; }
+        public object ViewBag { get;  set; }
 
         //FOR GETTING THE DETAILS
         public void gettingdetails()
@@ -31,15 +31,17 @@ namespace Edujinni.Models
             // List all Names.    
             
             HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!  
+            var cname = response.Content.ReadAsStringAsync().Result;
             if (response.IsSuccessStatusCode)
             {
                 //string classTeacher = "";
-                var cname = response.Content.ReadAsStringAsync().Result;
+                
                 var tnames = new List<string>();
                 {
                     tnames.Add(cname);
                 }
-               // ViewBag. = tnames;
+                ViewBag.class_name = tnames;
+                //TempDataDictionary.
                 //model.class_name = tnames;
             }
             else
