@@ -13,6 +13,14 @@ namespace Edujinni.Controllers
         //{
         //    return View();
         //}
+        public ActionResult StudentDashboard()
+        {
+            return View();
+        }
+        public ActionResult EditProfile()
+        {
+            return View();
+        }
         public ActionResult student()
         {
             return View();

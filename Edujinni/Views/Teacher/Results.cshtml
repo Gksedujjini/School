@@ -1,0 +1,136 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Results List</title>
+    <style>
+        .form-control {
+            border-radius: 20px;
+            background-color: white;
+        }
+        #cntnr{ background-color: #f2f2f2; border-radius: 5px; width:70%;}
+        #search {
+            background-color: white;
+            border: none;
+            border-radius: 20px;
+            margin: 0px 0;
+            outline: none;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        .inputWithIcon #search {
+            padding-left: 40px;
+        }
+
+        .inputWithIcon {
+            position: relative;
+        }
+
+            .inputWithIcon i {
+                position: absolute;
+                left: 0;
+                top: 1px;
+                padding: 9px 15px;
+                color: black;
+                transition: 0.3s;
+            }
+
+            .inputWithIcon.inputIconBg i {
+                background-color: #aaa;
+                color: black;
+                padding: 9px 4px;
+                border-radius: 4px 0 0 4px;
+            }
+            #divper{color: white; background-color: red; width: 60px; height: 22px; border-radius: 7px; padding: 0 0 0 5px;}
+    </style>
+</head>
+<body>
+    <div class="container mt-5" id="cntnr">
+        <div class="row justify-content-center mt-3 mb-3">
+            <div class="col-md-6 mt-2">
+                <div class="col">
+                    <select name="Class" class="form-control">
+                        <option>Class</option>
+                        <option>class1</option>
+                        <option>class2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-2">
+                <div class="col">
+                    <select name="Section" class="form-control">
+                        <option>Section</option>
+                        <option>section1</option>
+                        <option>section2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-start mt-3">
+            <div class="col-md-6">
+                <div class="col" style="width:100%;">
+                    <select name="ExamType" class="form-control">
+                        <option>Exam Type</option>
+                        <option>Exam1</option>
+                        <option>Exam2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-12">
+                <div class="col" style="width:100%;">
+                    <div class="inputWithIcon">
+                        <input type="text" class="form-control col-12" id="search" placeholder="Search Student">
+                        <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-12">
+                <div class="col">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr class="" style="color:white; background-color:green;">
+                                <th scope="col" width="17%">Roll No</th>
+                                <th scope="col" width="66%">Student Name</th>
+                                <th scope="col" width="17%">Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" style="color:black; background-color:#e6ffff;">
+                                <td scope="col" width="17%">23</td>
+                                <td scope="col" width="66%">Sampath Singh</td>
+                                <td scope="col" width="17%"><span style="color:green;">63</span>%</td>
+                            </tr>
+                            <tr class="" style="color:black; background-color:#ffe6ff;">
+                                <td scope="col" width="17%">24</td>
+                                <td scope="col" width="66%">Santosh Singh</td>
+                                <td scope="col" width="17%"><div id="divper">34%</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
