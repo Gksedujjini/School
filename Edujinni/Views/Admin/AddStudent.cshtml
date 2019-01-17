@@ -173,7 +173,13 @@
                                     @Html.TextBoxFor(Model => Model.student_last_name, new { @class = "form-control", @placeholder = "Last Name" })
                                 </div>
                                 @{ 
+
                                     List<SelectListItem> listitem = new List<SelectListItem>();
+                                    //    listitem.Add(new SelectListItem
+                                    //    {
+                                    //        Text = "";
+
+                                    //});
                                 }
                                 <div class="col-md-3">
                                     @*<select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
@@ -183,10 +189,10 @@
                                         <option>First Class</option>
                                         <option>Second Class</option>
                                     </select>*@
-                                    @*@Html.DropDownListFor(Model =>Model.student_class, listitem, new { @class = "form-control" })*@
+                                    @Html.DropDownListFor(Model =>Model.student_class, listitem, new { @class = "form-control" })
                                     @*@Html.DropDownList("--Select Class--", new SelectList(ViewBag.classdetails, "class_name"))*@
-                                    @Html.TextBoxFor(Model =>Model.student_class,new {@class ="from-control", @placeholder ="Classname" })
-                                </div>
+                                    @*@Html.TextBoxFor(Model =>Model.student_class,new {@class ="from-control", @placeholder ="Classname" })
+                                </div>*@
                                 @{ 
                                     List<SelectListItem> list = new List<SelectListItem>();
                                 }

@@ -48,8 +48,11 @@ namespace Edujinni.Models
             client.BaseAddress = new Uri("http://www.edujinni.in/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Accept.Clear();
-          //  ViewBag.classdetails = "";
-           // HttpResponseMessage response = await client.GetAsync("classNames/classDetailsList");
+            HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!    
+            if (response.IsSuccessStatusCode)
+            {
+                var classnames = response.Content.ReadAsStringAsync().Result;
+            }
         }
     }
     

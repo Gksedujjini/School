@@ -88,19 +88,11 @@ namespace Edujinni.Controllers
 
         public async  Task<ActionResult> AddStudent(addstudent student)
         {
+            student.GETCLASS();
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://www.edujinni.in/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Accept.Clear();
-            ViewBag.classdetails = "";
-            HttpResponseMessage response = await client.GetAsync("classNames/classDetailsList");
-            List<string> list;
-            //JsonConvert.DeserializeObject<List<addstudent>>(Json);
-            if (response.IsSuccessStatusCode ==true)
-            {
-                //list = await response.Content.ReadAsAsync<List<string>>();
-                //ViewBag.classdetails = list;
-            }
             student.insert_by = "srikar";
             student.insert_date = DateTime.Now;
             student.update_by = "srikar";
