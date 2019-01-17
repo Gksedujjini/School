@@ -161,22 +161,23 @@
                     <div class="row" style="margin-top: 30px;">
                         <div class="col-md-12 ml-4">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     @Html.TextBoxFor(Model => Model.student_first_name, new { @class = "form-control", @placeholder = "First Name" })
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     @Html.TextBoxFor(Model => Model.student_last_name, new { @class = "form-control", @placeholder = "Last Name" })
                                 </div>
-                                <div class="col-md-3">
-                                    <select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
+                                <div class="col-md-2">
+                                    @Html.DropDownListFor(Model => Model.student_class, new { @class = "form-control", @placeholder = "Class"})
+                                    @*<select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
                                         <option selected="selected">--Select class--</option>
                                         <option>LKG</option>
                                         <option>UKG</option>
                                         <option>First Class</option>
                                         <option>Second Class</option>
-                                    </select>
+                                    </select>*@
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <select name="section" class="form-control" id="section" placeholder="Section"  style="">
                                         <option selected="selected">--Select Section--</option>
                                         <option>A</option>
