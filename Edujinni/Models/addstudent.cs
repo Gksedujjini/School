@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web;
 
 namespace Edujinni.Models
@@ -39,5 +41,19 @@ namespace Edujinni.Models
         public int school_id { get; set; }
         public string Student_status { get; set; }
         public string student_class { get; set; }
+
+        public void GETCLASS()
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://www.edujinni.in/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Clear();
+            HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!    
+            if (response.IsSuccessStatusCode)
+            {
+                var classnames = response.Content.ReadAsStringAsync().Result;
+            }
+        }
     }
+    
 }
