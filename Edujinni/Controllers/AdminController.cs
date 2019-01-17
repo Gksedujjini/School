@@ -108,10 +108,6 @@ namespace Edujinni.Controllers
 
             return View();
         }
-        //public ActionResult AddTeacher()
-        //{
-        //    return View();
-        //}
 
 
         public ActionResult TeacherInfo()
@@ -187,23 +183,9 @@ namespace Edujinni.Controllers
         //public async Task<ActionResult> AddClass(addclass add)
         public async Task<ActionResult> AddClass(addclass add)
         {
-            add.gettingdetails();
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://www.edujinni.in/");
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Accept.Clear();
-            HttpResponseMessage response = await client.PostAsJsonAsync("classNames/classDetailsList", add);
-            //add.insert_by = "Srikar";
-            //add.insert_date = DateTime.Now;
-            //add.update_by = "srikar";
-            //add.update_date = DateTime.Now;
-            if (response.IsSuccessStatusCode == true)
-            {
-                Response.Cookies.Clear();
-                ModelState.Clear();
-                return View();
-            }
-
+            addclass addd = new addclass();
+           add.gettingdetails();
+           add.addingdetails();        
             return View();
         }
        
