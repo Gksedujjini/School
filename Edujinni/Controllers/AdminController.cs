@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 namespace Edujinni.Controllers
 
@@ -61,8 +62,49 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult AddStudent()
+        //public async Task<ActionResult> classdetails()
+        //{
+
+        //    var model = new classdetails();
+
+
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri("https://localhost:44305/");
+        //        client.DefaultRequestHeaders.Accept.Clear();
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //        ViewBag.country = "";
+        //        HttpResponseMessage response = await client.GetAsync("api/v1/doctor/country");
+        //        List<string> li;
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            Country co = new Models.Country();
+        //            li = await response.Content.ReadAsAsync<List<string>>();
+        //            ViewBag.country = li;
+        //        }
+        //    }
+        //    return View();
+        //}
+
+        public async  Task<ActionResult> AddStudent(addstudent student)
         {
+            student.GETCLASS();
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://www.edujinni.in/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Clear();
+            student.insert_by = "srikar";
+            student.insert_date = DateTime.Now;
+            student.update_by = "srikar";
+            student.update_date = DateTime.Now;
+            student.school_id = 1;
+            HttpResponseMessage res = await client.PostAsJsonAsync("addingStudentDetails", student);
+            if (res.IsSuccessStatusCode == true)
+            {
+                Response.Cookies.Clear();
+                ModelState.Clear();
+                return ViewBag.Message();
+            }
             return View();
         }
         //STUDENTS OVERVIEW MODULE //
