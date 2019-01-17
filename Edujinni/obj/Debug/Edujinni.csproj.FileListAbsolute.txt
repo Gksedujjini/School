@@ -319,6 +319,7 @@ C:\Gks\Edujinni\bin\Microsoft.AI.Web.xml
 C:\Gks\Edujinni\bin\Microsoft.AI.WindowsServer.xml
 C:\Gks\Edujinni\bin\Microsoft.ApplicationInsights.xml
 C:\Gks\Edujinni\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Gks\Edujinni\bin\System.Net.Http.Formatting.xml
 C:\Gks\Edujinni\bin\System.Web.Helpers.xml
 C:\Gks\Edujinni\bin\System.Web.Mvc.xml
 C:\Gks\Edujinni\bin\System.Web.Optimization.xml
@@ -328,7 +329,6 @@ C:\Gks\Edujinni\bin\System.Web.WebPages.Deployment.xml
 C:\Gks\Edujinni\bin\System.Web.WebPages.Razor.xml
 C:\Gks\Edujinni\bin\Antlr3.Runtime.pdb
 C:\Gks\Edujinni\bin\Newtonsoft.Json.xml
-C:\Gks\Edujinni\bin\System.Net.Http.Formatting.xml
 C:\Gks\Edujinni\bin\System.Web.Http.xml
 C:\Gks\Edujinni\bin\System.Web.Http.WebHost.xml
 C:\Gks\Edujinni\bin\EntityFramework.xml
@@ -345,6 +345,6 @@ C:\Gks\Edujinni\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Gks\Edujinni\bin\Microsoft.Owin.Security.Google.xml
 C:\Gks\Edujinni\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Gks\Edujinni\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Gks\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
 C:\Gks\Edujinni\obj\Debug\Edujinni.dll
 C:\Gks\Edujinni\obj\Debug\Edujinni.pdb
-C:\Gks\Edujinni\obj\Debug\Edujinni.csprojResolveAssemblyReference.cache
