@@ -36,11 +36,11 @@ namespace Edujinni.Models
             {
                 //string classTeacher = "";
                 
-                var tnames = new List<string>();
-                {
-                    tnames.Add(cname);
-                }
-                ViewBag.class_name = tnames;
+                //var tnames = new List<string>();
+                //{
+                //    tnames.Add(cname);
+                //}
+                //ViewBag.class_name = tnames;
                 //TempDataDictionary.
                 //model.class_name = tnames;
             }
