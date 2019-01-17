@@ -1,9 +1,9 @@
 ﻿@model Edujinni.Models.addstudent
 @{
- Layout = null;
+// Layout = null;
 }
-@using (Html.BeginForm("AddStudent", "Admin", FormMethod.Post))
-{
+@*@using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post))
+    {*@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -151,16 +151,15 @@
                                             <label class="form-check-label" for="inlineCheckboxMale">Male</label>
                                         </div>
                                         <div class="form-check form-check-inline ml-auto mt-1">
-                                            @Html.RadioButtonFor(Model => Model.student_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale", @style = "margin-left:1px" })
+                                            @Html.RadioButtonFor(Model => Model.student_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale", @style = "margin-left:15px" })
                                             <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
                     <div class="row" style="margin-top: 30px;">
-                        <div class="col-md-12">
+                        <div class="col-md-12 ml-4">
                             <div class="row">
                                 <div class="col-md-3">
                                     @Html.TextBoxFor(Model => Model.student_first_name, new { @class = "form-control", @placeholder = "First Name" })
@@ -168,56 +167,39 @@
                                 <div class="col-md-3">
                                     @Html.TextBoxFor(Model => Model.student_last_name, new { @class = "form-control", @placeholder = "Last Name" })
                                 </div>
-                                @{ 
-
-                                    List<SelectListItem> listitem = new List<SelectListItem>();
-                                    //    listitem.Add(new SelectListItem
-                                    //    {
-                                    //        Text = "";
-
-                                    //});
-                                }
                                 <div class="col-md-3">
-                                    @*<select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
-                                        <option selected="selected">Select class</option>
+                                    <select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
+                                        <option selected="selected">--Select class--</option>
                                         <option>LKG</option>
                                         <option>UKG</option>
                                         <option>First Class</option>
                                         <option>Second Class</option>
-                                    </select>*@
-                                    @Html.DropDownListFor(Model =>Model.student_class, listitem, new { @class = "form-control" })
-                                    @*@Html.DropDownList("--Select Class--", new SelectList(ViewBag.classdetails, "class_name"))*@
-                                    @*@Html.TextBoxFor(Model =>Model.student_class,new {@class ="from-control", @placeholder ="Classname" })
-                                </div>*@
-                                @{ 
-                                    List<SelectListItem> list = new List<SelectListItem>();
-                                }
+                                    </select>
+                                </div>
                                 <div class="col-md-3">
-                                    @*<select name="section" class="form-control" id="section" placeholder="Section"  style="">
-                                        <option selected="selected">Select Section</option>
+                                    <select name="section" class="form-control" id="section" placeholder="Section"  style="">
+                                        <option selected="selected">--Select Section--</option>
                                         <option>A</option>
                                         <option>B</option>
                                         <option>C</option>
                                         <option>D</option>
-                                    </select>*@
-                                    @*@Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control" })*@
-                                    @Html.TextBoxFor(Model => Model.student_section, new { @class = "from-control", @placeholder = "sectionname" })
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        
+                        </div>
                     </div><br>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     @Html.TextBoxFor(Model => Model.student_roll_no, new { @class="form-control",@placeholder="Roll No"})
                                 </div>
-                                <div class="col-md-3">
-                                    @Html.TextBoxFor(Model => Model.student_chiled_no, new { @class = "form-control", @placeholder = "chiled no" })
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(Model => Model.student_id, new { @class = "form-control", @placeholder = "Student ID" })
                                 </div>
-                                <div class="col-md-3">
-                                    @Html.TextBoxFor(Model => Model.student_dob, new { @type="date",@class = "form-control", @placeholder = "Date of Birth" })
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(Model => Model.student_roll_no, new { @type="date",@class = "form-control", @placeholder = "Date of Birth" })
                                 </div>
                             </div><br>
                             <hr>
@@ -256,9 +238,9 @@
                                 <div class="col-md-4">
                                     @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Sibbling Name" })
                                 </div>
-                                @*<div class="col-md-4">
-                                    @Html.TextBoxFor(Model => Model.sibblingage, new { @class = "form-control", @placeholder = "Age" })
-                                </div>*@<br>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(Model => Model.student_no_of_siblings, new { @class = "form-control", @placeholder = "Age" })
+                                </div><br>
 
                             </div><br>
                             <hr>
@@ -298,37 +280,14 @@
                                         @Html.TextBoxFor(Model => Model.student_pincode, new { @class = "form-control", @placeholder = "Area Code" })
                                     </div>
                                     <div class="col-md-4">
-                                        @Html.TextBoxFor(Model => Model.student_admission_date, new {@type="date", @class = "form-control", @placeholder = "Admissiondate" })
+                                        <button type="submit" class="btn btn-success" style="height: 40px; width: 190px;border-radius: 20px;">Submit</button>
                                     </div>
-                                </div><br />
-                                @{
-                                    List<SelectListItem> lis = new List<SelectListItem>();
-                                    lis.Add(new SelectListItem
-                                    {
-                                        Text = "Active",
-                                        Value = "Active",
-                                        Selected = true
-                                    });
-                                    lis.Add(new SelectListItem
-                                    {
-                                        Text = "InActive",
-                                        Value = "InActive"
-                                        
-                                    });
-                                }
-                            <div class="row" style="margin-bottom:40px;">
-                                <div class="col-md-4">
-                                    @Html.DropDownListFor(Model => Model.Student_status,lis, new {@class = "form-control" })
-                                </div>
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-success form-control" style="border-radius: 20px; background-color:green;">Submit</button>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
-                            </div>
                 </form>
             </div>
         </div>
-    
+    </div>
 </body>
-}
+@*}*@

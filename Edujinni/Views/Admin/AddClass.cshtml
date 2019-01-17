@@ -27,7 +27,7 @@
         </style>
     </head>
     <body>
-        <script type="text/javascript">
+        @*<script type="text/javascript">
 
     function getCities() {
         var stateID = $('#StudentGender').val();
@@ -49,7 +49,7 @@
             });
         }
     }
-        </script>
+        </script>*@
         
         @{
 //List <Model.gettingdetails()> Teacherlist = new List<Model.gettingdetails()>();
@@ -75,8 +75,18 @@
                         <option>@item</option>
                     }
             </select>*@
-            <select class="form-control" id="StudentGender" name="StudentGender">
+            @*<select class="form-control" id="StudentGender" name="StudentGender">
                 <option>@Model.tnames</option>
+            </select>*@
+            @*@foreach (var item in ViewBag.classs)
+            {
+                <span> @item.class_name</span>
+            }*@
+            <select id="sltCustomers" name="sltCustomers">
+                @foreach (var item in Model.class_name)
+                {
+                    <option>@item</option>
+                }
             </select>
             <br /> 
                 @Html.TextBoxFor(Model => Model.class_name, new { @class = "form-control", @placeholder = "Enter Class Name", @id = "achievements" })
