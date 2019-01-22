@@ -1,0 +1,125 @@
+﻿@model Edujinni.Models.MessageModel
+@{
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>Send Message</title>
+    <style>
+        .form-control {
+            border-radius: 15px;
+            background-color: white;
+            height: 35px;
+            font-size: 15px;
+        }
+        #btnsave {
+            background-color: forestgreen;
+            color: white;
+        }
+        #btnsearch{background-color:black; color:white;}
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row ml-0 mr-2 mt-5" style="width:80%;">
+        <div class="col-md-12 col-md-offset-0 mr-1 mb-3" id="colcontainer">
+            <br />
+            <center><b>Send Message to</b></center>
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        @Html.TextAreaFor(Model => Model.Message, new { @class = "form-control", @placeholder = "Write Message" })
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        <select name="to" class="form-control">
+                            <option>All Students</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <select name="Class" class="form-control">
+                            <option>Class</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <select name="Section" class="form-control">
+                            <option>Section</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        <input type="submit" value="Search" class="form-control" id="btnsearch" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-start">
+                <div class="col-md-12 mt-4">
+                    <div class="col text-left">
+                        <label class="checkbox-inline ml-1">
+                            <input type="checkbox" value=""><span class="mt-1">Select All</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="col">
+                        <table class="table table-borderless" style="width:100%">
+                            <thead>
+                                <tr class="" style="color:black; background-color:lightgray;">
+                                    <td scope="col" style="width:30%;">Id</td>
+                                    <td scope="col" style="width:40%;">Student Name</td>
+                                    <td scope="col" style="width:30%;">Roll No</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        <input type="submit" value="Send" class="form-control" id="btnsave" />
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+        </div>
+    </div>
+</body>
+</html>

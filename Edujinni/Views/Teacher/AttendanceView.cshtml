@@ -1,6 +1,6 @@
 ﻿
 @{
-  Layout = null;
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -18,14 +18,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>AttendanceView</title>
+    <title>Attendance View</title>
         <style>
             .form-control {
-                border-radius: 20px;
-                background-color: #f2f2f2;
-            }
+            border-radius: 20px;
+            background-color: white;
+        }
+        #colcontainer{background-color: #f2f2f2; width:100%; border-radius:10px;}
             #search {
-                background-color: #f2f2f2;
+                background-color: white;
                 border: none;
                 border-radius: 20px;
                 margin: 0px 0;
@@ -57,50 +58,54 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5" style="width:65%">
-        <div class="row justify-content-center mt-3 mb-3">
-            <div class="col-md-4 mt-2">
-                <div class="col">
-                    <select class="form-control">
-                        <option>class1</option>
-                        <option>class2</option>
-                    </select>
+    <div class="container mt-5" style="width:100%">
+        <div class="row" style="width:87%;">
+            <div class="col-md-12 mb-3" id="colcontainer">
+                <div class="row justify-content-center mt-3 mb-3">
+                    <div class="col-md-6 mt-2">
+                        <div class="col">
+                            <select class="form-control">
+                                <option>class1</option>
+                                <option>class2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <div class="col">
+                            <select class="form-control">
+                                <option>class1</option>
+                                <option>class2</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 mt-2">
-                <div class="col">
-                    <select class="form-control">
-                        <option>class1</option>
-                        <option>class2</option>
-                    </select>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-md-12">
+                        <div class="col" style="width:100%;">
+                            <div class="inputWithIcon">
+                                <input type="text" class="form-control col-12" id="search" placeholder="Search Student">
+                                <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-md-12">
+                        <div class="col">
+                            <table class="table table-borderless table-responsive">
+                                <thead>
+                                    <tr class="table-active">
+                                        <th scope="col" width="17%">Roll No</th>
+                                        <th scope="col" width="66%">Student Name</th>
+                                        <th scope="col" width="17%">Percentage</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-md-8">
-            <div class="col" style="width:100%;">
-                <div class="inputWithIcon">
-                    <input type="text" class="form-control col-12" id="search" placeholder="Search Student">
-                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div> 
-    </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-md-8">
-                <div class="col">
-                <table class="table table-borderless table-responsive">
-                    <thead>
-                        <tr class="table-active">
-                            <th scope="col" width="17%">Roll No</th>
-                            <th scope="col" width="66%">Student Name</th>
-                            <th scope="col" width="17%">Percentage</th>
-                        </tr>
-                    </thead>
-                </table>
-                </div>
-            </div>
-        </div>
-   </div>
+       </div>
 </body>
 </html>

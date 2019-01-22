@@ -1,5 +1,5 @@
 ﻿@{
-// Layout = null;
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
             crossorigin="anonymous"></script>
     <link href="Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="Content/sb-admin.css" rel="stylesheet">
-    <title>AddSubjects</title>
+    <title>Syllabus View</title>
     <style>
         .form-control {
             border-radius: 15px;
@@ -48,7 +48,7 @@
     </style>
 </head>
 <body>
-    <div class="row ml-0 mr-2 mt-3" style="width:95%;">
+    <div class="row ml-0 mr-2 mt-5" style="width:95%;">
         <div class="col-md-12 col-md-offset-0 mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
             <div class="row mt-4">
                 <div class="col-md-6 mt-2">
@@ -89,7 +89,7 @@
                     <label style="margin-top:5px;">Sub Units</label>
                 </div>
                 </div>
-                <div class="col-md-12">
+                @*<div class="col-md-12">
                     <div class="col text-left" id="dataunit">
                         <label style="margin-top:5px;">Sub Units Data List</label>
                     </div>
@@ -98,13 +98,12 @@
                     <div class="col text-left" id="dataunit1">
                         <label style="margin-top:5px;">Sub Units Data List</label>
                     </div>
-                </div>
+                </div>*@
             </div>
             <div class="row mt-5">
                 <div class="col" id="divlast">
                     <a href="@Url.Action("AddSyllabusView","Teacher")">
                         <i class="fa fa-plus-circle" id="upload-data"></i>
-
                         <div id="addDiv"><label class="ml-2 mt-2">Add</label></div>
                     </a>
                 </div>

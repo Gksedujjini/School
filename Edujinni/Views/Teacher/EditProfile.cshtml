@@ -1,8 +1,8 @@
 ﻿@model Edujinni.Models.Addteacher
 @{
-// Layout = null;
+ Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
-@using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("EditProfile", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <head>
         <meta charset="utf-8">
@@ -14,7 +14,6 @@
                 integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
                 crossorigin="anonymous"></script>
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
         <link href="Content/all.min.css" rel="stylesheet" type="text/css">

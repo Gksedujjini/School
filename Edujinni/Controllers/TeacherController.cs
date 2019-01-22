@@ -77,5 +77,61 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult EditProfile()
+        {
+            return View();
+        }
+        public ActionResult Notifications()
+        {
+            return View();
+        }
+        public ActionResult Messages()
+        {
+            return View();
+        }
+        public ActionResult SendMessage()
+        {
+            return View();
+        }
+        public ActionResult AddMarks()
+        {
+            return View();
+        }
+        public ActionResult TimeTable()
+        {
+            return View();
+        }
+        public ActionResult LeaveRequest()
+        {
+            return View();
+        }
+        public ActionResult ApplyLeave()
+        {
+            return View();
+        }
+        public ActionResult RequestedLeaves()
+        {
+            return View();
+        }
+        public ActionResult ExamSchedule()
+        {
+            return View();
+        }
+        public ActionResult ViewExamSchedule()
+        {
+            return View();
+        }
+        public ActionResult EditExamSchedule()
+        {
+            return View();
+        }
+        public ActionResult MyWork()
+        {
+            return View();
+        }
+        public ActionResult MyTimeTable()
+        {
+            return View();
+        }
     }
 }

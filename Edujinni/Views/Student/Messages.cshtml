@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Messages</title>
+    <style>
+        #cntnr {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        .form-control {
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 55px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+
+        #addDiv {
+            width: 58px;
+            float: right;
+            margin-top: 7px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+
+        #receivebtn {
+            background-color: #e6e6e6;
+            width: 100%;
+            border: none;
+            height: 50px;
+        }
+
+        #sentbtn {
+            background-color: #f2f2f2;
+            width: 100%;
+            border: none;
+            height: 50px;
+        }
+
+        #btndiv {
+            float: left;
+            width: 36%;
+        }
+
+        #btndiv2 {
+            float: left;
+            width: 36%;
+            border-left: 2px solid #bfbfbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="row align-content-end mt-5 mb-3" style="width:84%;">
+        <div class="col">
+            <button type="button" onclick="location.href = '/Student/SendMessage'" class="btn btn-success btn-sm" style="float:right; border-radius:10px;">
+                <span class="glyphicon glyphicon-plus-sign" style=""></span> <span>Send Message</span>
+            </button>
+        </div>
+    </div>
+    <div class="container mt-2 mb-3" id="cntnr">
+        <div class="row justify-content-center mt-3 mb-3">
+            <div id="btndiv">
+                <input type="button" id="sentbtn" value="Sent" />
+            </div>
+            <div id="btndiv2">
+                <input type="button" id="receivebtn" value="Receive" />
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3 mb-3">
+            <div class="col-md-10 mt-2">
+                <div class="col">
+                    <select name="Section" class="form-control">
+                        <option>All Parents</option>
+                        <option>Section1</option>
+                        <option>section2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3 mb-3">
+            content will be here
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="col" style="width:100%;">
+                <a href="@Url.Action("SendMessage","Student")">
+                    <i class="fa fa-plus-circle" id="upload-data"></i>
+                    <div id="addDiv"><label class="ml-2 mt-1">Send</label></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 ﻿@model Edujinni.Models.DiaryModel
 @{
-//Layout = null;
+Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -25,16 +25,16 @@
             height: 35px;
             font-size: 15px;
         }
-
         #btnsave {
             background-color: forestgreen;
             color: white;
         }
+        #colcontainer{background-color: #f2f2f2; width:100%; border-radius:10px;}
     </style>
 </head>
 <body>
-    <div class="row ml-0 mr-2 mt-3" style="width:80%;">
-        <div class="col-md-12 col-md-offset-0 mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
+    <div class="row ml-0 mr-2 mt-5" style="width:80%;">
+        <div class="col-md-12 col-md-offset-0 mr-1 mb-3" id="colcontainer">
             <br />
             <center><b>Add Work</b></center>
             <div class="row mt-4">

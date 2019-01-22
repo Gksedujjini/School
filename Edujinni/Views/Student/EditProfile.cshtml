@@ -1,6 +1,6 @@
 ﻿@model Edujinni.Models.StudentEditModel
 @{
-// Layout = null;
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
 @using (Html.BeginForm("EditProfile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
