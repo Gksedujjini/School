@@ -164,10 +164,6 @@
                         <div class="row mt-3">
                             <div class="ml-3 mt-2 mr-3" id="image">
                                 <center>
-                                    @*<div id="logodiv">*@
-                                    @*<label>School</label><br>
-                                        <label style="font-size: 20px;">Logo</label>*@
-                                    @*</div>*@
                                     <img src="" alt="School Logo" id="img1" />
                                 </center>
                                 <i class="fa fa-plus-circle upload-data" id="upload-data"></i>
@@ -190,7 +186,8 @@
                                         @*@Html.TextBoxFor(Model => Model.PrincipalId, new { @class = "form-control", value = "12436576", @id = "basic-url"})*@
                                         <input type="text" name="" value="12436576" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                                     </div>
-                                </div> <div class="row mt-4">
+                                </div> 
+                                <div class="row mt-4">
                                     <div class="col-md-12 input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon3">School Name</span>
@@ -212,7 +209,7 @@
                             <div class="col-md-4 ml-auto mt-2">
                                 @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", @placeholder = "Email ID" })
                             </div>
-                            <div class="col-md-3 ml-auto mt-2">
+                            <div class="col-md-3 ml-auto mt-4">
                                 <div class="form-check form-check-inline ml-auto">
                                     @Html.RadioButtonFor(Model => Model.Gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
                                     <label class="form-check-label" for="inlineCheckboxMale">Male</label>
@@ -283,10 +280,10 @@
                             <div class="col-md-4 mt-2">
                             </div>
                             <div class="col-md-4 ml-auto mt-2">
-                                <input type="button" class="form-control" Value="Edit" id="btn1">
+                                <input type="button" class="form-control" Value="Edit" id="btn1" style="border-radius:10px;">
                             </div>
                             <div class="col-md-3 ml-auto mt-2 mb-1">
-                                <input type="button" class="form-control" value="Save" id="btn2">
+                                <input type="button" class="form-control" value="Save" id="btn2" style="border-radius:10px;">
                             </div>
                         </div>
                     </form>

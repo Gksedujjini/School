@@ -29,10 +29,38 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult test()
+        public ActionResult AcademicSyallabus()
         {
-            ViewBag.Message = "hello..this is test";
             return View();
         }
+        public ActionResult TimeTable()
+        {
+            return View();
+        }
+        public ActionResult Diary()
+        {
+            return View();
+        }
+        public ActionResult LeadingBoard()
+        {
+            return View();
+        }
+        public ActionResult Attendance()
+        {
+            return View();
+        }
+        public ActionResult Events()
+        {
+            return View();
+        }
+        public ActionResult ExamSchedule()
+        {
+            return View();
+        }
+        public ActionResult ViewExamSchedule()
+        {
+            return View();
+        }
+
     }
 }

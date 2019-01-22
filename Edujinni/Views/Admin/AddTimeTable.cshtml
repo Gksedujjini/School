@@ -23,72 +23,60 @@
         </style>
     </head>
     <body>
+        @{ 
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
         <div class="container mt-4 col-md-12 col-xs-12" id="cntnr">
             <div class="row mt-2">
                 <div class="col-md-5 mt-2">
                     <div class="col">
-                        <select name="section" class="form-control">
+                        @*<select name="section" class="form-control">
                             <option>Select Day</option>
                             <option>Section</option>
                             <option>Section</option>
-                        </select>
+                        </select>*@
+                        @Html.DropDownListFor(Model => Model.selectday, list,"Select Day",new {@class="form-control"})
                     </div>
                 </div>
                 <div class="col-md-5 mt-2">
                     <div class="col">
-                        <select name="section" class="form-control">
-                            <option>Select Subject</option>
-                            <option>Section</option>
-                            <option>Section</option>
-                        </select>
+                      @Html.DropDownListFor(Model => Model.selectsubject, list, "Select Subject", new { @class = "form-control" })
                     </div>
                 </div>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-4">
                 <div class="col-md-5 mt-2">
                     <div class="col">
-                        <select name="section" class="form-control">
-                            <option>Select Teacher Name</option>
-                            <option>Section</option>
-                            <option>Section</option>
-                        </select>
+                        @Html.DropDownListFor(Model => Model.teachername, list, "Select Teacher Name", new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-5 mt-2">
                             <div class="col">
-                                <select name="section" class="form-control">
-                                    <option>Class</option>
-                                    <option>Section</option>
-                                    <option>Section</option>
-                                </select>
+                                @Html.DropDownListFor(Model => Model.classs, list, "Select Class", new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="col-md-5 mt-2">
                             <div class="col">
-                                <select name="section" class="form-control">
-                                    <option>Section</option>
-                                    <option>Section</option>
-                                    <option>Section</option>
-                                </select>
+                                @Html.DropDownListFor(Model => Model.section, list, "Select Section", new { @class = "form-control" })
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-4">
                 <div class="col-md-6 align-self-start mt-2">
                     time picker1
                 </div>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-4">
                 <div class="col-md-5 align-self-start">
                     <div class="col">
-                <input type="button" value="Save" class="form-control" style="border-radius:10px;" />
+                <input type="button" value="Save" class="form-control" style="border-radius:10px; background-color:forestgreen; color:white;" />
                         </div>
                 </div>
-            </div>
+            </div><br />
         </div>
         
 

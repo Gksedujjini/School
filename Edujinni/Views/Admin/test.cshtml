@@ -2,13 +2,6 @@
 @{
     Layout = null;
 }
-@{
-//using system.data;
-//Sqlconnection com = null;
-//var db = Database.Open("test");
-//var selectedData = db.Query("SELECT * FROM Movies");
-//var grid = new WebGrid(source: selectedData);
-}
 @using (Html.BeginForm("Main", "Home", FormMethod.Get))
 {
     <meta charset="utf-8">
@@ -21,16 +14,18 @@
 
     <!-- Bootstrap core CSS-->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="stylesheet" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Custom fonts for this template-->
     <style>
         .navbar-brand {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1px;
             height: 40px;
             margin-top: 5px;
         }
@@ -40,192 +35,274 @@
             margin-left: 10px;
             margin-top: 10px;
         }
-        
-        /*CSS CODE FOR MAIN PAGE FIRST ROW TO DISPLAY STUDENTS ,PARENTS AND ALL INFO*/
-        * {
-            box-sizing: border-box;
+
+        #aa:hover {
+            background-color: blue;
         }
 
-        /* Create two equal columns that floats next to each other */
-        #col {
-            width: 100px;
-            padding: 10px;   
-                    
+        .form-control {
+            border-radius: 20px;
         }
 
-        /* Clear floats after the columns */
-        #row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        #border
-        {
-            border-radius:10px;
-        }
-        h3
-        {
-            margin-left:2px;
-            margin-top:2px;
+        #envelopetextbox {
+            width: 20px;
+            color: white;
+            background-color: red;
+            border: 1px solid black;
+            border-radius: 12px;
+            height: 20px;
+            position: absolute;
+            margin-top: -37px;
+            margin-left: 16px;
+            text-align: center;
         }
     </style>
     <link href="~/Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/sb-admin.css" rel="stylesheet">
-    @*<link href="~/Content/custom.css" rel="stylesheet">*@
     <body id="page-top">
-        <div class="row" style="margin-bottom:-10px; height:auto;">
-            <div class="col" id="logoBar" style="background-color: blue; margin-left: 0px; width:150px;">
-                <a class="navbar-brand mr-1" href="#" style="color: white; font-size:18px;">&nbsp&nbsp&nbsp Logo</a>
-                <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#" style="float: right; margin-top: 7px;">
-                    <i class="fas fa-bars" style="margin-left: -20px; font-size:20px;"></i>
+        <div class="row" style="margin-right:0;">
+            <div class="col" id="logoBar" style="background-color: blue; margin-left: 0px;">
+                <a class="navbar-brand mr-1" href="@Url.Action("Index","Admin")" style="color: white; font-size: 25px; margin-top: 5px;">
+                    &nbsp Logo
+                </a>
+                <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#" style="float: right; margin-top: 15px;">
+                    <i class="fas fa-bars fa-2x" style="margin-left: -20px;"></i>
                 </button>
             </div>
-            <div class="col-md-10" style="background-color: white;">
-                <span style="margin-left: 00px; font-size: 17px; margin-top:5px;">Welcome to school management system</span>
-                <nav style="background-color: white; font-size:15px; margin-bottom:00px;" class="navbar navbar-expand navbar-dark navbar-right bg-grey static-top">
-                    <form id="search-box" class="d-block d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                        <div id="search-box" class="input-group" style="width: auto;">
-                            <input type="text" style="background-color: #ebebe0; border:none; border-radius: 20px 00px 00px 20px" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-default" type="button" style="background-color: #ebebe0;border-radius: 00px 20px 20px 00px">
-                                    <i class="fas fa-search"></i>
-                                </button>
+            @*New header*@
+            <div class="col-md-10" style="background-color: white; margin: 0px;">
+                <div class="row mt-1">
+                    <div class="col-md-5 mt-3" style="background-color: white; margin: 0px;">
+                        <div class="col">
+                            <span style="margin-left: 00px; font-size: 15px;">Welcome to school management system</span>
+                        </div>
+                    </div>
+                    @*<div class="col-md-7 justify-content-end" style="background-color: none; margin: 0px;">*@
+                    @*<div class="col-10 align-self-end inputWithIcon" style="margin-left:20px;">
+                                <input type="text" class="form-control" placeholder="Search here..." style="min-width:260px;">
+                                <span class="glyphicon glyphicon-search form-control-feedback mr-5" aria-hidden="true"></span>
+                        </div>
+                        </div>*@
+                    @*<div class="col-md-3" style="background-color: none; margin: 0px;">
+                            <div class="row ml-auto align-items-center">
+                                <div class="mt-1" style="float:right; margin-left:5px;">
+                                    <a class="nav-link" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-envelope fa-2x" style="margin-top:-3px; color:lightgray;" aria-hidden="true"></i>
+                                        <span class="badge badge-danger" style="margin-top:-38px; margin-left:-10px; font-size:10px; color:black; border:1px solid black; background-color:red;">7</span>
+                                        </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>&nbsp;&nbsp; <span>|</span>&nbsp;
+                                <div class="ml-2 mt-1 align-self-end" style="float:right;">
+                                    <img src="~/Images/Group 174.png" height="25" width="25">
+                                    <span style="font-size:12.2px; margin-left:5px;">Admin Name &nbsp;&nbsp;
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    <br />
+                                    <span style="margin-left:35px;">Admin</span></span>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                        <a class="dropdown-item" href="#">Settings</a>
+                                        <a class="dropdown-item" href="#">Activity Log</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="col-md-4 mt-3">
+                        <input type="text" class="form-control" placeholder="Search here..." style="min-width:160px;">
+                        <span class="glyphicon glyphicon-search form-control-feedback mr-5" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-3 mt-3" style="background-color: none; margin: 0px;">
+                        <nav class="navbar navbar-right" style="margin:0px; margin-top:-12px;">
+                            <ul class="" style="text-decoration:none; list-style-type:none;margin:0px; padding:0px;">
+                                <li style="float:right; margin-left:15px;">
+                                    <a class="nav-link" href="#" id="messagesDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-decoration:none; font-size:12px;">
+                                        <img src="~/Images/Group 174.png" height="25" width="25"><span style="margin-left:10px;">Admin Name</span>
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <br /><span style="margin-left:35px;">Admin</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown1">
+                                        <a class="dropdown-item" href="#">Settings</a>
+                                        <a class="dropdown-item" href="#">Activity Log</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                                    </div>
+                                </li>
+                                <li style="float:right; margin-left:0px; margin-top:8px;">
+                                    <a class="nav-link" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-envelope fa-2x" style="margin-top:-3px; color:lightgray;" aria-hidden="true"></i>
+                                        <input type="text" readonly value="7" style="" id="envelopetextbox" />
+                                        @*<span class="badge badge-danger" style="margin-top:-38px; margin-left:-10px; font-size:10px; color:black; border:1px solid black; background-color:red;">7</span>*@
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="messagesDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-10" style="background-color: white; margin: 0px;">
+                <div class="row mt-3">
+                    <div class="col-md-5" style="background-color: white; margin: 0px;">
+                        <div class="col">
+                            <span style="margin-left: 00px; font-size: 15px;">Welcome to school management system</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="background-color: none; margin: 0px;">
+                        <div class="col-10 align-self-end inputWithIcon" style="margin-left:20px;">
+                            <input type="text" class="form-control" id="" placeholder="Search here..." style="min-width:208px;">
+                            @*<i class="fa fa-search fa-md fa-fw" id="sear" aria-hidden="true"></i>*@
+            @*<span class="glyphicon glyphicon-search form-control-feedback mr-5"></span>
                             </div>
                         </div>
-                    </form>
-                    <ul class="navbar-nav ml-auto ml-md-0">
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw" style="color: grey;"></i>
-                                <span class="badge badge-danger">7</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="col-md-3" style="background-color: none; margin: 0px;">
+                            <div class="row ml-auto align-items-center">
+                                <div class="mt-1" style="float:right; margin-left:5px;">
+                                    <a class="nav-link" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-envelope fa-2x" style="margin-top:-3px; color:lightgray;" aria-hidden="true"></i>
+                                        <span class="badge badge-danger" style="margin-top:-38px; margin-left:-10px; font-size:10px; color:black; border:1px solid black; background-color:red;">7</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>&nbsp;&nbsp; <span>|</span>&nbsp;
+                                <div class="ml-2 mt-1 align-self-end" style="float:right;">
+                                    <img src="~/Images/Group 174.png" height="25" width="25">
+                                    <span style="font-size:12.2px; margin-left:5px;">
+                                        Admin Name &nbsp;&nbsp;
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <br />
+                                        <span style="margin-left:35px;">Admin</span>
+                                    </span>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                        <a class="dropdown-item" href="#">Settings</a>
+                                        <a class="dropdown-item" href="#">Activity Log</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                                    </div>
+                                </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user-circle fa-fw" style="color: grey; border-radius: 14px;"></i>
-                                @*<img src="images/Group 174.png" height="20" width="20">*@
-                            </a>
-                            <!-- <span style="margin-left: auto;">Admin name<br>Name</span> -->
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Activity Log</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown no-arrow" style="">
-                            <span style="">Admin name<br>Name</span>
-                        </li>
-                        <!-- <span style="margin-left: -40px;">Admin name<br>Name</span> -->
-                    </ul>
 
-                </nav>
-            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>*@
         </div>
         <div id="wrapper" style="font-size:12px;">
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav" style="width: 0px;">
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 289.png" height="20" width="20">
                         <span>Academic Syllabus</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 176@2x.png" height="20" width="20" class="img">
-                    <span>
-                        @Html.ActionLink("Edit Profile", "EditProfile", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium;" })
-                    </span>
+                    <a class="nav-link" href="@Url.Action("EditProfile","Admin")" id="aa">
+                        <img src="~/Images/Group 176@2x.png" height="20" width="20">
+                        <span>Edit Profile</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <span>
-                        <img src="~/Images/Group 232@2x.png" height="20" width="20" class="img">
-                        @Html.ActionLink("Teacher", "TeacherView", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium;" })
-                    </span>
+                    <a class="nav-link" href="@Url.Action("TeacherView","Admin")" id="aa">
+                        <img src="~/Images/Group 232@2x.png" height="20" width="20">
+                        <span>Teacher</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 235.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Add Subject", "AddSubjects", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;" })
+                    <a class="nav-link" href="@Url.Action("AddSubjects","Admin")" id="aa">
+                        <img src="~/Images/Group 235.png" height="20" width="20">
+                        <span>Add Subjects</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/img.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Achievements", "ViewAchievements", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    @*<a class="nav-link" href="#">
-                            <img src="~/Images/img.png" height="20" width="20">
-                            <span>View Achievements</span>
-                        </a>*@
+                    <a class="nav-link" href="@Url.Action("ViewAchievements","Admin")" id="aa">
+                        <img src="~/Images/img.png" height="20" width="20">
+                        <span>Achievements</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 289.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Attendance Records", "ATTRecords", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-
+                    <a class="nav-link" href="@Url.Action("ATTRecords","Admin")" id="aa">
+                        <img src="~/Images/Group 289.png" height="20" width="20">
+                        <span>Attendance Records</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("Message","Admin")" id="aa">
                         <img src="~/Images/Group 204.png" height="20" width="20">
                         <span>Message</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("FeeCollection","Admin")" id="aa">
                         <img src="~/Images/Group 243.png" height="20" width="20">
                         <span>Fee Collection</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("RequestedPage","Admin")" id="aa">
                         <img src="~/Images/Group 246.png" height="20" width="20">
                         <span>Requested</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 180.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Assign TimeTable", "ViewTimeTable", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
+                    <a class="nav-link" href="@Url.Action("ViewTimeTable","Admin")" id="aa">
+                        <img src="~/Images/Group 180.png" height="20" width="20">
+                        <span>Assign TimeTable</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 198.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Add Events", "EvetsView", "Events", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
-                    @*<a class="nav-link" href="#">
-                            <img src="~/Images/Group 198.png" height="20" width="20">
-                            <span>Add Events</span>
-                        </a>*@
+                    <a class="nav-link" href="@Url.Action("EvetsView","Events")" id="aa">
+                        <img src="~/Images/Group 198.png" height="20" width="20">
+                        <span>Add Events</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("LeadingBoardView","Admin")" id="aa">
                         <img src="~/Images/Group 192@2x.png" height="20" width="20">
                         <span>Leading Board</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("ExamSchedules","Admin")" id="aa">
                         <img src="~/Images/Group 290.png" height="20" width="20">
                         <span>Add Exam Schedules</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("AddResultView","Admin")" id="aa">
                         <img src="~/Images/Group 210@2x.png" height="20" width="20">
                         <span>Results</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <img src="~/Images/Group 292.png" height="20" width="20" class="img">
-                    @Html.ActionLink("Students OverView", "StudentsOverView", "Admin", new { area = "" }, new { @class = "navbar-brand", style = "font-size:medium; margin-top:-5px; margin-bottom:5px;  " })
+                    <a class="nav-link" href="@Url.Action("StudentsOverView","Admin")" id="aa">
+                        <img src="~/Images/Group 292.png" height="20" width="20">
+                        <span>Students OverView</span>
+                    </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("AddMarks","Admin")" id="aa">
                         <img src="~/Images/Group 293.png" height="20" width="20">
                         <span>Add Marks</span>
                     </a>
                 </li>
                 <li class="nav-item active" style="border-bottom: 1px solid #3d3d5c;">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" id="aa">
                         <img src="~/Images/Group 294.png" height="20" width="20">
                         <span>Logout</span>
                     </a>
@@ -236,255 +313,274 @@
                     <!-- Breadcrumbs-->
                     <ol class="breadcrumb" style="background-color: #ebebe0; font-size: 12px; margin-top: -5px;">
                         <li class="breadcrumb-item">
-                            @*<a href="#">Home</a>*@
+                            <a href="#">Home</a>
                         </li>
-                        @*<a href="#">Student Overview/</a>
-                            <li class="breadcrumb-item active"> Student Overview - Add Student</li>*@
+                        <!-- <a href="#">Student Overview/</a> -->
+                        <li class="breadcrumb-item active"> </li>
                     </ol>
-                    @* DIV CONTENT STARTS FROM DOWN *@
-                    <div class="container-fluid mb-3">
-                        <div class="row" style="margin-top: -10px;">
-                              @* THE BODY CONTENT STARTS FROM DOWN *@
-                                <div class="col-md-4 mt-3">
-                                    <div class="row">
-                                        @* STUDENTS  *@
-                                        <div class="row mb-2" id="row" style="margin-left:7px;">
-                                            <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
-                                                <img src="~/Images/Group 196.png">
+                    @*
+        *********************************
+            COL-MD-12 CONTAINER STARTS FROM HERE
+            MAIN DIV CONTAINER
+        *********************************
+                    *@
+                    <div class="container-fluid mb-3 ml-1">
+                        @* FIRST ROW *@
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="row">
+                                            <div class="col" id="rad">
+                                                <center><img src="~/Images/Group 196.png"></center>
                                             </div>
-                                            <div class="column" id="col" style="background-color:#4F91FF; color:white; margin-right:10px; border-top-right-radius:10px; border-bottom-right-radius:10px;">
+                                            <div class="col" id="rad1" style="background-color:#4F91FF;">
                                                 <label>Students</label>
                                                 @Html.TextBoxFor(Model => Model.Students, new { @class = "form-control" })
                                             </div>
-                                        @* TEACHERS  *@
-                                            <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
-                                                    <img src="~/Images/Group 255.png">
-                                                </div>
-                                                <div class="column" id="col" style="background-color:#F6BF07; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
-                                                    <label>Teachers</label>
-                                                    @Html.TextBoxFor(Model => Model.Teachers, new { @class = "form-control" })
-                                                </div>
                                         </div>
                                     </div>
-                                    @* FEE COLLECTION STARTS HERE *@
-                                    <div class="row mt-2">
-                                        <div class="col" style="background-color:white; height:200px;" id="border" >
-                                            <div class="row">
-                                                <h3>
-                                                    Fee Collection & Expenses
-                                                </h3>
-                                                <span>
-                                                    X & Reload symbol
-                                                </span>
-                                            </div> 
-                                            <hr />
-                                            <div class="row">
-                                                Here the bar graph is fetched from database
-                                                Here the bar graph is fetched from database
-                                                Here the bar graph is fetched from database
-                                                Here the bar graph is fetched from database
-                                                Here the bar graph is fetched from database
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @* FEE COLLECTION ENDS HERE *@
-
-                                    @* EVENT CALENDAR STARTS HERE *@
-                                    <div class="row mt-4">
-                                        <div class="col" style="background-color:white; height:200px;" id="border">
-                                            <div class="row">
-                                                <h3>
-                                                   Event Calendar
-                                                </h3>
-                                                <span>
-                                                    X & Reload symbol
-                                                </span>
-                                            </div>
-                                            <hr />
-                                            <div class="row">
-                                                Calendar is shown
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @* EVENT CALENDAR ENDS HERE *@
-
-                                    @* EDIT PROFILE ,STUDENT,TEACHER SECTION GOES HERE *@
-
-                                    <div class="row mt-4">
-                                        <div class="col mr-4" style="background-color:white;border-radius:10px;">
-                                            <center>
-                                                <img src="~/Images/Group 176@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("Edit Profile", "EditProfile", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>
-                                        <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
-                                            <center>
-                                                <img src="~/Images/Group 228@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("Student", "StudentsOverView", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>
-                                        <div class="col ml-2" style="background-color:white;border-radius:10px;">
-                                            <center>
-                                                <img src="~/Images/Group 232@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("Teacher", "TeacherView", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>
-                                    </div>
-                                    @* EDIT PROFILE ,STUDENT,TEACHER SECTION ENDS HERE *@
-
-                                    @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION STARTS HERE *@
-
-
-                                    <div class="row mt-4">
-                                        <div class="col mr-4" style="background-color:white;border-radius:10px;">
-                                            <center>
-                                                <img src="~/Images/Group 242@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("Add Classes", "EditProfile", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>
-                                        <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
-                                            <center>
-                                                <img src="~/Images/Group 196@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("Attendance", "ATTRecords", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>
-                                        <div class="col ml-2" style="background-color:white;border-radius:10px;">
-                                            <center>
-                                                <img src="~/Images/Group 204@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("Message", "TeacherView", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>
-                                    </div>
-
-                                    @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION ENDS HERE *@
-
-                                    @* EDUCATION VIDEOS STARTS HERE *@
-                                    <div class="row mt-4">
-                                        <div class="col" style="background-color:white; height:auto;" id="border">
-                                            <div class="row">
-                                                <h3>
-                                                    Robotic Education Videos
-                                                </h3>
-                                                <span>
-                                                    X & Reload symbol
-                                                </span>
-                                            </div>
-                                            <hr />
-                                            <div class="row" style="margin-bottom:10px;">
-                                                <div class="col-md-6 col-sm-2">
-                                                    <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
-                                                </div>
-                                                <div class="col-md-4 mr-4 col-sm-2">
-                                                    <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
-                                                </div>
-                                            </div>                                                                                
-                                        </div>
-                                    </div>
-                                    </div>
-
-                                    @* EDUCATION VIDEOS ENDS HERE *@
-
-                                    @* /////////////////////////////////////SECOND COLUMN STARTS////////////////////////  *@
-                                    <div class="col-md-4 mt-3" style="margin-left:15px">
+                                    <div class="col-md-2 ml-3">
                                         <div class="row">
-                                            @* ADMIN STAFF  *@
-                                            <div class="row mb-2" id="row" style="margin-left:7px;">
-                                                <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
-                                                    <img src="~/Images/Group 324.png">
-                                                </div>
-                                                <div class="column" id="col" style="background-color:#4F91FF; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
-                                                    <label>Admin Staff</label>
-                                                    @Html.TextBoxFor(Model => Model.AdminStaff, new { @class = "form-control" })
-                                                </div>
-                                                @* PARENTS  *@
-                                                <div class="column" id="col" style="background-color:white; margin-left:8px; border-top-left-radius:10px; border-bottom-left-radius:10px;">
-                                                    <img src="~/Images/Group 258.png">
-                                                </div>
-                                                <div class="column" id="col" style="background-color:#56FF00; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
-                                                    <label>Parents</label>
-                                                    @Html.TextBoxFor(Model => Model.Parents, new { @class = "form-control" })
-                                                </div>
+                                            <div class="col" id="rad">
+                                                <center><img src="~/Images/Group 255.png"></center>
+                                            </div>
+                                            <div class="col" id="rad1" style="background-color:#F6BF07;">
+                                                <label>Teachers</label>
+                                                @Html.TextBoxFor(Model => Model.Teachers, new { @class = "form-control" })
                                             </div>
                                         </div>
-                                        @* ACHIEVEMENTS STARTS HERE *@
-                                        <div class="row mt-2">
-                                            <div class="col" style="background-color:white; height:200px;" id="border" >
-                                                <div class="row">
-                                                    <h3>
-                                                       Achievements
-                                                    </h3>
-                                                    <span>
-                                                        X & Reload symbol
-                                                    </span>
-                                                </div>
-                                                <hr />
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <center>
-                                                            <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 282.png"></div>
-                                                            <div style="padding: 30px; background-color: #f97ca2;">Div Two</div>
-                                                        </center>
-                                                    </div>
-                                                    <div class="col">
-                                                        <center>
-                                                            <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 284.png"></div>
-                                                            <div style="padding: 30px; background-color: #225be8 ;">Div Two</div>
-                                                        </center>
-                                                    </div>
-                                                    <div class="col">
-                                                        <center>
-                                                               <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 286.png"></div>
-                                                               <div style="padding: 30px; background-color: #fa9337;">Div Two</div>
-                                                        </center>
-                                                    </div>
-                                                </div>                                               
+                                    </div>
+                                    <div class="col-md-2 ml-3">
+                                        <div class="row">
+                                            <div class="col" id="rad">
+                                                <center><img src="~/Images/Group 324.png"></center>
+                                            </div>
+                                            <div class="col" id="rad1" style="background-color:black;">
+                                                <label>Admin Staff</label>
+                                                @Html.TextBoxFor(Model => Model.AdminStaff, new { @class = "form-control" })
                                             </div>
                                         </div>
-                                        @* ACHIEVEMENTS ENDS HERE *@
-
-                                        @* LEADING BOARD STARTS HERE *@
-                                        <div class="row mt-4">
-                                            <div class="col" style="background-color:white; height:200px;" id="border">
-                                                <div class="row">
-                                                    <h3>
-                                                        Leading Board
-                                                    </h3>
-                                                    <span>
-                                                        X & Reload symbol
-                                                    </span>
-                                                </div>
-                                                <hr />
-                                                <div class="row">
-                                                   <div class="row ml-2">
-                                                       //GRID VIEW
-                                                       @*@grid.GetHtml()*@
-                                                   </div>
-                                                </div>
+                                    </div>
+                                    <div class="col-md-2 ml-3">
+                                        <div class="row">
+                                            <div class="col" id="rad">
+                                                <center><img src="~/Images/Group 258.png"></center>
+                                            </div>
+                                            <div class="col" id="rad1" style="background-color:#56FF00;">
+                                                <label>Parents</label>
+                                                @Html.TextBoxFor(Model => Model.Parents, new { @class = "form-control" })
                                             </div>
                                         </div>
-                                        @* LEADING BOARD ENDS HERE *@
+                                    </div>
+                                    <div class="col-md-3 ml-3">
+                                        <div class="row">
+                                            <div class="col" id="rad">
+                                                <center><img src="~/Images/Group 259.png"></center>
+                                            </div>
+                                            <div class="col" id="rad1" style="background-color:#FF0303;">
+                                                <label>Total Earnings</label>
+                                                @Html.TextBoxFor(Model => Model.TotalEarnings, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @* FIRST ROW ENDS *@
+                        @* SECOND ROW STARTS *@
+                        <div class="row mt-3">
+                            <div class="col-md-4 mr-md-3 mt-2" style="background-color:white; border-radius:10px; min-height:250px; min-width:300px;">
+                                <div class="row mt-1">
+                                    <h3 style="margin-left:10px;">Fee Collection & Expenses</h3>
+                                    <span style="float:right">Close tag</span>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    Here the bar graph is shown based on the data from the database
+                                </div>
+                            </div>
+                            <div class="col-md-4 ml-3 mr-3 mt-2" style="background-color:white; border-radius:10px; height:auto; min-width:300px;">
+                                <div class="row mt-1">
+                                    <h3 style="margin-left:10px;">Achievements</h3>
+                                    <span style="float:right">Close tag</span>
+                                </div>
+                                <hr />
+                                <div class="row mt-3">
+                                    <div class="col ml-1">
+                                        <center>
+                                            <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 282.png"></div>
+                                            <div style="padding: 30px; background-color: #f97ca2;">Div Two</div>
+                                        </center>
+                                    </div>
+                                    <div class="col">
+                                        <center>
+                                            <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 284.png"></div>
+                                            <div style="padding: 30px; background-color: #225be8 ;">Div Two</div>
+                                        </center>
+                                    </div>
+                                    <div class="col">
+                                        <center>
+                                            <div style="padding: 20px; background-color: #E5E4E2;"><img src="~/Images/Group 286.png"></div>
+                                            <div style="padding: 30px; background-color: #fa9337;">Div Two</div>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            @* 2ND ROW 3RD COLUMN *@
+                            <div class="col-md-3 ml-3">
+                                @* FACEBOOK *@<br />
+                                <div class="row mt-3" style="background-color: #1700bb ;  border-radius:10px; color:white; margin-bottom:15px;">
+                                    <div class="col" style="width:auto; margin-bottom:7px;">
+                                        <img src="~/Images/Group 267.png" height="45">
+                                    </div>
+                                    <div class="col mt-3">
+                                        <h2>Likes</h2>
+                                    </div>
+                                    <div class="col mt-3">
+                                        @Html.TextBoxFor(Model => Model.fblikes, new { @class = "form-control", @style = "width:90px;" })
+                                    </div>
+                                </div>
+                                @* TWITTER *@
+                                <div class="row mt-3" style="background-color: #10c0f4 ;  border-radius:10px; color:white; margin-bottom:15px;">
+                                    <div class="col" style="width:240px; margin-bottom:7px;">
+                                        <img src="~/Images/Group 269.png" height="45">
+                                    </div>
+                                    <div class="col mt-3">
+                                        <h2>Likes</h2>
+                                    </div>
+                                    <div class="col mt-3">
+                                        @Html.TextBoxFor(Model => Model.twitterlikes, new { @class = "form-control", @style = "width:90px;" })
+                                    </div>
+                                </div>
+                                @* INSTAGRAM PAGE LIKES *@
+                                <div class="row mt-3" style="background-color: #900C3F ;  border-radius:10px; color:white; margin-bottom:15px;">
+                                    <div class="col" style="width:240px; margin-bottom:7px;">
+                                        <img src="~/Images/Group 304@2x.png" height="45">
+                                    </div>
+                                    <div class="col mt-3">
+                                        <h2>Likes</h2>
+                                    </div>
+                                    <div class="col mt-3">
+                                        @Html.TextBoxFor(Model => Model.instalikes, new { @class = "form-control", @style = "width:90px;" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @* SOCIAL NETWORKS ENDS UP *@
 
-                                        @* EDIT PROFILE ,STUDENT,TEACHER SECTION GOES HERE *@
 
-                                        <div class="row mt-4">
+                        @* SECOND ROW ENDS HERE *@
+                        @* THIRD ROW STARTED *@
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    @* 3RD ROW 1ST COL *@
+                                    <div class="col-md-4 mr-3 mt-2" style="background-color:white;border-radius:10px; min-height:300px;">
+                                        <div class="row mt-1">
+                                            <h3>Events Calendar</h3>
+                                            <span>close and reload</span>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            Events calendar is shown here
+                                        </div>
+                                    </div>
+                                    @* 3RD ROW 2ND COL *@
+                                    <div class="col-md-4 ml-3 mr-3 mt-2" style="background-color:white;border-radius:10px; min-height:300px;">
+                                        <div class="row mt-1">
+                                            <h3>Leading Board</h3>
+                                            <span>close and reload</span>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            Leading members list shown here
+                                            in grid view
+                                            @*@grid.GetHtml()*@
+                                        </div>
+                                    </div>
+                                    @* 3RD ROW 3RD COL *@
+                                    <div class="col-md-3 ml-3 mt-2" style="background-color:white;border-radius:10px; min-height:300px;">
+                                        <div class="row mt-1">
+                                            <h3>Notice Board</h3>
+                                            <span>close and reload</span>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            Notices are shown here
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @* THIRD ROW ENDED *@
+                        @* FOURTH ROW *@
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4 mr-3 mt-3">
+                                        <div class="row">
+                                            <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                                <center>
+                                                    <img src="~/Images/Group 176@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("Edit Profile", "EditProfile", "Admin")
+                                                    <br />
+                                                    <br />
+                                                </center>
+                                            </div>
+                                            <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
+                                                <center>
+                                                    <img src="~/Images/Group 228@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("Student", "StudentsOverView", "Admin")
+                                                    <br />
+                                                    <br />
+                                                </center>
+                                            </div>
+                                            <div class="col ml-2" style="background-color:white;border-radius:10px;">
+                                                <center>
+                                                    <img src="~/Images/Group 232@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("Teacher", "TeacherView", "Admin")
+                                                    <br />
+                                                    <br />
+                                                </center>
+                                            </div>
+                                        </div><br />
+                                        <div class="row">
+                                            <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                                <center>
+                                                    <img src="~/Images/Group 242@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("Add Classes", "ViewClass", "Admin")
+                                                    <br />
+                                                    <br />
+                                                </center>
+                                            </div>
+                                            <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
+                                                <center>
+                                                    <img src="~/Images/Group 196@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("Attendance", "ATTRecords", "Admin")
+                                                    <br />
+                                                    <br />
+                                                </center>
+                                            </div>
+                                            <div class="col ml-2" style="background-color:white;border-radius:10px;">
+                                                <center>
+                                                    <img src="~/Images/Group 204@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("Message", "Message", "Admin")
+                                                    <br />
+                                                    <br />
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @* 4TH ROW 2ND COL *@
+                                    <div class="col-md-4 ml-3 mr-3 mt-3">
+                                        <div class="row">
                                             <div class="col mr-4" style="background-color:white;border-radius:10px;">
                                                 <center>
                                                     <img src="~/Images/Group 288@2x.png" height="50" width="50" style="margin-top:10px;">
@@ -509,15 +605,11 @@
                                                     <br />
                                                 </center>
                                             </div>
-                                        </div>
-                                        @* EDIT PROFILE ,STUDENT,TEACHER SECTION ENDS HERE *@
-
-                                        @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION STARTS HERE *@
-
-                                        <div class="row mt-4">
+                                        </div><br />
+                                        <div class="row">
                                             <div class="col mr-4" style="background-color:white;border-radius:10px;">
                                                 <center>
-                                                    <img src="~/Images/Group 242@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <img src="~/Images/Group 243@2x.png" height="50" width="50" style="margin-top:10px;">
                                                     <br />
                                                     @Html.ActionLink("Fee Collection", "FeeCollection", "Admin")
                                                     <br />
@@ -526,7 +618,7 @@
                                             </div>
                                             <div class="col mr-4 ml-2" style="background-color:white;border-radius:10px;">
                                                 <center>
-                                                    <img src="~/Images/Group 196@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <img src="~/Images/Group 346@2x.png" height="50" width="50" style="margin-top:10px;">
                                                     <br />
                                                     @Html.ActionLink("Assign TimeTable", "ViewTimeTable", "Admin")
                                                     <br />
@@ -535,186 +627,113 @@
                                             </div>
                                             <div class="col ml-2" style="background-color:white;border-radius:10px;">
                                                 <center>
-                                                    <img src="~/Images/Group 204@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <img src="~/Images/Group 246@2x.png" height="50" width="50" style="margin-top:10px;">
                                                     <br />
-                                                    @Html.ActionLink("Requested", "Requested", "Admin")
+                                                    @Html.ActionLink("Requested", "RequestedPage", "Admin")
                                                     <br />
                                                     <br />
                                                 </center>
                                             </div>
                                         </div>
-
-                                        @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION ENDS HERE *@
-
-                                        @* EDUCATION VIDEOS STARTS HERE *@
-                                        <div class="row mt-4">
-                                            <div class="col" style="background-color:white; height:auto;" id="border">
-                                                <div class="row">
-                                                    <h3>
-                                                       Daily Existing Videos
-                                                    </h3>
-                                                    <span>
-                                                        X & Reload symbol
-                                                    </span>
-                                                </div>
-                                                <hr />
-                                                <div class="row" style="margin-bottom:10px;">
-                                                    <div class="col-md-6 col-sm-2">
-                                                        <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
-                                                    </div>
-                                                    <div class="col-md-4 mr-4 col-sm-2">
-                                                        <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
-                                                    </div>
-                                                </div>    
-                                        @* EDUCATION VIDEOS ENDS HERE *@
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @* //////////////////////////////////SECOND COLUMN ENDS //////////////////////////////// *@
-
-
-
-                                @* /////////////////////////////////////THIRD COLUMN STARTS////////////////////////  *@
-                                <div class="col-md-3 mt-3" style="margin-left:15px;">
-                                    <div class="row">
-                                            @* TOTAL EARNINGS  *@
-                                            <div class="column" id="col" style="background-color:white; border-top-left-radius:10px; border-bottom-left-radius:10px;">
-                                                <img src="~/Images/Group 258.png">
-                                            </div>
-                                            <div class="column" id="col" style="background-color:#FF0303; color:white; border-top-right-radius:10px; border-bottom-right-radius:10px;">
-                                                <label>Total Earnings</label>
-                                                @Html.TextBoxFor(Model => Model.TotalEarnings, new { @class = "form-control" })
-                                            </div>
-                                        </div>
-                                    @* ACHIEVEMENTS STARTS HERE *@
-                                    <div class="row mt-3">
-                                        <div class="col" id="border" style="margin-bottom:10px;"> @***HERE DEFINE WHITE COLOR TO SEE DIV CLASS***@
-                                        @* FACEBOOK PAGE LIKES *@ 
-                                            <div class="row mt-3" style="background-color: #1700bb ;  border-radius:10px; color:white; margin-bottom:15px;">
-                                                <div class="col" style="width:240px; margin-bottom:7px;">
-                                                <img src="~/Images/Group 267.png" height="45"></div>
-                                                <div class="col">
-                                                    <h2>Likes</h2>
-                                                </div>
-                                                <div class="col">
-                                                    @Html.TextBoxFor(Model => Model.fblikes, new { @class = "form-control", @style = "width:120px;" })
-                                                </div>
-                                            </div>
-                                        @* TWITTER PAGE LIKES *@
-                                                <div class="row" style="background-color: #10c0f4 ;  border-radius:10px; color:white; margin-bottom:15px;">
-                                                        <div class="col" style="width:240px; margin-bottom:7px;">
-                                                    <img src="~/Images/Group 269.png" height="45"></div>
-                                                    <div class="col">
-                                                        <h2>Likes</h2>
-                                                    </div>
-                                                    <div class="col">
-                                                        @Html.TextBoxFor(Model => Model.twitterlikes, new { @class = "form-control",@style = "width:120px;" })
-                                                    </div>
-                                                </div>
-                                        @* INSTAGRAM PAGE LIKES *@
-                                            <div class="row" style="background-color: #900C3F ;  border-radius:10px; color:white;">
-                                                <div class="col" style="width:240px; margin-bottom:7px;">
-                                                <img src="~/Images/Group 304@2x.png" height="45">
-                                                </div>
-                                                <div class="col">
-                                                    <h2>Likes</h2>
-                                                </div>
-                                                <div class="col">
-                                                    @Html.TextBoxFor(Model => Model.instalikes, new { @class = "form-control" , @style = "width:120px;"})
-                                                </div>
-                                            </div>
-                                        @* SOCIAL NETWORKS ENDS UP *@
-                                            </div>
-                                        </div>
-                                    @* ACHIEVEMENTS ENDS HERE *@
-
-                                    @* LEADING BOARD STARTS HERE *@
-                                    <div class="row mt-4">
-                                        <div class="col" style="background-color:white; height:200px;" id="border">
-                                            @*<div id="kryesore" style="overflow-x: scroll;">*@
-                                                <div class="row">
-                                                    <h3>
-                                                        Notice Board
-                                                    </h3>
-                                                    <span>
-                                                        X & Reload symbol
-                                                    </span>
-                                                </div>
-                                                <hr />
-                                                <div class="row">
-                                                        <div class="row ml-2">
-                                                            //GRID VIEW
-                                                            @*@grid.GetHtml()*@
-                                                        </div>
-                                                    </div>
-                                            </div>
                                     </div>
-                                    @* LEADING BOARD ENDS HERE *@
-
-                                    @* EDIT PROFILE ,STUDENT,TEACHER SECTION GOES HERE *@
-
-                                    <div class="row mt-4">
-                                        <div class="col mr-4" style="background-color:white;border-radius:10px; ">
-                                            <center>
-                                                <img src="~/Images/Group 288@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("View Achievements", "ViewAchievements", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>
-                                    </div>
-                                    @* EDIT PROFILE ,STUDENT,TEACHER SECTION ENDS HERE *@
-
-                                    @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION STARTS HERE *@
-
-                                    <div class="row mt-4">
-                                        <div class="col mr-4" style="background-color:white;border-radius:10px;">
-                                            <center>
-                                                <img src="~/Images/Group 242@2x.png" height="50" width="50" style="margin-top:10px;">
-                                                <br />
-                                                @Html.ActionLink("Add Events", "EvetsView", "Admin")
-                                                <br />
-                                                <br />
-                                            </center>
-                                        </div>                                       
-                                    </div>
-
-                                    @* ADD CLASSES,ATTENDANCE , MESSAGES SECTION ENDS HERE *@
-
-                                    @* EDUCATION VIDEOS STARTS HERE *@
-                                    <div class="row mt-4">
-                                        <div class="col " style="background-color:white; height:auto;" id="border">
-                                            <div class="row">
-                                                <h3>
-                                                    Career Guidance Videos
-                                                </h3>
-                                                <span>
-                                                    X & Reload symbol
-                                                </span>
+                                    @* 4TH ROW 3RD COL *@
+                                    <div class="col-md-3 ml-3 mt-3">
+                                        <div class="row ">
+                                            <div class="col mr-4" style="background-color:white;border-radius:10px; ">
+                                                <center>
+                                                    <img src="~/Images/Group 213@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("View Achievements", "ViewAchievements", "Admin")
+                                                    <br />
+                                                    <br />
+                                                </center>
                                             </div>
-                                            <hr />
-                                            <div class="row" style="margin-bottom:10px;">
-                                                <div class="col-md-6 col-sm-2" style="width:auto;">
-                                                    <iframe width="270" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
-                                                </div>
+                                        </div><br />
+                                        <div class="row">
+                                            <div class="col mr-4" style="background-color:white;border-radius:10px;">
+                                                <center>
+                                                    <img src="~/Images/Group 198@2x.png" height="50" width="50" style="margin-top:10px;">
+                                                    <br />
+                                                    @Html.ActionLink("Add Events", "EvetsView", "Events")
+                                                    <br />
+                                                    <br />
+                                                </center>
                                             </div>
                                         </div>
                                     </div>
-
-                                    @* EDUCATION VIDEOS ENDS HERE *@
                                 </div>
-                                @* //////////////////////////////////THIRD COLUMN ENDS //////////////////////////////// *@
-
-
-
-
+                            </div>
+                        </div>
+                        @* FOURTH ROW ENDED *@
+                        @* FIFTH ROW *@
+                        <div class="row">
+                            <div class="col-md-4 mt-3 mr-3" style="background-color:white; border-radius:10px;">
+                                <div class="row mt-1">
+                                    <h3>
+                                        Robotic Education Videos
+                                    </h3>
+                                    <span>
+                                        X & Reload symbol
+                                    </span>
                                 </div>
-                              @* THE BODY CONTENT ENDS HERE *@
+                                <hr />
+                                <div class="row" style="margin-bottom:10px;">
+                                    <div class="col">
+                                        <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                    </div>
+                                    <div class="col">
+                                        <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- side social links -->                            
+                            @* 5TH ROW 2ND COL *@
+                            <div class="col-md-4 mt-3 ml-3 mr-3" style="background-color:white; border-radius:10px;">
+                                <div class="row mt-1">
+                                    <h3>
+                                        Daily Existing Videos
+                                    </h3>
+                                    <span>
+                                        X & Reload symbol
+                                    </span>
+                                </div>
+                                <hr />
+                                <div class="row" style="margin-bottom:10px;">
+                                    <div class="col">
+                                        <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                    </div>
+                                    <div class="col">
+                                        <iframe width="170" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                    </div>
+                                </div>
                             </div>
-                   </div>
+                            @* 5TH ROW 3RD COL *@
+                            <div class="col-md-3 ml-3">
+                                <div class="row mt-4">
+                                    <div class="col " style="background-color:white; height:auto;" id="border">
+                                        <div class="row">
+                                            <h3>
+                                                Career Guidance Videos
+                                            </h3>
+                                            <span>
+                                                X & Reload symbol
+                                            </span>
+                                        </div>
+                                        <hr />
+                                        <div class="row" style="margin-bottom:10px;">
+                                            <div class="col" style="width:auto;">
+                                                <iframe width="270" height="150" src="//www.youtube.com/embed/CyX-8ufVetI" frameborder="0" allowfullscreen id="video" name="video"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        @* FIFTH ROW ENDED *@
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- /.content-wrapper -->
         <!-- /#wrapper -->
         <!-- Scroll to Top Button-->

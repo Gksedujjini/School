@@ -150,15 +150,20 @@
                             </div>
                         </div>
                         <br>
+                        @{ 
+                            List<SelectListItem> list = new List<SelectListItem>();
+                        }
                         <b style="float:left;">Academic Information</b><br />
                         <div class="row mt-4">
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 mt-3">
-                                        @Html.TextBoxFor(Model => Model.teacher_subject1, new { @class = "form-control", @placeholder = "Subject 1" })
+                                        @*@Html.TextBoxFor(Model => Model.teacher_subject1, new { @class = "form-control", @placeholder = "Subject 1" })*@
+                                        @Html.DropDownListFor(Model => Model.teacher_subject1,list,"Subject 1",new {@class = "form-control"})
                                     </div>
                                     <div class="col-md-4 mt-3">
-                                        @Html.TextBoxFor(Model => Model.teacher_subject2, new { @class = "form-control", @placeholder = "Subject 2" })
+                                        @*@Html.TextBoxFor(Model => Model.teacher_subject2, new { @class = "form-control", @placeholder = "Subject 2" })*@
+                                        @Html.DropDownListFor(Model => Model.teacher_subject2, list, "Subject 2", new { @class = "form-control" })
                                     </div>
                                     <div class="col-md-4 mt-3">
                                         @Html.TextBoxFor(Model => Model.teacher_qualification, new { @class = "form-control", @placeholder = "Qualification" })

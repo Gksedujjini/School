@@ -1,6 +1,5 @@
-﻿
-@{
-//Layout = null;
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -232,7 +231,7 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 176@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 176@2x.png" height="50" width="50" style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
                         <a href="@Url.Action("EditProfile","Student")" style="text-decoration: none;">
@@ -244,10 +243,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 177@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 177@2x.png" height="50" width="50" style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("AttendanceView","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("AcademicSyallabus", "Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Academic Syllabus</span>
                         </a>
                     </div>
@@ -256,10 +255,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 180@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 180@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="#" style="text-decoration: none;">
+                        <a href="@Url.Action("TimeTable","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Time Table</span>
                         </a>
                     </div>
@@ -268,10 +267,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 189@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 189@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("Results","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("Diary","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Diary</span>
                         </a>
                     </div>
@@ -280,10 +279,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 192@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 192@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="#" style="text-decoration: none;">
+                        <a href="@Url.Action("LeadingBoard","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Leading Board</span>
                         </a>
                     </div>
@@ -292,10 +291,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 194@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 194@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("AttendanceAdd","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("AttendanceAdd","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Doubts</span>
                         </a>
                     </div>
@@ -304,10 +303,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 196@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 196@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("AttendanceView","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("Attendance","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Attendance</span>
                         </a>
                     </div>
@@ -316,10 +315,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 198@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 198@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="#" style="text-decoration: none;">
+                        <a href="@Url.Action("Events","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Events</span>
                         </a>
                     </div>
@@ -328,10 +327,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 315@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 315@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("Results","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("ExamSchedule","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Exam Schedule</span>
                         </a>
                     </div>
@@ -340,7 +339,7 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 202@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 202@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
                         <a href="#" style="text-decoration: none;">
@@ -352,10 +351,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 203@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 203@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("AttendanceAdd","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("AttendanceAdd","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Assignments</span>
                         </a>
                     </div>
@@ -364,10 +363,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 204@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 204@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("AttendanceView","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("AttendanceView","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Messages</span>
                         </a>
                     </div>
@@ -376,7 +375,7 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 218@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 218@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
                         <a href="#" style="text-decoration: none;">
@@ -388,10 +387,10 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 213@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 213@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
-                        <a href="@Url.Action("Results","Teacher")" style="text-decoration: none;">
+                        <a href="@Url.Action("Results","Student")" style="text-decoration: none;">
                             <span style="font-size: 12px; margin-top: 5px;">Student Achievements</span>
                         </a>
                     </div>
@@ -400,7 +399,7 @@
             <div class="col" style="">
                 <div id="divlink">
                     <div class="row justify-content-center">
-                        <img src="~/Images/Group 316@2x.png" height="50px" width="50px" style="margin-top:5px;">
+                        <img src="~/Images/Group 316@2x.png" height=50 width=50 style="margin-top:5px;">
                     </div>
                     <div class="row justify-content-center mt-2">
                         <a href="#" style="text-decoration: none;">
@@ -412,154 +411,6 @@
                     </div>
                 </div>
         </div>
-        @*<div class="row mt-0" style="background-color:lightgray;">
-            <div class="col" style="margin-left: 12px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 189@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="@Url.Action("DiaryView","Teacher")" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:33px;">Diary</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink" style="background-color:white; padding: 10px; height:103; margin: 5px 0px 5px 0px;">
-                    <div class="row">
-                        <img src="~/Images/Group 192@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="@Url.Action("LeadingBoard","Teacher")" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:7px;">Leading Board</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 316@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="@Url.Action("StudentOverview","Teacher")" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:1px;">Student Overview</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 213@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="@Url.Action("Achievements","Teacher")" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:10px;">Achievements</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 204@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="#" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:18px;">Message</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 203@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="@Url.Action("Assignment","Teacher")" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:12px;">Assignemnts</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-0" style="background-color:lightgray;">
-            <div class="col" style="margin-left: 12px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 176@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="#" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:18px;">Edit Profile</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 218@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="#" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:7px;">Leave Request</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 219@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="#" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:18px;">Notifications</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 198@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="#" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:28px;">Events</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 218@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="#" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:0px;">Requested Leaves</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="margin-left: 20px;">
-                <div id="divlink">
-                    <div class="row">
-                        <img src="~/Images/Group 315@2x.png" height="50px" width="50px" style="margin-left:23px;">
-                    </div>
-                    <div class="row mt-2">
-                        <a href="#" style="text-decoration: none;">
-                            <span style="font-size: 12px; margin-top: 5px; margin-left:0px;">View Exam Shedule</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>*@
     </div>
 </body>
 </html>
