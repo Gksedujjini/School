@@ -1,8 +1,9 @@
 ﻿@model Edujinni.Models.Addteacher
 @{
-//Layout = null;
+    ViewBag.Title = "AddTeacher";
+    //Layout ="~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("AddTeacher", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("AddTeacher", "Admin", FormMethod.Post))
 {
     <head>
         <meta charset="utf-8">
@@ -98,8 +99,8 @@
                             <img src="" alt="User Image" id="image1" />
                             @*<center><i class="fa fa-user fa-5x" style="color:blue;"></i></center>*@
                             <i class="fa fa-plus-circle upload-data" id="upload-data1"></i>
-                            <input class="" id="getfile1" style="display: none;" type="file" accept="image/*"
-                                   onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" />
+                            @*<input class="" id="getfile1" style="display: none;" type="file" accept="image/*"
+                                   onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" />*@
 
 
 
@@ -108,11 +109,13 @@
                                 <div class="row mt-2">
                                     <div class="col-md-6 mt-5 input-group">
                                         <div class="form-check form-check-inline ml-3">
-                                            @Html.RadioButtonFor(m => m.teacher_gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
+                                            @*@Html.RadioButtonFor((Model => Model.teacher_gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })*@
+                                            @Html.RadioButtonFor(Model =>Model.teacher_gender,"Male")
                                             <label class="form-check-label" for="inlineCheckboxMale" style="margin-right:20px;">Male</label>
                                         </div>
                                         <div class="form-check form-check-inline ml-3">
-                                            @Html.RadioButtonFor(m => m.teacher_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })
+                                            @Html.RadioButtonFor(Model =>Model.teacher_gender,"Female")
+                                            @*@Html.RadioButtonFor(m => m.teacher_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale" })*@
                                             <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                         </div>
                                     </div>
@@ -220,10 +223,13 @@
                                         @Html.TextBoxFor(Model => Model.teacher_pincode, new { @class = "form-control", @placeholder = "Area Code" })
                                     </div>
                                     <div class="col-md-4">
-                                        <button type="submit" class="btn btn-success" style="height: 40px; width: 200px;border-radius: 10px;">Submit</button>
+                                        @*<button type="submit" value="submit" class="btn btn-success" style="height: 40px; width: 200px;border-radius: 10px;">Submit</button>*@
+                                        @*<input type="button" class="form-control" name="submit" value="submit" onclick="call();" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 200px;">*@
+                                       
                                     </div>
                                 </div>
-                                <!-- <input type="submit" class="btn btn-success" id="submit" value="submit" onclick="call();" style="height: 30px; width: 130px;"><br> -->
+                                <input type="submit" class="form-control" name="submit" value="Submit" style="border-radius:10px; background-color: black; color: white; min-width: 50px; width: 200px;" onclick="location.href='@Url.Action("AddTeacher", "Admin")'" formaction="@Url.Action("AddTeacher","Admin")">
+                                @*<button type="button" onclick="location.href='@Url.Action("AddTeacher", "Admin")'">Save</button>*@
                             </div>
                         </div>
                     </form>

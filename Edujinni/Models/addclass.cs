@@ -21,39 +21,49 @@ namespace Edujinni.Models
         public object ViewBag { get;  set; }
 
         //FOR GETTING THE DETAILS
-        public async void gettingdetails()
+        public  void gettingdetails()
         {
-            var model = new addclass();
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://www.edujinni.in/");
-            // Add an Accept header for JSON format.    
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            // List all Names.    
-
-            HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!  
-            var cname = response.Content.ReadAsStringAsync().Result;
-            /* if (response.IsSuccessStatusCode)
-             {
-                 //string classTeacher = "";
-
-                 //var tnames = new List<string>();
-                 //{
-                 //    tnames.Add(cname);
-                 //}
-                 //ViewBag.class_name = tnames;
-                 //TempDataDictionary.
-                 //model.class_name = tnames;
-             }*/
+            client.DefaultRequestHeaders.Accept.Clear();
+            HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!    
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.Content.ReadAsAsync<IEnumerable<string>>();
-                //if (result != null)
-                    //model.class_name = result;
+                var classnames = response.Content.ReadAsStringAsync().Result;
+                ViewBag = classnames;
             }
-            else
-            {
-                //Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
-            }
+            //var model = new addclass();
+            //HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("http://www.edujinni.in/");
+            //// Add an Accept header for JSON format.    
+            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //// List all Names.    
+
+            //HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!  
+            //var cname = response.Content.ReadAsStringAsync().Result;
+            ///* if (response.IsSuccessStatusCode)
+            // {
+            //     //string classTeacher = "";
+
+            //     //var tnames = new List<string>();
+            //     //{
+            //     //    tnames.Add(cname);
+            //     //}
+            //     //ViewBag.class_name = tnames;
+            //     //TempDataDictionary.
+            //     //model.class_name = tnames;
+            // }*/
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    var result = await response.Content.ReadAsAsync<IEnumerable<string>>();
+            //    //if (result != null)
+            //        //model.class_name = result;
+            //}
+            //else
+            //{
+            //    //Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+            //}
         }
         //FOR POSTING THE DETAILS
         [HttpPost]

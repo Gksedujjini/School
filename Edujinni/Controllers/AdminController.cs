@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
@@ -62,33 +63,17 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        //public async Task<ActionResult> classdetails()
-        //{
+        public ActionResult AddStudent()
+        {
+            return View();
+        }
 
-        //    var model = new classdetails();
-
-
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri("https://localhost:44305/");
-        //        client.DefaultRequestHeaders.Accept.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        ViewBag.country = "";
-        //        HttpResponseMessage response = await client.GetAsync("api/v1/doctor/country");
-        //        List<string> li;
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            Country co = new Models.Country();
-        //            li = await response.Content.ReadAsAsync<List<string>>();
-        //            ViewBag.country = li;
-        //        }
-        //    }
-        //    return View();
-        //}
-
+       // [HttpPost]
         public async  Task<ActionResult> AddStudent(addstudent student)
         {
-            student.GETCLASS();
+            addclass a = new addclass();
+            a.gettingdetails();
+            //student.GETCLASS();
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://www.edujinni.in/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -126,21 +111,15 @@ namespace Edujinni.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<ActionResult> AddTeacher(Addteacher addTech)
+        public async Task<ActionResult> AddTeacher(Addteacher Add)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://www.edujinni.in/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Accept.Clear();
-            addTech.insert_by = "ganesh";
-            addTech.insert_date = DateTime.Now;
-            addTech.update_by = "gani";
-            addTech.update_date = DateTime.Now;
-            addTech.class_id = 1;
-            addTech.school_id = 1;
-
-            HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", addTech);
-            Console.WriteLine(response);
+            Add.class_id = 1;
+            Add.school_id = 1;
+            HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", Add);
             if (response.IsSuccessStatusCode == true)
             {
                 Response.Cookies.Clear();
@@ -150,8 +129,6 @@ namespace Edujinni.Controllers
 
             return View();
         }
-
-
         public ActionResult TeacherInfo()
         {
             return View();
