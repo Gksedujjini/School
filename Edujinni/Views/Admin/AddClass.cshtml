@@ -25,75 +25,31 @@
                 margin-bottom:200px;
             }
         </style>
+        @*<script>
+            $(document).ready(function () {
+                $.getJSON("http://www.edujinni.in/classNames/classDetailsList/",function(data)
+                {
+                    $.each(data,function(key,val){
+                        $("<li>"+val+"<li>").appendTo($("#ach"));
+                    })
+                    
+                })
+                })
+        </script>*@
     </head>
     <body>
-        @*<script type="text/javascript">
-
-    function getCities() {
-        var stateID = $('#StudentGender').val();
-        if (stateID > 0)
-        {
-            $.ajax({
-                url: "@Url.Action("GetJsonCity","CollegeDetails")",
-                data: { class_name: class_name },
-                dataType: "json",
-                type: "GET",
-                success: function (data) {
-                    var items = "";
-                    items = "<option value=''>--Choose City--</option>";
-                    $.each(data, function (i, item) {
-                        items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
-                    });
-                    $('#StudentGender').html(items);
-                }
-            });
-        }
-    }
-        </script>*@
-        
-        @{
-//List <Model.gettingdetails()> Teacherlist = new List<Model.gettingdetails()>();
-//List<string> list = new List<string>();
-//{
-//    list.Add();                    
-//}            
-        }
         <div id="vertical">           
                 <p style="font-size:40px;">Add Class</p>
-                <br />
-            @* @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.Locations, new { id = "ddlLocations", @class = "form-control" })*@
-            @*@Html.DropDownListFor(model => model.class_name, ViewBag.teacherlist as SelectList, new { @class = "form-control" })*@            
-            @*@Html.DropDownListFor(Model => Model.class_name,list, "--Select Teacher--", new { @class = "form-control", @placeholder = "Add Class Teacher", @id = "achievements" })*@
-            @*@Html.DropDownListFor(Model => Model.class_name, list, "--Select Teacher--", new SelectList(Model.class_name, "Value", "Text"))*@
-           @*@Html.DropDownList("addclass", new List<SelectListItem>)
-           {
-               new SelectListItem {Text= Model.class_name , selected = true }
-           }*@
-            @*<select id="sltCustomers" name="sltCustomers">               
-                    @foreach (var item in Model.class_name)
-                    {
-                        <option>@item</option>
-                    }
+            @*<select id="ach">
             </select>*@
-            @*<select class="form-control" id="StudentGender" name="StudentGender">
-                <option>@Model.tnames</option>
-            </select>*@
-            @*@foreach (var item in ViewBag.classs)
-            {
-                <span> @item.class_name</span>
-            }*@
-            <select id="classname" name="classname">
-                @foreach (var item in Model.class_name)
-                {
-                    <option>@item</option>
-                }
-            </select>
+                <br />        
+            @Html.DropDownList("teacher",ViewBag.class_name as SelectList, "Select Teacher",new {@class="form-control", @id = "achievements" })
             <br /> 
                 @Html.TextBoxFor(Model => Model.class_name, new { @class = "form-control", @placeholder = "Enter Class Name", @id = "achievements" })
                 <br />
                 @Html.TextBoxFor(Model => Model.class_section_name, new { @class = "form-control", @placeholder = "Enter Section Name", @id = "achievements" })
                 <br />
-                <input type="submit" value="Save" class="btn btn-success" id="achievements" />            
+                <input type="button" value="Add" class="btn btn-success" id="achievements" />            
         </div>
     </body>
 }

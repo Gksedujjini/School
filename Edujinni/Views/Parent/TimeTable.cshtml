@@ -1,0 +1,44 @@
+﻿@model Edujinni.Models.Parent.TimeTable
+@{
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TimeTable</title>
+    <style>
+        label {
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    @{
+        List<SelectListItem> list = new List<SelectListItem>();
+    }
+    <div class="col-md-12 mt-4" style="background-color:#E7E7E7; border-radius:10px;">
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-3">
+                <label>Class</label>
+                @Html.DropDownListFor(Model => Model.classs, list, "Class", new { @class = "form-control" })
+            </div>
+            <div class="col-md-3">
+                <label>Section</label>
+                @Html.DropDownListFor(Model => Model.Section, list, "Section", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-md-3">
+                @Html.DropDownListFor(Model => Model.date, list, "Date", new { @class = "form-control" })
+            </div>
+        </div>
+    <div class="row mt-3">
+        <div class="col-md-10">
+            //ALL TIMETABLES IS SHOWN HERE
+        </div>
+    </div><br />
+    </div><br />
+</body>
+</html>

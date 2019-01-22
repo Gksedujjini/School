@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Edujinni.Models.StudentOverView
+@{
 // Layout = null;
 }
 @using (Html.BeginForm("StudentOverView", "Home", FormMethod.Post))
@@ -29,7 +30,7 @@
             .form-control {
                 border-radius: 20px;
                 background-color: #f2f2f2;
-            }
+            }   
 
             #search {
                 background-color: #f2f2f2;
@@ -88,60 +89,29 @@
         </style>
     </head>
     <body>
-        @*<div class="mt-3">
-            <a href="@Url.Action("Home-","#","Admin")"><label style="float:left;font-size:15px;">Home</label></a><span style="float:left;font-size:15px;">-Students OverView</span>
-        </div>*@
-        <div class="mt-4">
-            <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddStudent","Admin")'"
-                   value="Add Student" style="border-radius:5px; color: white;height:35px; min-width: 50px; width: 150px; float:right; margin-right:10px;">
-            <br />
-        </div>
-        <br />
-
+        @{ 
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
         <div class="container-fluid">
-            <!-- Example split danger button -->
-
-            grid view
-            @*<div class="row mt-3 mb-3">
-                <div class="col-md-3 mt-2">
-                    <div class="">
-                        <select class="form-control">
-                            <option>Class</option>
-                            <option>class1</option>
-                            <option>class2</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-2">
-                    <div class="">
-                        <select class="form-control">
-                            <option>Section</option>
-                            <option>Section1</option>
-                            <option>Section2</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-2">
-                    <div class="inputWithIcon">
-                        <input type="text" class="form-control col-12" id="search" placeholder="Search Student">
-                        <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>*@
-            <div class="row">
-                <div class="col">
-                    <a href="@Url.Action("AddStudent","Admin")">
-                        <i class="fa fa-plus-circle fa-1x" id="upload-data" style=""></i>
-                        <div id="addDiv" style="width:auto;"><label class="ml-2">Add Student</label></div>
-                    </a>
-                </div>
-                <br />
-            </div>
-            @* FOR TESTING PURPOSE  *@
-            <div class="row">
-                @Html.ActionLink("Student Details", "StudentInfo", "Admin")
-            </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            @Html.DropDownListFor(Model => Model.Classs, list, "Class", new { @class = "form-control" })
+       </div>
+        <div class="col-md-6">
+            @Html.DropDownListFor(Model => Model.Section, list, "Section", new { @class = "form-control" })
         </div>
+    </div>
+            <div class="row mt-4">
+                <div class="col-md-12 ml-2" style="background-color:silver;">
+                    students overview will be displayed here
+                </div>
+            </div>
+    <br />
+    @* FOR TESTING PURPOSE  *@
+    <div class="row">
+        @Html.ActionLink("Student Details", "StudentInfo", "Admin")
+    </div>
+</div>
     </body>
 
 }

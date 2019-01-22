@@ -1,0 +1,150 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>Student Overview</title>
+    <style>
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
+        #label{ color:gray;}
+        #boxvalue{background-color:#f2f2f2; border:1px solid lightgray;}
+        #textareabox{min-width:80%;background-color:#f2f2f2; border:1px solid lightgray;}
+    </style>
+</head>
+<body>
+    <div class="row ml-0 mr-2 mt-5" style="width:90%;">
+        <div class="col-md-12 mb-3" id="colcontainer">
+            <br />
+            <div class="row mt-2 justify-content-start">
+               <div class="col-md-4 mt-3">
+                   <div class="col text-left">
+                      <img src="~/Images/test/ic_launcher.png" width="80" height="80"/>
+                   </div>
+               </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">First Name</label>
+                        <input type="text" class="" id="boxvalue" value="Sampath Kumar" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Last Name</label>
+                        <input type="text" class="" id="boxvalue" value="Singh" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Student Id</label>
+                        <input type="text" class="" id="boxvalue" value="45454554" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Class</label>
+                        <input type="text" class="" id="boxvalue" value="Class-4" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Section</label>
+                        <input type="text" class="" id="boxvalue" value="A" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Admission Date</label>
+                        <input type="text" class="" id="boxvalue" value="12-05-2018" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Gender</label>
+                        <input type="text" id="boxvalue" class="" value="Male" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Phone No</label>
+                        <input type="text" id="boxvalue" class="" value="9894568752" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Date of Birth</label>
+                        <input type="text" id="boxvalue" class="" value="24-08-2006" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Grade</label>
+                        <input type="text" id="boxvalue" class="" value="B" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Attendance</label>
+                        <input type="text" id="boxvalue" style="color:red;" class="" value="40%" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Percentage</label>
+                        <input type="text" id="boxvalue" style="color:green;" class="" value="76%" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-start">
+                <div class="col-md-10 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Achievements</label><br />
+                        <textarea name="achievements" id="textareabox">Achievements are displayed here.......</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-start">
+                <div class="col-md-10 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Parent Name</label><br />
+                        <input type="text" id="boxvalue" value="Prasana Kumar" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-start">
+                <div class="col-md-10 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Address</label><br />
+                        <textarea name="achievements" id="textareabox">23-098, Botonical Garedens, Kondapur, Hyderabad-500034</textarea>
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+        </div>
+    </div>
+</body>
+</html>

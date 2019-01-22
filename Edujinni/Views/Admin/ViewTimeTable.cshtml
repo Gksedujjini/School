@@ -71,12 +71,17 @@
         </style>
     </head>
     <body>
+        @{ 
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
         <div class="row">
             <div class="col-md ml-2 mt-2">
                 @*<i class="fa fa-user-circle fa-2x" style="color:silver;float:left;"></i>
                 <label style="color:white; font-size:20px; float:left;">Kakatiya Educational Society</label>*@
-                <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddTimeTable", "Admin")'"
-                       value="Add TimeTable" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:30px;   ">
+                <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddTimeTable", "Admin")'"
+                             style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;   ">
+                    <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Timetable
+                </button>
             </div>
         </div>
        
@@ -103,16 +108,19 @@
                     <div class="col-md-4">datepicker
                     </div>
                 </div>
-            <div class="row">
-                <div class="col">
-                    <a href="@Url.Action("AddTimeTable", "Admin")">
-                        <i class="fa fa-plus-circle" id="upload-data"></i>
-                        <div id="addDiv"><label class="ml-2">Add</label></div>
-                    </a>
-                </div>
-                <br />
+            <div class="row mt-2">
+                grid view 
             </div>
-        </div>
+                <div class="row">
+                    <div class="col">
+                        <a href="@Url.Action("AddTimeTable", "Admin")">
+                            <i class="fa fa-plus-circle" id="upload-data"></i>
+                            <div id="addDiv"><label class="ml-2">Add</label></div>
+                        </a>
+                    </div>
+                    <br />
+                </div>
+            </div>
     </body>
 </html>
 }

@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
         #cntnr {
             background-color: #f2f2f2;
             border-radius: 5px;
-            width: 60%;
+            width: 80%;
         }
         #divper {
             color: white;
@@ -37,7 +37,7 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5" id="cntnr">
+    <div class="container mt-5 mb-3" id="cntnr">
         <div class="row justify-content-center mt-3 mb-3">
             <div class="col-md-6 mt-2">
                 <div class="col">
@@ -61,7 +61,7 @@
         <div class="row justify-content-center mt-3">
             <div class="col-md-12">
                 <div class="col">
-                    <table class="table table-borderless">
+                    <table class="table table-borderless table-responsive">
                         <thead>
                             <tr class="" style="color:white; background-color:green;">
                                 <th scope="col" width="17%">Roll No</th>
@@ -69,7 +69,7 @@
                                 <th scope="col" width="17%">Father Name</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        @*<tbody>
                             <tr class="" style="color:black; background-color:#e6ffff;">
                                 <td scope="col" width="17%">23</td>
                                 <td scope="col" width="66%">Sampath Singh</td>
@@ -80,7 +80,7 @@
                                 <td scope="col" width="66%">Santosh Singh</td>
                                 <td scope="col" width="17%">Prasana kumar</td>
                             </tr>
-                        </tbody>
+                        </tbody>*@
                     </table>
                 </div>
             </div>

@@ -1,0 +1,79 @@
+﻿@model Edujinni.Models.Parent.FeeDetails
+@{
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CompleteFeeDetails</title>
+    <style>
+        label{
+            font-size:17px;
+        }
+    </style>
+</head>
+<body>
+    <div class="col mt-2 " style="background-color:#E7E7E7; border-radius:10px;">
+        <div class="row  justify-content-center">
+            <label>Term-1</label>
+            <div class="col-md-3">
+                <label>Paid Amount</label>
+                @Html.TextBoxFor(Model => Model.PaidAmount, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-11 mt-4 ml-2 mr-2" style="background-color:white; border-radius:10px;">
+                <div class="col-md-3 mb-3">
+                    <label>Student Id</label>
+                    @Html.TextBoxFor(Model => Model.StudentId, new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    <label>Student Name</label>
+                    @Html.TextBoxFor(Model => Model.StudentName, new { @class = "form-control" })
+                </div>
+                <div class="col-md-3">
+                    <label>Class</label>
+                    @Html.TextBoxFor(Model => Model.Classs, new { @class = "form-control" })
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label>Section</label>
+                    @Html.TextBoxFor(Model => Model.Section, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-11 mt-4 ml-2 mr-2 " style="background-color:white; border-radius:10px;">
+                <div class="col-md-3 mb-3">
+                    <label>Total Academic Fee</label>
+                    <span>@Html.TextBoxFor(Model => Model.TotalAcademicFee, new { @class = "form-control" })</span>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label>Term-1 Due Amount</label>
+                    <span>@Html.TextBoxFor(Model=>Model.DueAmount,new {@class="form-control"})</span>
+                </div>
+            </div>
+        </div><br />
+        <div class="row justify-content-center">
+        <label>Terms List</label>
+            <div class="col-md-11  ml-2 mr-2 " style="background-color:white; border-radius:10px;">
+              //TERM FEE LIST ARE SHOWN HERE IN GRID VIEW
+            </div>
+        </div><br />
+        <div class="row justify-content-center">
+            <div class="col-md-11 mt-4 ml-2 mr-2 " style="background-color:white; border-radius:10px;">
+                <div class="col-md-3 mb-3">
+                    <label>Total Discount</label>
+                    <span>@Html.TextBoxFor(Model => Model.TotalDiscount, new { @class = "form-control" })</span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Total Amount to be paid</label>
+                    <span>@Html.TextBoxFor(Model => Model.TotalAmountToBePaid, new { @class = "form-control" })</span>
+                </div>
+            </div>
+        </div><br />
+    </div>
+   
+</body>
+</html>

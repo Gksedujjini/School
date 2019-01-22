@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Edujinni.Models.AddResultView
+@{
 // Layout = null;
 }
 @using (Html.BeginForm("AddResultView", "Home", FormMethod.Post))
@@ -70,78 +71,58 @@
                 #pname{ color:black;}
                 #box{ background-color:white; border-radius:15px;}
                 #rankbox{background-color:lightyellow;}
+       #addDiv {
+            width: 58px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+         #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 55px;
+            color: green;
+            width: 40px;
+            margin-top: -8px;
+        }
+
         </style>
     </head>
     <body>
+        @{ 
+            List<SelectListItem> list = new List<SelectListItem>();
+        }    
         <div class="container-fluid">
                 <!-- Example split danger button -->
                 <div class="row mt-3 mb-3">
                   <div class="col-md-3 mt-2">
                       <div class="col">
-                          <select class="form-control">
-                              <option>class1</option>
-                              <option>class2</option>
-                          </select>
+                         @Html.DropDownListFor(Model=>Model.classs, list,"Class", new { @class="form-control"})
                       </div>
                   </div>  
                     <div class="col-md-3 mt-2">
                         <div class="col">
-                            <select class="form-control">
-                                <option>class1</option>
-                                <option>class2</option>
-                            </select>
+                            @Html.DropDownListFor(Model => Model.section, list, "Section", new { @class = "form-control" })
                         </div>
                     </div>  
                     <div class="col-md-3 mt-2">
                         <div class="col">
-                            <select class="form-control">
-                                <option>class1</option>
-                                <option>class2</option>
-                            </select>
+                            @Html.DropDownListFor(Model => Model.examtype, list, "Exam Type", new { @class = "form-control" })
                         </div>
                     </div>  
-                    <div class="col" style="width:100%;">
+                    <div class="col mt-2" style="width:100%;">
                         <div class="inputWithIcon">
-                            <input type="text" class="form-control col-12" id="search" placeholder="Search Student">
+                            <input type="text" class="form-control col-12" id="search" placeholder="Search Students">
                             <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
                         </div>
                     </div>  
             </div>
-            @*<div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="col" id="box">
-                        <div class="row">
-                            <div class="col-md-6 mt-4 text-left">
-                            <p id="pheading">Name</p>
-                            <p id="pname">Sampath Kumar</p>
-                            </div>
-                            <div class="col-md-6 mt-4 text-left">
-                                <p id="pheading">Father Name</p>
-                                <p id="pname">Sampath Kumar</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mt-4 text-left">
-                                <p id="pheading">Student Id</p>
-                                <p id="pname">4554545</p>
-                            </div>
-                            <div class="col-md-6 mt-4 text-left">
-                                <p id="pheading">Type of Exam</p>
-                                <p id="pname">Unit Text-1</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 mt-4 text-left">
-                                <div class="col" id="rankbox">
-                                    <p id="pheading">Student Id</p>
-                                    <p id="pname">4554545</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>*@
+            @* DETAILS STARTED *@
+                <a href="@Url.Action("AddMarks","Admin")">Add Student Marks</a>
+            @* DETAILS ENDED *@          
         </div>
     </body>
 

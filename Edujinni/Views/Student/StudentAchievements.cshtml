@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>Student Achievements</title>
+    <style>
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        #label {
+            color: gray;
+        }
+
+        #boxvalue {
+            background-color: white;
+            border: none;
+            color: darkgreen;
+            font-weight: bold;
+            width:100%
+        }
+
+        #textareabox {
+            min-width: 80%;
+            border-radius:10px;
+            background-color: #f2f2f2;
+        }
+        #innerdiv{background-color:white; border-radius:10px;}
+    </style>
+</head>
+<body>
+    <div class="row ml-0 mr-2 mt-5" style="width:90%;">
+        <div class="col-md-12 mb-3" id="colcontainer">
+            <br />
+            <div class="col" id="innerdiv">
+            <div class="row mt-2 justify-content-center">
+                <div class="col-md-4 mt-2">
+                    <div class="col text-left">
+                        <label id="label">Activity Name</label><br />
+                        <input type="text" class="" id="boxvalue" value="Football" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-2">
+                    <div class="col text-left">
+                        <label id="label">Date</label><br />
+                        <input type="text" class="" id="boxvalue" value="12-09-2017" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-0">
+                        &nbsp;
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center">
+                <div class="col-md-4 mt-2">
+                    <div class="col text-left">
+                        <label id="label">Student Name</label>
+                        <input type="text" class="" id="boxvalue" value="Sampath Kumar" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-2">
+                    <div class="col text-left">
+                        <label id="label">Class</label>
+                        <input type="text" class="" id="boxvalue" value="5" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-2">
+                    <div class="col text-left">
+                        <label id="label" style="color:black;">Section</label>
+                        <input type="text" class="" id="boxvalue" value="A" />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row mt-2 justify-content-start">
+                <div class="col-md-10 mt-2">
+                    <div class="col text-left">
+                        <textarea name="achievements" id="textareabox">Suresh won the 1st price in football</textarea>
+                    </div>
+                </div>
+            </div><br />
+            </div>
+            <br /><br />
+        </div>
+    </div>
+</body>
+</html>

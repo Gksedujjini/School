@@ -77,11 +77,14 @@
 </head>
 <body>
     <div class="row" style="background-color:blue;">
-        <div class="col-md-12 ml-2 mt-2">
+        <div class="col-md-12 ml-2 mt-2 mb-2">
             <i class="fa fa-user-circle fa-2x" style="color:silver; margin-bottom:5px; margin-right:10px; float:left;"></i>
-            <label style="color:white; float:left;">Kakatiya Educational Society</label>
-            <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddAchievements","Admin")'"
-                   value="Add Achievements" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">
+            <label style="color:white; float:left; font-size:medium;">Kakatiya Educational Society</label>
+            @*<input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddAchievements","Admin")'"
+                   value="Add Achievements" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">*@
+            <button type="button" class="btn btn-success btn-sm" onclick="location.href='@Url.Action("AddAchievements","Admin")'" style="border-radius:5px; color: white;height:35px; min-width: 60px; width: 160px; float:right; margin-right:10px;">
+                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-2px;"></span><h5 style="margin-top:3px;">&nbsp;Add Achievements</h5>
+            </button>
         </div>
     </div>
     <div class="container mt-4" id="cntnr">
@@ -95,12 +98,12 @@
                 <div class="col-md-5 mt-1" id="div1">
                     <div class="row">
                         <div class="col ml-2">
-                            <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
+                            <input type="button" class="form-control" id="input1" name="submit" value="Edit" onclick="location.href='@Url.Action("AddAchievements","Admin")'">
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col ml-2 mb-2">
-                            <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
+                            <input type="button" id="input2" class="form-control" name="submit" value="Delete"  onclick="location.href='@Url.Action("AddAchievements","Admin")'">
                         </div>
                     </div>
             </div>  
@@ -115,5 +118,6 @@
             <br />
         </div>
     </div>
+    <br />
 </body>
 </html>

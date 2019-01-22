@@ -15,6 +15,7 @@ namespace Edujinni.Models
         public string section { get; set; }
         public string RoolNo { get; set; }
         public string StudentId { get; set; }
+        public string AdmissionDate {get; set;}
         public DateTime Dob { get; set; }
         public string FatherName { get; set; }
         public Int64 FatherMobileNo { get; set; }
@@ -32,7 +33,12 @@ namespace Edujinni.Models
         public string City { get; set; }
         public string State { get; set; }
         public string AreaCode { get; set; }   //can be used for pin code in edit student 
-        
+        public string mobile { get; set; }
+        public string grade { get; set; }
+        public string attendance { get; set; }
+        public Int32 marks { get; set; }
+        public string Achievements { get; set; }
+        public string Address { get; set; }
         public string Insert(StudentModel Sm)
         {
             SqlConnection con =null;

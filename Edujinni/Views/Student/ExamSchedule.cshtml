@@ -1,0 +1,77 @@
+﻿@model Edujinni.Models.Student.ExamSchedule
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExamSchedule</title>
+    <style>
+         #image1 {
+            margin-left: 10px;
+            background-color: white;
+            width: 130px;
+            height: 100px;
+            text-align: right;
+            border-radius: 10px;
+        }
+
+        #imguser {
+            color: blue;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="col-md-12 mt-4" style="background-color:#E7E7E7; border-radius:10px;">
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-3">
+               <label>Class</label>
+                @Html.TextBoxFor(Model=>Model.Classs,new {@class="form-control"})
+            </div>
+            <div class="col-md-3">
+                <label>Section</label>
+                @Html.TextBoxFor(Model => Model.Section, new { @class = "form-control" })
+            </div>
+        </div>
+            <div class="row ml-4 mt-2">
+                <label>Exam Schedules</label>
+            </div>
+        @*<div class="row justify-content-center">
+                <div class="col-md-6 mt-2 ml-4" style="background-color:white; border-radius:10px;">
+                    <div class="mt-2" id="image1">
+                        <center><img src="~/Images/Group 315@2x.png" id="imguser"></center>
+                    </div>
+                    <div class="col ml-4">
+                        <div class="row ">
+                            <div class="col-md-12 text-left mt-2">
+                                <label id="ename">Exam Type</label><br />
+                                @Html.TextBoxFor(Model => Model.ExamType, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6 text-left">
+                                <label id="ename">From Date</label><br />
+                                @Html.TextBoxFor(Model => Model.ToDate, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6 text-left">
+                                <label id="ename">To Date</label><br />
+                                @Html.TextBoxFor(Model => Model.ToDate, new { @class = "form-control" })
+                            </div>
+                        </div><br />
+                    </div>
+                </div>
+        </div>*@
+        <div class="row">
+            <div class="col ml-3 mr-3" style="background-color:white; border-radius:10px;">
+                //GRID CONTAINER
+            </div>
+        </div>
+        <br />
+    <a href="@Url.Action("ViewExamSchedule","Student")">View Exam Schedule</a>
+    </div><br />
+</body>
+</html>

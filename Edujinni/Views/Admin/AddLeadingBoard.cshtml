@@ -1,4 +1,4 @@
-﻿@model Edujinni.Models.TimeTable
+﻿@model Edujinni.Models.LeadingBoard
 @{
 //Layout = null;
 }
@@ -43,68 +43,57 @@
             }
         </style>
     </head>
-    <body>        
-        <div class="container mt-4 col-md-12 col-xs-12" id="cntnr">
-    <div class="row mt-2">
-        <div class="col-md-5">
-            <div class="col">
-                <select name="Class" class="form-control">
-                    <option>Class</option>
-                    <option>Section</option>
-                    <option>Section</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <div class="col">
-                <select name="Section" class="form-control">
-                    <option>Section</option>
-                    <option>Section</option>
-                    <option>Section</option>
-                </select>
-            </div>
-        </div>
-    </div>
-             <div class="row mt-2">
-                 <div class="col-md-10">
-                     <div class="col">
-                         <select name="Name" class="form-control">
-                             <option>Select Name</option>
-                             <option>Section</option>
-                             <option>Section</option>
-                         </select>
-                     </div>
-                 </div>
-                 
-             </div>
-             <div class="row mt-2">
-                 <div class="col-md-5">
-                     <div class="col">
-                         <select name="section" class="form-control">
-                             <option>Select Exam</option>
-                             <option>Section</option>
-                             <option>Section</option>
-                         </select>
-                     </div>
-                 </div>
-                 <div class="col-md-5">
-                     <div class="col">
-                         <select name="section" class="form-control">
-                             <option>Select Rank</option>
-                             <option>Section</option>
-                             <option>Section</option>
-                         </select>
-                     </div>
-                 </div>
-             </div>
-            <div class="row mt-2">
-                <div class="col-md-10">
-                    <div class="col align-self-center">
-                        <input type="button" class="form-control" style="background-color:forestgreen; color:white;" value="Select"/>
+    <body>  
+        @{ 
+            List<SelectListItem> list = new List<SelectListItem>();
+        }
+        <center>
+            <div class="row ml-5 mt-4">
+                <div class="container mt-4 col-md-10 col-xs-12 ">
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.classs, list, "Class", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.section, list, "Section", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row mt-2">
+                        <div class="col-md-10">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.name, list, "Select Name", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.exam, list, "Select Exam", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col">
+                                @Html.DropDownListFor(Model => Model.rank, list, "Select Rank", new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <div class="col align-self-center">
+                                <input type="button" class="form-control" style="background-color:forestgreen; color:white;" value="Select" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-</div>
+        </center>
     </body>
 </html>
 }

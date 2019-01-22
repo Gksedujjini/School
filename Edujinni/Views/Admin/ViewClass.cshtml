@@ -85,11 +85,15 @@ td, th {
 </head>
 <body>
     <div class="row" style="background-color:blue;">
-        <div class="col-md ml-2 mt-2">
+        <div class="col-md ml-2 mt-2 mb-2">
             <i class="fa fa-user-circle fa-2x" style="color:silver;"></i>
             <label style="color:white;">Kakatiya Educational Society</label>
-            <input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
-                   value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">
+            @*<input type="button" class="btn btn-success" name="submit" onclick="location.href='@Url.Action("AddClass","Admin")'"
+                   value="Add Class" style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px;">*@
+            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddClass", "Admin")'"
+                    style="border-radius:5px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;">
+                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Class
+            </button>
         </div>
     </div>
     <div class="container mt-4" id="cntnr">
@@ -98,11 +102,13 @@ td, th {
             List<SelectListItem> list = new List<SelectListItem>();
         }
         <div class="col-md-6">
-            @Html.DropDownListFor(Model => Model.class_name, list, new { @class = "form-control" })
+            @Html.DropDownListFor(Model => Model.class_name, list,"Class", new { @class = "form-control" })
         </div>
-        <br />        
-        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">           
-            <div class="col-md-6" style="background-color:white;border-radius:15px;">
+        <br />   
+        <br />     
+        <div class="row mt-3 ml-3 mr-4" style="background-color:white; border-radius:15px;">   
+            //DATA IS SHOWN IN GRID VIEW      
+            @*<div class="col-md-6" style="background-color:white;border-radius:15px;">
                 <table>
                     <tbody>
                         <tr>
@@ -137,8 +143,8 @@ td, th {
                         </tr>  
                     </tbody>
                 </table> 
-            </div>
-            <div class="col-md-5 mt-1" id="div1">
+            </div>*@
+            @*<div class="col-md-5 mt-1" id="div1">
                 <div class="row">
                     <div class="col ml-2">
                         <input type="submit" class="form-control" id="input1" name="submit" value="Edit">
@@ -149,8 +155,9 @@ td, th {
                         <input type="submit" id="input2" class="form-control" name="submit" value="Delete">
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
+        <br />
         <div class="row">
             <div class="col">
                 <a href="@Url.Action("AddClass","Admin")">
@@ -160,6 +167,6 @@ td, th {
             </div>
             <br />
         </div>
-    </div>
+    </div><br />
 </body>
 </html>

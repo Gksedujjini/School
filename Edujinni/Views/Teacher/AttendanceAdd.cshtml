@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -18,96 +18,67 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>AttendanceView</title>
+    <title>Add Attendance</title>
     <style>
         .form-control {
             border-radius: 20px;
-            background-color: #f2f2f2;
+            background-color: white;
         }
-
-        #search {
-            background-color: #f2f2f2;
-            border: none;
-            border-radius: 20px;
-            margin: 0px 0;
-            outline: none;
-            padding: 8px;
-            box-sizing: border-box;
-            transition: 0.3s;
-        }
-
-        .inputWithIcon #search {
-            padding-left: 40px;
-        }
-
-        .inputWithIcon {
-            position: relative;
-        }
-
-            .inputWithIcon i {
-                position: absolute;
-                left: 0;
-                top: 1px;
-                padding: 9px 15px;
-                color: black;
-                transition: 0.3s;
-            }
-
-            .inputWithIcon.inputIconBg i {
-                background-color: #aaa;
-                color: black;
-                padding: 9px 4px;
-                border-radius: 4px 0 0 4px;
-            }
+        #colcontainer{background-color: #f2f2f2; width:100%; border-radius:10px;}
     </style>
 </head>
 <body>
-    <div class="container mt-5" style="width:65%">
-        <div class="row justify-content-center mt-3 mb-3">
-            <div class="col-md-3 mt-2">
-                <div class="col">
-                    <select name="class" class="form-control">
-                        <option>Class</option>
-                        <option>class2</option>
-                    </select>
+    <div class="container mt-5" style="width:100%">
+        <div class="row" style="width:87%;">
+            <div class="col-md-12 mb-3" id="colcontainer">
+                <div class="row justify-content-center mt-3 mb-3">
+                    <div class="col-md-4 mt-2">
+                        <div class="col">
+                            <select name="class" class="form-control">
+                                <option>Class</option>
+                                <option>class2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <div class="col">
+                            <select name="Section" class="form-control">
+                                <option>Section</option>
+                                <option>class2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <div class="col">
+                            <select name="time" class="form-control">
+                                <option>FirstHalf</option>
+                                <option>class2</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 mt-2">
-                <div class="col">
-                    <select name="Section" class="form-control">
-                        <option>Section</option>
-                        <option>class2</option>
-                    </select>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-md-12">
+                        <div class="col">
+                            <table class="table table-borderless table-responsive">
+                                <thead>
+                                    <tr class="table-active" style="color:white; background-color:green;">
+                                        <th scope="col" width="17%">Roll No</th>
+                                        <th scope="col" width="33%">Name</th>
+                                        <th scope="col" width="33%">Parent Names</th>
+                                        <th scope="col" width="17%">Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 mt-2">
-                <div class="col">
-                    <select name="time" class="form-control">
-                        <option>FirstHalf</option>
-                        <option>class2</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-md-9">
-                <div class="col">
-                    <table class="table table-borderless">
-                        <thead>
-                            <tr class="table-active">
-                                <th scope="col" width="17%">Roll No</th>
-                                <th scope="col" width="66%">Student Name</th>
-                                <th scope="col" width="17%">Percentage</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-             </div>
-        </div>
-        <div class="row justify-content-center mb-3 mt-3">
-            <div class="col-md-4">
-                <div class="col">
-                    <input type="button" class="form-control" value="Save" style="color:white; background-color:green;" />
+                <div class="row justify-content-center mb-3 mt-3">
+                    <div class="col-md-4">
+                        <div class="col">
+                            <input type="button" class="form-control" value="Save" style="color:white; background-color:green;" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
