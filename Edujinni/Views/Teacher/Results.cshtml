@@ -1,7 +1,6 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -23,7 +22,7 @@
             border-radius: 20px;
             background-color: white;
         }
-        #cntnr{ background-color: #f2f2f2; border-radius: 5px; width:70%;}
+        #cntnr{ background-color: #f2f2f2; border-radius: 5px; width:80%;}
         #search {
             background-color: white;
             border: none;
@@ -34,15 +33,12 @@
             box-sizing: border-box;
             transition: 0.3s;
         }
-
         .inputWithIcon #search {
             padding-left: 40px;
         }
-
         .inputWithIcon {
             position: relative;
         }
-
             .inputWithIcon i {
                 position: absolute;
                 left: 0;
@@ -51,7 +47,6 @@
                 color: black;
                 transition: 0.3s;
             }
-
             .inputWithIcon.inputIconBg i {
                 background-color: #aaa;
                 color: black;
@@ -62,7 +57,7 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5" id="cntnr">
+    <div class="container mt-5 mb-3" id="cntnr">
         <div class="row justify-content-center mt-3 mb-3">
             <div class="col-md-6 mt-2">
                 <div class="col">
@@ -107,7 +102,7 @@
         <div class="row justify-content-center mt-3">
             <div class="col-md-12">
                 <div class="col">
-                    <table class="table table-borderless">
+                    <table class="table table-borderless table-responsive">
                         <thead>
                             <tr class="" style="color:white; background-color:green;">
                                 <th scope="col" width="17%">Roll No</th>

@@ -1,5 +1,4 @@
-﻿@model Edujinni.Models.SyllabusModel
-@{
+﻿@{
     Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
@@ -17,7 +16,7 @@
             crossorigin="anonymous"></script>
     <link href="Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="Content/sb-admin.css" rel="stylesheet">
-    <title>Add Syllabus</title>
+    <title>Time Table</title>
     <style>
         .form-control {
             border-radius: 15px;
@@ -25,13 +24,23 @@
             height: 35px;
             font-size: 15px;
         }
-        #btnsave{ background-color:forestgreen; color:white;}
+        #btnsave {
+            background-color: forestgreen;
+            color: white;
+        }
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="row ml-0 mr-2 mt-5" style="width:80%;">
-        <div class="col-md-12 col-md-offset-0 mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
-            <div class="row mt-4">
+        <div class="col-md-12 col-md-offset-0 mr-1 mb-3" id="colcontainer">
+            <br />
+            <center><b>Time Table</b></center>
+            <div class="row mt-4 justify-content-center">
                 <div class="col-md-6 mt-2">
                     <div class="col">
                         <select name="Class" class="form-control">
@@ -43,38 +52,17 @@
                 </div>
                 <div class="col-md-6 mt-2">
                     <div class="col">
-                        <select name="Unit" class="form-control">
-                            <option>Unit</option>
+                        <select name="Section" class="form-control">
+                            <option>Section</option>
                             <option>Section</option>
                             <option>Section</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-6 mt-2">
-                    <div class="col">
-                        @Html.TextBoxFor(Model => Model.Unit, new { @class = "form-control", @placeholder = "Unit" })
-                    </div>
-                </div>
-                <div class="col-md-6 mt-2">
-                    <div class="col">
-                        @Html.TextBoxFor(Model => Model.SubUnit, new { @class = "form-control", @placeholder = "Sub-Unit" })
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
+            <div class="row mt-4 justify-content-center">
                 <div class="col-md-12 mt-2">
-                    <div class="col">
-                        @Html.TextAreaFor(Model => Model.Topics, new { @class = "form-control", @placeholder = "Enter the topic name" })
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-12 mt-2">
-                    <div class="col">
-                        <input type="submit" value="Save" class="form-control" id="btnsave"/>
-                    </div>
+                   <label>calendar will be here</label>
                 </div>
             </div>
             <br /><br /><br />

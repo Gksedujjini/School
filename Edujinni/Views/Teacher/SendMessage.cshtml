@@ -1,6 +1,6 @@
-﻿@model Edujinni.Models.DiaryModel
+﻿@model Edujinni.Models.MessageModel
 @{
-Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ Layout = "~/Views/Shared/_TeacherLayout.cshtml";
             crossorigin="anonymous"></script>
     <link href="Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="Content/sb-admin.css" rel="stylesheet">
-    <title>Add Diary</title>
+    <title>Send Message</title>
     <style>
         .form-control {
             border-radius: 15px;
@@ -29,19 +29,42 @@ Layout = "~/Views/Shared/_TeacherLayout.cshtml";
             background-color: forestgreen;
             color: white;
         }
-        #colcontainer{background-color: #f2f2f2; width:100%; border-radius:10px;}
+        #btnsearch{background-color:black; color:white;}
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="row ml-0 mr-2 mt-5" style="width:80%;">
         <div class="col-md-12 col-md-offset-0 mr-1 mb-3" id="colcontainer">
             <br />
-            <center><b>Add Work</b></center>
+            <center><b>Send Message to</b></center>
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        @Html.TextAreaFor(Model => Model.Message, new { @class = "form-control", @placeholder = "Write Message" })
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 mt-2">
+                    <div class="col">
+                        <select name="to" class="form-control">
+                            <option>All Students</option>
+                            <option>Section</option>
+                            <option>Section</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="row mt-4">
                 <div class="col-md-6 mt-2">
                     <div class="col">
                         <select name="Class" class="form-control">
-                            <option>Select Class</option>
+                            <option>Class</option>
                             <option>Section</option>
                             <option>Section</option>
                         </select>
@@ -60,48 +83,38 @@ Layout = "~/Views/Shared/_TeacherLayout.cshtml";
             <div class="row mt-4">
                 <div class="col-md-12 mt-2">
                     <div class="col">
-                        @Html.TextBoxFor(Model => Model.Date, new { @type="date", @class = "form-control", @placeholder = "Select Date" })
+                        <input type="submit" value="Search" class="form-control" id="btnsearch" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-start">
+                <div class="col-md-12 mt-4">
+                    <div class="col text-left">
+                        <label class="checkbox-inline ml-1">
+                            <input type="checkbox" value=""><span class="mt-1">Select All</span>
+                        </label>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-md-6 mt-2">
+                <div class="col-md-12">
                     <div class="col">
-                        <select name="Subject" class="form-control">
-                            <option>Subject</option>
-                            <option>Section</option>
-                            <option>Section</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-2">
-                    <div class="col">
-                        <select name="Unit" class="form-control">
-                            <option>Unit</option>
-                            <option>Section</option>
-                            <option>Section</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-12 mt-2">
-                    <div class="col">
-                        @Html.TextAreaFor(Model => Model.ClassRelatedTest, new { @class = "form-control", @placeholder = "Today class related test..." })
+                        <table class="table table-borderless" style="width:100%">
+                            <thead>
+                                <tr class="" style="color:black; background-color:lightgray;">
+                                    <td scope="col" style="width:30%;">Id</td>
+                                    <td scope="col" style="width:40%;">Student Name</td>
+                                    <td scope="col" style="width:30%;">Roll No</td>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-12 mt-2">
                     <div class="col">
-                        @Html.TextAreaFor(Model => Model.HomeWork, new { @class = "form-control", @placeholder = "Enter homework here" })
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-12 mt-2">
-                    <div class="col">
-                        <input type="submit" value="Save" class="form-control" id="btnsave" />
+                        <input type="submit" value="Send" class="form-control" id="btnsave" />
                     </div>
                 </div>
             </div>

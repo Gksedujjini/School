@@ -52,25 +52,11 @@
         #ename{ color: grey; font-size:12px;}
         #evtcontent{ text-align:left; font-size:13px;}
         #editbtn{ border-radius:20px; width:100px;}
-        #divlast
-        {
-            margin-right:35px;
-
-        }
+        #divlast{margin-right:135px;}
     </style>
 </head>
-<body>
-    <div class="row">
-        <div class="col-md ml-2 mt-2">
-            @*<i class="fa fa-user-circle fa-2x" style="color:silver;float:left;"></i>
-                <label style="color:white; font-size:20px; float:left;">Kakatiya Educational Society</label>*@
-            <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddEventsView", "Events")'"
-                    style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;   ">
-                <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Events
-            </button>
-        </div>
-    </div>
-        <div class="row ml-0 mr-2 mt-3">               
+   <body>
+        <div class="row ml-0 mr-2 mt-3">
             <div class="col-md-8 col-md-offset-2 mr-1 mb-3" style="background-color: #f2f2f2; width:70%; border-radius:10px;">
                 <div class="row mt-3">
                     <div class="mt-2" id="image1">
@@ -97,7 +83,7 @@
                         
                     </div>
                     <div class="col align-self-end">
-                        <input class="btn btn-success" type="button" name="edit" value="Edit" id="editbtn" onclick="location.href='@Url.Action("AddEventsView", "Events")'"/>
+                        <input class="btn btn-success" type="submit" name="submit" value="Edit" id="editbtn" />
                     </div>
                     <div class="col align-self-center">
                         <input type="submit" class="btn btn-danger" name="submit" value="Delete" id="editbtn" />
@@ -146,6 +132,7 @@
         <div class="col" id="divlast">
             <a href="@Url.Action("AddEventsView","Events")">
                 <i class="fa fa-plus-circle" id="upload-data"></i>
+
                 <div id="addDiv"><label class="ml-2 mt-2">Add</label></div>
             </a>
         </div>

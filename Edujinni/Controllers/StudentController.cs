@@ -61,6 +61,5 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-
     }
 }

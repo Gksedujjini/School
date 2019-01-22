@@ -17,16 +17,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Events View</title>
+    <title>Leave Request</title>
     <style>
         #cntnr {
             background-color: #f2f2f2;
             border-radius: 5px;
             width: 80%;
-        }
-        .form-control {
-            background-color: white;
-            border-radius: 20px;
         }
         #upload-data {
             margin-right: auto;
@@ -39,7 +35,7 @@
         #addDiv {
             width: 58px;
             float: right;
-            margin-top: 7px;
+            margin-top: 10px;
             border-radius: 5px;
             margin-right: -5px;
             background-color: green;
@@ -50,20 +46,30 @@
 <body>
     <div class="row align-content-end mt-5 mb-3" style="width:84%;">
         <div class="col">
-            <button type="button" onclick="location.href = '/Teacher/AddEvent'" class="btn btn-success btn-sm" style="float:right; border-radius:10px;">
-                <span class="glyphicon glyphicon-plus-sign" style=""></span> <span>Add Events</span>
+            <button type="button" onclick="location.href = '/Teacher/ApplyLeave'" class="btn btn-success btn-sm" style="float:right; border-radius:10px;">
+                <span class="glyphicon glyphicon-plus-sign" style=""></span> <span>Apply Leave</span>
             </button>
         </div>
     </div>
-    <div class="container mt-2 mb-3" id="cntnr">
-        <div class="row justify-content-center mt-3 mb-3">
-            content will be here
+    <div class="container mt-3 mb-3" id="cntnr">
+        @*<div class="row align-content-end mt-3 mb-3">
+                <div class="col">
+                    <button type="button" onclick="location.href = '/Teacher/AddAchievement'" class="btn btn-success btn-sm" style="float:right;">
+                        <span class="glyphicon glyphicon-plus-sign" style=""></span> <span>Add Achievements</span>
+                    </button>
+                </div>
+            </div>*@
+        <div class="row align-center-end mt-3 mb-3">
+            <div class="col">
+                <br /><br /><br />Content<br /><br /><br />
+            </div>
         </div>
         <div class="row mt-3 mb-3">
             <div class="col" style="width:100%;">
-                <a href="@Url.Action("AddEvent","Teacher")">
+                <a href="@Url.Action("ApplyLeave","Teacher")">
                     <i class="fa fa-plus-circle" id="upload-data"></i>
-                    <div id="addDiv"><label class="ml-2 mt-1">Add</label></div>
+
+                    <div id="addDiv"><label class="ml-2 mt-1">Apply</label></div>
                 </a>
             </div>
         </div>

@@ -1,5 +1,5 @@
 ﻿@{
-//Layout = null;
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -17,7 +17,6 @@
     <link href="Content/all.min.css" rel="stylesheet" type="text/css">
     <link href="Content/sb-admin.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" rel="text/javascript" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" rel="text/javascript" />
     <title>Diary View</title>
@@ -28,7 +27,6 @@
             height: 35px;
             font-size: 15px;
         }
-
         #upload-data {
             margin-right: auto;
             float: right;
@@ -50,19 +48,18 @@
     </style>
 </head>
 <body>
-    <div class="container">
-    <div class="row ml-0 mr-2 mt-3 justify-content-center" style="width:80%;">
-        <div class="col-md-10 align-self-center mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
+    <div class="row ml-0 mr-2 mt-5 justify-content-center" style="width:80%;">
+        <div class="col-md-12 align-self-center mr-1 mb-3" style="background-color: #f2f2f2; width:100%; border-radius:10px;">
             <div class="row mt-4">
                 <div class="col-md-4 mt-2 text-lef">
-                    <label>Class</label>
-                    <div class="col">
+                    <div class="col text-left">
+                        <label>&nbsp;&nbsp;Class</label>
                         <input type="text" class="form-control" placeholder="Class-7" />
                     </div>
                 </div>
                 <div class="col-md-4 mt-2 text-lef">
-                    <label>Section</label>
-                    <div class="col">
+                    <div class="col text-left">
+                        <label>&nbsp;Section</label>
                         <input type="text" class="form-control" placeholder="A"/>
                     </div>
                 </div>
@@ -97,7 +94,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 </html>

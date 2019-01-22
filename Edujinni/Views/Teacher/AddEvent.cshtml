@@ -1,6 +1,6 @@
 ﻿@model Edujinni.Models.EventsModel
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@
         #cntnr {
             background-color: #f2f2f2;
             border-radius: 5px;
-            width: 60%;
+            width: 90%;
         }
          #upload-data1 {
                 font-size: 1.6em;
@@ -66,7 +66,7 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5" id="cntnr">
+    <div class="container mt-5 mb-3" id="cntnr">
         <div class="row justify-content-center mt-3 mb-3">
             <div class="col-md-8 mt-2">
                 <div class="col justify-content-center">
@@ -84,7 +84,7 @@
             <div class="col-md-8 mt-2">
                 <div class="col">
                     @Html.TextBoxFor(Model => Model.EventName, new { @class = "form-control", @placeholder = "Select Event Date" })
-                    <span class="glyphicon glyphicon-calendar form-control-feedback mr-5"></span>
+                    <span class="glyphicon glyphicon-calendar form-control-feedback mr-4" style="color:gray;"></span>
                 </div>
             </div>
         </div>

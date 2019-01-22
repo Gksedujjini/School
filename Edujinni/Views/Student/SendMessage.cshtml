@@ -1,0 +1,80 @@
+﻿@model Edujinni.Models.Student.MessageModel
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>Send Message</title>
+    <style>
+        .form-control {
+            border-radius: 15px;
+            background-color: white;
+            height: 35px;
+            font-size: 15px;
+        }
+
+        #btnsave {
+            background-color: forestgreen;
+            color: white;
+        }
+
+        #btnsearch {
+            background-color: black;
+            color: white;
+        }
+
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row mt-5 justify-content-center" style="width:80%;">
+        <div class="col-md-10 col-md-offset-0 mr-1 mb-3" id="colcontainer">
+            <br />
+            <center><b>Send Message to</b></center>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-md-10 mt-2">
+                    <div class="col">
+                        @Html.TextAreaFor(Model => Model.Message, new { @class = "form-control", @placeholder = "Write Message" })
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-md-10 mt-2">
+                    <div class="col">
+                        <select name="to" class="form-control">
+                            <option>Select Teacher</option>
+                            <option>Teacher1</option>
+                            <option>Teacher2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-md-10 mt-2">
+                    <div class="col">
+                        <input type="button" value="Send" class="form-control" id="btnsave" />
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+        </div>
+    </div>
+</body>
+</html>
