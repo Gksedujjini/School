@@ -21,7 +21,7 @@ namespace Edujinni.Models
         public object ViewBag { get;  set; }
 
         //FOR GETTING THE DETAILS
-        public void gettingdetails()
+        public async void gettingdetails()
         {
             var model = new addclass();
             HttpClient client = new HttpClient();
@@ -29,20 +29,26 @@ namespace Edujinni.Models
             // Add an Accept header for JSON format.    
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             // List all Names.    
-            
+
             HttpResponseMessage response = client.GetAsync("classNames/classDetailsList").Result;  // Blocking call!  
             var cname = response.Content.ReadAsStringAsync().Result;
+            /* if (response.IsSuccessStatusCode)
+             {
+                 //string classTeacher = "";
+
+                 //var tnames = new List<string>();
+                 //{
+                 //    tnames.Add(cname);
+                 //}
+                 //ViewBag.class_name = tnames;
+                 //TempDataDictionary.
+                 //model.class_name = tnames;
+             }*/
             if (response.IsSuccessStatusCode)
             {
-                //string classTeacher = "";
-                
-                //var tnames = new List<string>();
-                //{
-                //    tnames.Add(cname);
-                //}
-                //ViewBag.class_name = tnames;
-                //TempDataDictionary.
-                //model.class_name = tnames;
+                var result = await response.Content.ReadAsAsync<IEnumerable<string>>();
+                //if (result != null)
+                    //model.class_name = result;
             }
             else
             {
