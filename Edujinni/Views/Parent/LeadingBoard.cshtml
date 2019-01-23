@@ -1,0 +1,40 @@
+﻿@model Edujinni.Models.Parent.LeadingBoard
+@{
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LeadingBoard</title>
+    <style>
+        label {
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div class="col-md-12 mt-4" style="background-color:#E7E7E7; border-radius:10px;">
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-3">
+                <label>Class</label>
+                @Html.TextBoxFor(Model => Model.Classs, new { @class = "form-control" })
+            </div>
+            <div class="col-md-3">
+                <label>Section</label>
+                @Html.TextBoxFor(Model => Model.Section, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                //LEADING BOARD
+                RESULTS
+                APPEAR HERE
+            </div>
+        </div>
+        <br />
+    </div><br />
+</body>
+</html>

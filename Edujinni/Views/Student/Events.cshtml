@@ -1,0 +1,104 @@
+﻿@model Edujinni.Models.Student.Events
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Events</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>AddEventsView</title>
+    <style>
+        #cntrn {
+            margin-left: auto;
+        }
+
+        #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 50px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+
+        #addDiv {
+            width: 58px;
+            height: 25px;
+            float: right;
+            margin-top: 5px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+
+        #image1 {
+            margin-left: 10px;
+            background-color: white;
+            width: 130px;
+            height: 100px;
+            text-align: right;
+            border-radius: 10px;
+        }
+
+        #imguser {
+            color: blue;
+            margin-top: 15px;
+        }
+
+        #ename {
+            color: grey;
+            font-size: 12px;
+        }
+
+        #evtcontent {
+            text-align: left;
+            font-size: 13px;
+        }
+
+        #editbtn {
+            border-radius: 20px;
+            width: 100px;
+        }
+
+        #divlast {
+            margin-right: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <div class="row ml-0 mr-2 mt-3">
+            <div class="col-md-8 col-md-offset-2 mr-1 mb-3" style="background-color: #f2f2f2; width:80%; border-radius:10px;">
+                <div class="row mt-3">
+                    <div class="mt-2" id="image1">
+                        <center><i class="fa fa-user fa-5x" id="imguser"></i></center>
+                    </div>
+                    <div class="col ml-4">
+                        <div class="row ">
+                            <div class="col-md-12 text-left mt-4">
+                                <label id="ename">Event Date</label><br /><label id="edate"></label>
+                                @Html.TextBoxFor(Model=>Model.EventDate,new {@class="form-control"})
+                            </div>
+                        </div> <div class="row mt-3">
+                            <div class="col-md-12 text-left">
+                                <label id="ename">Event Name</label><br /><label id="edate"></label>
+                                @Html.TextBoxFor(Model => Model.EventName, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 ml-1">
+                    <label id="ename">Event Description</label><br />
+                    @Html.TextAreaFor(Model => Model.EventDescription, new { @class = "form-control" })
+                </div><br />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

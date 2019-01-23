@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_ParentLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fee</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#grid2").hide();
+            $("#grid3").hide();
+            $("#feegrid1").click(function () {
+                $("#grid2").show();
+            })
+            $("#feegrid2").click(function () {
+                $("#grid3").show();
+            })
+        })
+    </script>
+    <div class="row mt-4 ml-4">
+        <label style="font-size:19px;">Fee</label>
+    </div>
+    <div class="row ml-2 mr-2">
+            <div class="col mt-2" style="background-color:#E7E7E7; border-radius:10px;">
+                //DETAILS WILL BE SHOWN IN THIS GRID REGARDING FEE.....
+                <a href="#" id="feegrid1">Fee Details</a>
+            </div>        
+    </div>
+        <div class="row ml-2 mr-2" id="grid2">
+            <div class="col-md-12 mt-2" style="background-color:#E7E7E7; border-radius:10px;">
+                //TOTAL AMOUNT PAID GRID.....
+                <a href="#" id="feegrid2">Complete Fee Details</a>
+            </div>
+        </div>
+    <div class="row ml-2 mr-2" id="grid3">
+        <div class="col-md-12 mt-2" style="background-color:#E7E7E7; border-radius:10px;">
+            //PAYMENT RECEIPT GRID.....
+            <a href="@Url.Action("CompleteFeeDetails", "Parent")" id="feegrid2">Complete Fee List</a>
+            <p id="phello">hello</p>
+        </div>
+    </div>
+        <br />
+</body>
+</html>

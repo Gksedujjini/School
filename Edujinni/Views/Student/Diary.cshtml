@@ -1,0 +1,49 @@
+﻿@model Edujinni.Models.Student.Diary
+@{
+        Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Diary</title>
+    <style>
+        label{font-size:17px;}
+    </style>
+</head>
+<body>
+    @{ List<SelectListItem> list = new List<SelectListItem>(); }
+    <div class="col-md-12 mt-4" style="background-color:#E7E7E7; border-radius:10px;">
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-3">
+                <label>Class</label>
+                @Html.TextBoxFor(Model => Model.Classs, new { @class = "form-control" })
+            </div>
+            <div class="col-md-3">
+                <label>Section</label>
+                @Html.TextBoxFor(Model => Model.Section, new { @class = "form-control" })
+            </div>
+            <div class="col-md-3">
+                <label>Parent Name</label>
+                @Html.TextBoxFor(Model => Model.ParentName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-center">
+            <div class="col-md-3 mt-2">
+                @Html.DropDownListFor(Model => Model.TypeofWork, list, "Type Of Work", new { @class = "form-control" })
+            </div>
+            <div class="col-md-3 mt-2">
+                @Html.DropDownListFor(Model => Model.Date, list, "Date", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                //GRID GOES HERE//GRID GOES HERE//GRID GOES HERE//GRID GOES HERE
+                //GRID GOES HERE//GRID GOES HERE//GRID GOES HERE//GRID GOES HERE
+            </div>
+        </div><br />
+    </div><br />
+</body>
+</html>

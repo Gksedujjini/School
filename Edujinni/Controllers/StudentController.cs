@@ -29,44 +29,35 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        public ActionResult test()
-        {
-            ViewBag.Message = "hello..this is test";
-            return View();
-        }
-        public ActionResult Marks()
+        public ActionResult AcademicSyallabus()
         {
             return View();
         }
-        public ActionResult CompareMarks()
+        public ActionResult TimeTable()
         {
             return View();
         }
-        public ActionResult Assignments()
+        public ActionResult Diary()
         {
             return View();
         }
-        public ActionResult Messages()
+        public ActionResult LeadingBoard()
         {
             return View();
         }
-        public ActionResult SendMessage()
+        public ActionResult Attendance()
         {
             return View();
         }
-        public ActionResult LeaveRequest()
+        public ActionResult Events()
         {
             return View();
         }
-        public ActionResult ApplyLeave()
+        public ActionResult ExamSchedule()
         {
             return View();
         }
-        public ActionResult StudentAchievements()
-        {
-            return View();
-        }
-        public ActionResult Overview()
+        public ActionResult ViewExamSchedule()
         {
             return View();
         }
