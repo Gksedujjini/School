@@ -21,8 +21,7 @@ namespace Edujinni.Controllers
         }
         public ActionResult Sginup()
         {
-
-            return View();
+                return View();
         }
         [HttpPost]
         public async Task<ActionResult> Sginup(Adminsignup admin)
@@ -33,6 +32,7 @@ namespace Edujinni.Controllers
                
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("http://www.edujinni.in/");
+               // client.BaseAddress = new Uri("http://localhost:55426/");
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Accept.Clear();
                 admin.insert_by = "Srikar";

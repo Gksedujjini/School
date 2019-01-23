@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
@@ -68,8 +67,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-        //public async Task<ActionResult> classdetails()
-        //{
+        public ActionResult AddStudent()
+        {
+            return View();
+        }
 
         //    var model = new classdetails();
 
@@ -92,9 +93,11 @@ namespace Edujinni.Controllers
         //    return View();
         //}
 
-        public async Task<ActionResult> AddStudent(addstudent student)
+        public async  Task<ActionResult> AddStudent(addstudent student)
         {
-            student.GETCLASS();
+            addclass a = new addclass();
+            a.gettingdetails();
+            //student.GETCLASS();
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://www.edujinni.in/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -135,29 +138,31 @@ namespace Edujinni.Controllers
         {
             return View();
         }
-       // [HttpPost]
-        //public ActionResult AddTeacher(Addteacher addTech)
-        //{
-        //    HttpClient client = new HttpClient();
-        //    client.BaseAddress = new Uri("http://www.edujinni.in/");
-        //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //    client.DefaultRequestHeaders.Accept.Clear();
-        //    addTech.insert_by = "ganesh";
-        //    addTech.insert_date = DateTime.Now;
-        //    addTech.update_by = "gani";
-        //    addTech.update_date = DateTime.Now;
-        //    addTech.class_id = 1;
-        //    addTech.school_id = 1;
-        //    HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", addTech);
-        //    Console.WriteLine(response);
-        //    if (response.IsSuccessStatusCode == true)
-        //    {
-        //        Response.Cookies.Clear();
-        //        ModelState.Clear();
-        //        return ViewBag.Message();
-        //    }
-        //    return View();
-        //}
+        [HttpPost]
+        public async Task<ActionResult> AddTeacher(Addteacher addTech)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://www.edujinni.in/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Clear();
+            addTech.insert_by = "ganesh";
+            addTech.insert_date = DateTime.Now;
+            addTech.update_by = "gani";
+            addTech.update_date = DateTime.Now;
+            addTech.class_id = 1;
+            addTech.school_id = 1;
+
+            HttpResponseMessage response = await client.PostAsJsonAsync("addingTeacher", addTech);
+            Console.WriteLine(response);
+            if (response.IsSuccessStatusCode == true)
+            {
+                Response.Cookies.Clear();
+                ModelState.Clear();
+                return ViewBag.Message();
+            }
+
+            return View();
+        }
 
 
         public ActionResult TeacherInfo()

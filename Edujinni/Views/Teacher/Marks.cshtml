@@ -1,0 +1,164 @@
+﻿@{
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>View Exam Schedule</title>
+    <style>
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
+         #upload-data {
+            margin-right: auto;
+            float: right;
+            font-size: 55px;
+            color: green;
+            width: 50px;
+            margin-top: -8px;
+        }
+        #addDiv {
+            width: 58px;
+            float: right;
+            margin-top: 10px;
+            border-radius: 5px;
+            margin-right: -5px;
+            background-color: green;
+            color: white;
+        }
+        #editbtn {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            min-width: 100px;
+            max-width: 200px;
+        }
+        #search {
+            background-color: white;
+            border: none;
+            border-radius: 20px;
+            margin: 0px 0;
+            outline: none;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+        .inputWithIcon #search {
+            padding-left: 40px;
+        }
+        .inputWithIcon {
+            position: relative;
+        }
+            .inputWithIcon i {
+                position: absolute;
+                left: 0;
+                top: 1px;
+                padding: 9px 15px;
+                color: black;
+                transition: 0.3s;
+            }
+            .inputWithIcon.inputIconBg i {
+                background-color: #aaa;
+                color: black;
+                padding: 9px 4px;
+                border-radius: 4px 0 0 4px;
+            }
+    </style>
+</head>
+<body>
+    <div class="row ml-0 mr-2 mt-3" style="width:80%;">
+        <div class="row align-content-end mt-3 mb-3" style="width:105%;">
+            <div class="col">
+                <button type="button" onclick="location.href = '/Teacher/AddMarks'" class="btn btn-success btn-sm" style="float:right; border-radius:10px;">
+                    <span class="glyphicon glyphicon-plus-sign" style=""></span> <span>Add Marks</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-12 col-md-offset-0 mr-1 mb-3" id="colcontainer">
+            <br />
+            <div class="row justify-content-center mt-3 mb-3">
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <select name="Class" class="form-control">
+                            <option>Class</option>
+                            <option>class1</option>
+                            <option>class2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <select name="Section" class="form-control">
+                            <option>Section</option>
+                            <option>section1</option>
+                            <option>section2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-start mt-3">
+                <div class="col-md-6">
+                    <div class="col" style="width:100%;">
+                        <select name="ExamType" class="form-control">
+                            <option>Exam Type</option>
+                            <option>Exam1</option>
+                            <option>Exam2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-12 mt-2">
+                    <div class="col" style="width:100%;">
+                        <div class="inputWithIcon">
+                            <input type="text" class="form-control col-12" id="search" placeholder="Search Students">
+                            <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-12 mt-3">
+                    <div class="col">
+                        <table class="table table-borderless table-responsive">
+                            <thead>
+                                <tr class="table" style="background-color:green; color:white;">
+                                    <th scope="col" width="17%">Roll No</th>
+                                    <th scope="col" width="66%">Student Name</th>
+                                    <th scope="col" width="17%">Percentage</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 mb-3 justify-content-end">
+                <div class="col-md-3 mt-4 text-right">
+                    <input type="button" onclick="location.href = '/Teacher/MarksView'" value="View" class="form-control" style="background-color:blue; color:white;"/>
+                </div>
+                <div class="col-md-3 mt-3" style="">
+                    <a href="@Url.Action("AddMarks","Teacher")">
+                        <i class="fa fa-plus-circle" id="upload-data"></i>
+                        <div id="addDiv"><label class="ml-2 mt-1">Add</label></div>
+                    </a>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</body>
+</html>
