@@ -61,5 +61,48 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult Overview()
+        {
+            return View();
+        }
+        
+        public ActionResult test()
+        {
+            ViewBag.Message = "hello..this is test";
+            return View();
+        }
+        public ActionResult Marks()
+        {
+            return View();
+        }
+        public ActionResult CompareMarks()
+        {
+            return View();
+        }
+        public ActionResult Assignments()
+        {
+            return View();
+        }
+        public ActionResult Messages()
+        {
+            return View();
+        }
+        public ActionResult SendMessage()
+        {
+            return View();
+        }
+        public ActionResult LeaveRequest()
+        {
+            return View();
+        }
+        public ActionResult ApplyLeave()
+        {
+            return View();
+        }
+        public ActionResult StudentAchievements()
+        {
+            return View();
+        }
+      
     }
 }
