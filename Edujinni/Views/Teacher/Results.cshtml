@@ -18,6 +18,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Results List</title>
     <style>
+         
         .form-control {
             border-radius: 20px;
             background-color: white;
@@ -53,6 +54,13 @@
                 padding: 9px 4px;
                 border-radius: 4px 0 0 4px;
             }
+           #viewbtn {
+            background-color: blue !important;
+            color: white;
+            border-radius: 10px;
+            min-width: 100px;
+            max-width: 200px;
+        }
             #divper{color: white; background-color: red; width: 60px; height: 22px; border-radius: 7px; padding: 0 0 0 5px;}
     </style>
 </head>
@@ -104,28 +112,24 @@
                 <div class="col">
                     <table class="table table-borderless table-responsive">
                         <thead>
-                            <tr class="" style="color:white; background-color:green;">
+                            <tr class="table" style="background-color:green; color:white;">
                                 <th scope="col" width="17%">Roll No</th>
                                 <th scope="col" width="66%">Student Name</th>
                                 <th scope="col" width="17%">Percentage</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="" style="color:black; background-color:#e6ffff;">
-                                <td scope="col" width="17%">23</td>
-                                <td scope="col" width="66%">Sampath Singh</td>
-                                <td scope="col" width="17%"><span style="color:green;">63</span>%</td>
-                            </tr>
-                            <tr class="" style="color:black; background-color:#ffe6ff;">
-                                <td scope="col" width="17%">24</td>
-                                <td scope="col" width="66%">Santosh Singh</td>
-                                <td scope="col" width="17%"><div id="divper">34%</div></td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
+        <div class="row mt-4 justify-content-end">
+            <div class="col-md-4 mt-2">
+                <div class="col">
+                    <input type="button" onclick="location.href='/Teacher/ResultView'" value="View" id="viewbtn" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <br />
     </div>
 </body>
 </html>

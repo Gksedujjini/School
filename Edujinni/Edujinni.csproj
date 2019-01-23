@@ -34,7 +34,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -217,7 +216,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Controllers\PopupsController.cs" />
-    <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
@@ -227,9 +225,6 @@
     <Compile Include="Models\Achievements.cs" />
     <Compile Include="Models\AddAdmin.cs" />
     <Compile Include="Models\addclass.cs" />
-    <Compile Include="Models\AddExam.cs" />
-    <Compile Include="Models\AddMarks.cs" />
-    <Compile Include="Models\AddResultView.cs" />
     <Compile Include="Models\AddSchool.cs" />
     <Compile Include="Models\addstudent.cs" />
     <Compile Include="Models\AddSubject.cs" />
@@ -242,27 +237,20 @@
     <Compile Include="Models\Editprofile.cs" />
     <Compile Include="Models\EventsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\LeadingBoard.cs" />
+    <Compile Include="Models\LeaveModel.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Parent\FeeDetails.cs" />
-    <Compile Include="Models\Parent\Diary.cs" />
-    <Compile Include="Models\Parent\EditProfile.cs" />
-    <Compile Include="Models\Parent\Events.cs" />
-    <Compile Include="Models\Parent\ExamSchedule.cs" />
-    <Compile Include="Models\Parent\LeadingBoard.cs" />
-    <Compile Include="Models\Parent\TimeTable.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\Parent\LeaveModel.cs" />
+    <Compile Include="Models\Parent\MessageModel.cs" />
     <Compile Include="Models\StudentEditModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\StudentOverView.cs" />
-    <Compile Include="Models\Student\AcademicSyallabus.cs" />
-    <Compile Include="Models\Student\Diary.cs" />
-    <Compile Include="Models\Student\Events.cs" />
-    <Compile Include="Models\Student\ExamSchedule.cs" />
-    <Compile Include="Models\Student\LeadingBoard.cs" />
-    <Compile Include="Models\Student\TimeTable.cs" />
+    <Compile Include="Models\Student\LeaveModel.cs" />
+    <Compile Include="Models\Student\MessageModel.cs" />
     <Compile Include="Models\SyllabusModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
+    <Compile Include="Models\Teacher\ExamSchedule.cs" />
     <Compile Include="Models\TimeTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -473,9 +461,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sb-admin.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -514,6 +500,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Student\editstudent.cshtml" />
+    <Content Include="Views\Student\test.cshtml" />
     <Content Include="Views\Admin\AddAchievements.cshtml" />
     <Content Include="Views\Admin\ViewAchievements.cshtml" />
     <Content Include="Views\Admin\EditProfile.cshtml" />
@@ -534,6 +521,7 @@
     <Content Include="Views\Admin\TeacherInfo.cshtml" />
     <Content Include="Views\Admin\test.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\test2.cshtml" />
     <Content Include="Views\Account\Register - Copy.cshtml" />
     <Content Include="Views\Admin\AddResultView.cshtml" />
     <Content Include="Views\Admin\AddLeadingBoard.cshtml" />
@@ -548,7 +536,7 @@
     <Content Include="Views\Popups\StudentAdded.cshtml" />
     <Content Include="Views\Popups\TeacherAdded.cshtml" />
     <Content Include="Views\Popups\TimeTable.cshtml" />
-    <Content Include="Views\Admin\TeacherEditProfileView.cshtml" />
+    <Content Include="Views\Teacher\EditProfile.cshtml" />
     <Content Include="Views\Teacher\AddSyllabusView.cshtml" />
     <Content Include="Views\Teacher\SyllabusView.cshtml" />
     <Content Include="Views\Teacher\DiaryView.cshtml" />
@@ -569,43 +557,51 @@
     <Content Include="Views\Teacher\StudentOverview.cshtml" />
     <Content Include="Views\Student\StudentDashboard.cshtml" />
     <Content Include="Views\Student\EditProfile.cshtml" />
-    <Content Include="Views\Admin\StudentInfo.cshtml" />
-    <Content Include="Views\Admin\EditStudentOverView.cshtml" />
-    <Content Include="Views\Admin\ExamSchedules.cshtml" />
-    <Content Include="Views\Admin\AddExam.cshtml" />
-    <Content Include="Views\Admin\Message.cshtml" />
-    <Content Include="Views\Admin\FeeCollection.cshtml" />
-    <Content Include="Views\Admin\RequestedPage.cshtml" />
-    <Content Include="Views\Admin\AddMarks.cshtml" />
-    <Content Include="Views\Admin\Viewresult.cshtml" />
-    <Content Include="Views\Admin\StudentResult.cshtml" />
-    <Content Include="Views\Student\AcademicSyallabus.cshtml" />
-    <Content Include="Views\Student\TimeTable.cshtml" />
-    <Content Include="Views\Shared\_StudentLayout.cshtml" />
-    <Content Include="Views\Student\Diary.cshtml" />
-    <Content Include="Views\Student\LeadingBoard.cshtml" />
-    <Content Include="Views\Student\Attendance.cshtml" />
-    <Content Include="Views\Student\Events.cshtml" />
-    <Content Include="Views\Student\ExamSchedule.cshtml" />
-    <Content Include="Views\Student\ViewExamSchedule.cshtml" />
-    <Content Include="Views\Parent\EditProfile.cshtml" />
-    <Content Include="Views\Shared\_ParentLayout.cshtml" />
     <Content Include="Views\Parent\ParentDashboard.cshtml" />
-    <Content Include="Views\Parent\Attendance.cshtml" />
-    <Content Include="Views\Parent\ViewAttendance.cshtml" />
-    <Content Include="Views\Parent\Events.cshtml" />
-    <Content Include="Views\Parent\LeadingBoard.cshtml" />
-    <Content Include="Views\Parent\ExamSchedule.cshtml" />
-    <Content Include="Views\Parent\ViewExamSchedule.cshtml" />
-    <Content Include="Views\Parent\TimeTable.cshtml" />
-    <Content Include="Views\Parent\Diary.cshtml" />
-    <Content Include="Views\Parent\Fee.cshtml" />
-    <Content Include="Views\Parent\CompleteFeeDetails.cshtml" />
+    <Content Include="Views\Shared\_TeacherLayout.cshtml" />
+    <Content Include="Views\Teacher\Notifications.cshtml" />
+    <Content Include="Views\Teacher\Messages.cshtml" />
+    <Content Include="Views\Teacher\SendMessage.cshtml" />
+    <Content Include="Views\Teacher\AddMarks.cshtml" />
+    <Content Include="Views\Teacher\TimeTable.cshtml" />
+    <Content Include="Views\Teacher\LeaveRequest.cshtml" />
+    <Content Include="Views\Teacher\RequestedLeaves.cshtml" />
+    <Content Include="Views\Teacher\ExamSchedule.cshtml" />
+    <Content Include="Views\Teacher\MyWork.cshtml" />
+    <Content Include="Views\Teacher\MyTimeTable.cshtml" />
+    <Content Include="Views\Teacher\ApplyLeave.cshtml" />
+    <Content Include="Views\Shared\_StudentLayout.cshtml" />
+    <Content Include="Views\Student\StudentAchievements.cshtml" />
+    <Content Include="Views\Student\LeaveRequest.cshtml" />
+    <Content Include="Views\Student\Overview.cshtml" />
+    <Content Include="Views\Student\ApplyLeave.cshtml" />
+    <Content Include="Views\Student\Messages.cshtml" />
+    <Content Include="Views\Student\SendMessage.cshtml" />
+    <Content Include="Views\Student\Assignments.cshtml" />
+    <Content Include="Views\Student\Marks.cshtml" />
+    <Content Include="Views\Student\CompareMarks.cshtml" />
+    <Content Include="Views\Shared\_ParentLayout.cshtml" />
+    <Content Include="Views\Parent\Marks.cshtml" />
+    <Content Include="Views\Parent\ViewResult.cshtml" />
+    <Content Include="Views\Parent\CompareMarks.cshtml" />
+    <Content Include="Views\Parent\Assignments.cshtml" />
+    <Content Include="Views\Parent\ViewAchievements.cshtml" />
+    <Content Include="Views\Parent\SendMessage.cshtml" />
+    <Content Include="Views\Parent\Messages.cshtml" />
+    <Content Include="Views\Parent\StudentOverview.cshtml" />
+    <Content Include="Views\Parent\AcademicSyllabus.cshtml" />
+    <Content Include="Views\Parent\LeaveRequest.cshtml" />
+    <Content Include="Views\Parent\ApplyLeave.cshtml" />
+    <Content Include="Views\Teacher\ViewExamSchedule.cshtml" />
+    <Content Include="Views\Teacher\EditExamSchedule.cshtml" />
+    <Content Include="Views\Teacher\AttendanceDetails.cshtml" />
+    <Content Include="Views\Teacher\Marks.cshtml" />
+    <Content Include="Views\Teacher\MarksView.cshtml" />
+    <Content Include="Views\Teacher\CompareMarks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\parent\" />
-    <Folder Include="Views\Sample\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
