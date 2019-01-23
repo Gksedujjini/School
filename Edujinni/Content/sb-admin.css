@@ -206,7 +206,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 @media (min-width: 768px) {
   .sidebar {
-    width: 212px !important;
+    width: 241px !important;
   }
    #sear{
                     position: absolute;
@@ -221,7 +221,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
     width: 100%;
     text-align: left;
     padding: 1rem;
-    width: 243px;
+    width: 241px;
   }
   .sidebar .nav-item .nav-link span {
     font-size: 1.5rem;

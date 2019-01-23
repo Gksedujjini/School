@@ -44,6 +44,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult AddSection()
+        {
+            return View();
+        }
 
         public ActionResult ATTRecords()
         {
