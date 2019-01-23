@@ -33,6 +33,10 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult AttendanceDetails()
+            {
+                return View();
+            }
         public ActionResult AttendanceAdd()
         {
             return View();
@@ -93,7 +97,19 @@ namespace Edujinni.Controllers
         {
             return View();
         }
+        public ActionResult Marks()
+        {
+            return View();
+        }
         public ActionResult AddMarks()
+        {
+            return View();
+        }
+        public ActionResult MarksView()
+        {
+            return View();
+        }
+        public ActionResult CompareMarks()
         {
             return View();
         }

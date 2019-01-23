@@ -1,0 +1,198 @@
+﻿@{
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link href="Content/all.min.css" rel="stylesheet" type="text/css">
+    <link href="Content/sb-admin.css" rel="stylesheet">
+    <title>Marks View</title>
+    <style>
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        #label {
+            color: gray;
+        }
+
+        #boxvalue {
+            background-color: white;
+            border: none;
+            color: black;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        #innerdiv {
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        #label {
+            color: gray;
+        }
+
+        #rankboxtop {
+            background-color: white;
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+        }
+
+        #rank {
+            font-size: 15px;
+            color: black;
+            margin-top: 0px;
+        }
+
+        #boxvalue {
+            background-color: #f2f2f2;
+            border: 1px solid lightgray;
+        }
+
+        #ranktextbox {
+            color: green;
+            font-size: 35px;
+            color: green;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            border: none;
+            margin-top: 10px;
+        }
+
+        #btnview {
+            background-color: blue;
+            color: white;
+            border-radius: 15px;
+            min-width: 60px;
+            max-width: 125px;
+            height: 40px;
+        }
+        #btngraph {
+            background-color: black;
+            color: white;
+            border-radius: 15px;
+            min-width: 60px;
+            max-width: 125px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row ml-0 mr-2 mt-5 justify-content-center" style="width:90%;">
+        <div class="col-md-10 mb-3" id="colcontainer">
+            <br />
+            <center><b>Results</b></center>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-6 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Student Name</label>
+                        <input type="text" class="" id="boxvalue" value="Sampath Kumar" />
+                    </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Parent Name</label>
+                        <input type="text" class="" id="boxvalue" value="Prasana Kumar" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-md-6 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Student Id</label>
+                        <input type="text" class="" id="boxvalue" value="7846546544" />
+                    </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <div class="col text-left">
+                        <label id="label">Type of Exam</label>
+                        <input type="text" class="" id="boxvalue" value="Unit Test-3" />
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-start mt-3 mb-3">
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <div class="text-center" id="rankboxtop">
+                            <input type="text" id="ranktextbox" value="87.7" />
+                            <p id="rank">Overall %</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <div class="col">
+                        <div class="text-center" id="rankboxtop">
+                            <input type="text" id="ranktextbox" value="A" />
+                            <p id="rank">Overall Grade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="innerdiv">
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-md-4 mt-2">
+                        <div class="col text-left">
+                            <label id="label">Text</label>
+                            <input type="text" class="" id="boxvalue" value="Unit Text-1" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <div class="col text-center">
+                            <input type="text" id="ranktextbox" value="87.7" />
+                            <label id="label">Overall %</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <div class="col text-center">
+                            <input type="text" id="ranktextbox" value="A" />
+                            <label id="label" style="color:black;">Grade</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-0 justify-content-start">
+                    <div class="col-md-4 mt-2">
+                        <div class="col text-left">
+                            <label id="label">From</label>
+                            <input type="text" class="" id="boxvalue" value="02/05/2018" />
+                            <br /><br />
+                            <label id="label">To</label>
+                            <input type="text" class="" id="boxvalue" value="22/05/2018" />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col-md-1 align-self-center">
+
+                    </div>
+                    <div class="col-md-7 mt-2 align-self-center">
+                        <div class="row justify-content-center">
+                            <div class="col text-right mt-2">
+                                <input type="button" onclick="location.href = '/Teacher/ResultView'" id="btnview" class="form-control" value="View" />
+                            </div>
+                            <div class="col text-right mt-2">
+                                <input type="button" onclick="location.href = '/Teacher/CompareMarks'" id="btngraph" class="form-control" value="Graph" />
+                            </div>
+                        </div>
+                    </div>
+                </div><br />
+            </div>
+            <br /><br />
+        </div>
+    </div>
+</body>
+</html>

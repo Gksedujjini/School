@@ -19,76 +19,158 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Result View</title>
     <style>
-        .form-control {
-            border-radius: 20px;
-            background-color: white;
+        #colcontainer {
+            background-color: #f2f2f2;
+            width: 100%;
+            border-radius: 10px;
         }
-        #colcontainer{background-color: #f2f2f2; width:100%; border-radius:10px;}
+
         #cntnr {
             background-color: #f2f2f2;
             border-radius: 5px;
             width: 80%;
         }
-        #rank{font-size: 15px; color: black; margin-top: -5px;}
-        #rankbox{background-color: white; width: 100px; height: 100px; border-radius: 8px}
-        #rank-lablel{font-size:35px;color:green; margin-top:5px;}
-        #labelstd{font-size:12px; color:gray;}
+
+        #rank {
+            font-size: 15px;
+            color: black;
+            margin-top: 0px;
+        }
+
+        #ranktextboxmiddle {
+            color: green;
+            font-size: 35px;
+            color: green;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            border: none;
+            margin-top: 10px;
+        }
+
+        #rankbox {
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+        }
+
+        #rankboxtop {
+            background-color: white;
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+        }
+
+        #ranktextbox {
+            color: green;
+            font-size: 35px;
+            color: green;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            border: none;
+            margin-top: 10px;
+        }
+
+        #labelstd {
+            font-size: 12px;
+            color: gray;
+        }
+
+        #tabletextbox {
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            width: 65px;
+            border: none;
+        }
+
+        #tabletextbox1 {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            width: 65px;
+            border: none;
+        }
+
+        #textboxmiddle {
+            background-color: #f2f2f2;
+            border:1px solid gray;
+        }
     </style>
 </head>
 <body>
     <div class="container mt-5" style="width:100%">
-        <div class="row" style="width:87%;">
-            <div class="col-md-12 mb-3" id="colcontainer">
-                <div class="row justify-content-center mt-3 mb-3">
+        <div class="row justify-content-center" style="width:100%;">
+            <div class="col-md-10 mb-3" id="colcontainer">
+                <div class="row justify-content-start mt-3 mb-3">
                     <div class="col-md-6 mt-2">
                         <div class="col">
+                            <div class="text-center" id="rankboxtop">
+                                <input type="text" id="ranktextbox" value="87.7" />
+                                <p id="rank">Overall %</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <div class="col">
+                            <div class="text-center" id="rankboxtop">
+                                <input type="text" id="ranktextbox" value="A" />
+                                <p id="rank">Overall Grade</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3 mb-3">
+                    <div class="col-md-5 mt-2">
+                        <div class="col text-left">
                             <label id="labelstd">Student Name</label><br />
-                            <input type="text" value="Sampath Kumar" />
+                            <input type="text" id="textboxmiddle" value="Sampath Kumar" />
                         </div>
-
                     </div>
-                    <div class="col-md-6 mt-2">
-                        <div class="col">
+                    <div class="col-md-5 mt-2">
+                        <div class="col text-left">
                             <label id="labelstd">Parent Name</label><br />
-                            <input type="text" value="Prasant Kumar" />
+                            <input type="text" id="textboxmiddle" value="Prasana Kumar" />
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3 mb-3">
-                    <div class="col-md-6 mt-2">
-                        <div class="col">
+                    <div class="col-md-5 mt-2">
+                        <div class="col text-left">
                             <label id="labelstd">Student Id</label><br />
-                            <input type="text" value="54545545" />
+                            <input type="text" id="textboxmiddle" value="54545545" />
                         </div>
                     </div>
-                    <div class="col-md-6 mt-2">
-                        <div class="col">
+                    <div class="col-md-5 mt-2">
+                        <div class="col text-left">
                             <label id="labelstd">Type of Exam</label><br />
-                            <input type="text" value="Unit Text-3" />
+                            <input type="text" id="textboxmiddle" value="Unit Text-3" />
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-start mt-3">
-                    <div class="col-md-4">
+                <div class="row justify-content-center mt-3" style="width:92%;">
+                    <div class="col-md-4 mt-2">
                         <div class="col" style="">
                             <div class="text-center" id="rankbox">
-                                <p id="rank-lablel">5</p>
+                                <input type="text" id="ranktextboxmiddle" value="5" />
                                 <p id="rank">Rank</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-2">
                         <div class="col" style="">
                             <div class="text-center" id="rankbox">
-                                <p id="rank-lablel">87</p>
+                                <input type="text" id="ranktextboxmiddle" value="87" />
                                 <p id="rank">%</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-2">
                         <div class="col" style="">
                             <div class="text-center" id="rankbox">
-                                <p id="rank-lablel">A</p>
+                                <input type="text" id="ranktextboxmiddle" value="A" />
                                 <p id="rank">Grade</p>
                             </div>
                         </div>
@@ -102,39 +184,39 @@
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         <div class="col">
-                            <table class="table table-borderless table-responsive" style="width:90%">
+                            <table class="table table-borderless" style="width:100%">
                                 <thead>
                                     <tr class="" style="color:white; background-color:blue;">
-                                        <td scope="col" width="100%">Subject</td>
-                                        <td scope="col" width="100%">Marks Obtained</td>
+                                        <td style="width:60%;">Subject</td>
+                                        <td style="width:40%;">Marks Obtained</td>
                                     </tr>
                                 </thead>
-                                @*<tbody>
-                                    <tr class="" style="color:black; background-color:#e6ffff;">
-                                        <td scope="col" width="100%">Social</td>
-                                        <td scope="col" width="100%"><span style="color:green">50</span>/50</td>
-                                    </tr>
-                                    <tr class="" style="color:black; background-color:#ffe6ff;">
-                                        <td scope="col" width="100%">English</td>
-                                        <td scope="col" width="100%"><span style="color:red">10</span>/50</td>
-                                    </tr>
+                                <tbody>
+                                    @*<tr class="" style="color:black; background-color:#e6ffff;">
+                                            <td style="width:60%;">Social</td>
+                                            <td style="width:40%;"><span style="color:green">50</span>/50</td>
+                                        </tr>
+                                        <tr class="" style="color:black; background-color:#ffe6ff;">
+                                            <td style="width:60%;">English</td>
+                                            <td style="width:40%;"><span style="color:red">10</span>/50</td>
+                                        </tr>*@
                                     <tr class="" style="color:white; background-color:green;">
-                                        <th scope="col" width="100%">Obtained</th>
-                                        <th scope="col" width="100%">180</th>
+                                        <th style="width:60%;">Obtained</th>
+                                        <th style="width:40%;"><input type="text" id="tabletextbox" value="180" /></th>
                                     </tr>
                                     <tr class="" style="color:white; background-color:red;">
-                                        <th scope="col" width="100%">Total</th>
-                                        <th scope="col" width="100%">600</th>
+                                        <th style="width:60%;">Total</th>
+                                        <th style="width:40%;"><input type="text" id="tabletextbox1" value="600" /></th>
                                     </tr>
-                                </tbody>*@
+                                </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-           </div>
+        </div>
     </div>
 </body>
 </html>

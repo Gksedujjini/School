@@ -594,6 +594,10 @@
     <Content Include="Views\Parent\ApplyLeave.cshtml" />
     <Content Include="Views\Teacher\ViewExamSchedule.cshtml" />
     <Content Include="Views\Teacher\EditExamSchedule.cshtml" />
+    <Content Include="Views\Teacher\AttendanceDetails.cshtml" />
+    <Content Include="Views\Teacher\Marks.cshtml" />
+    <Content Include="Views\Teacher\MarksView.cshtml" />
+    <Content Include="Views\Teacher\CompareMarks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
