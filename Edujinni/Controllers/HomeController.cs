@@ -23,6 +23,10 @@ namespace Edujinni.Controllers
         {
                 return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<ActionResult> Sginup(Adminsignup admin)
         {

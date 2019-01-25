@@ -92,6 +92,14 @@
         @{ 
             List<SelectListItem> list = new List<SelectListItem>();
         }
+        <div class="row">
+            <div class="col-md ml-2 mt-2">
+                <button type="button" class="btn btn-success mt-2" name="button" onclick="location.href='@Url.Action("AddStudent", "Admin")'"
+                        style="border-radius:10px; color: white; min-width: 50px; width: 150px; float:right; margin-right:10px; height:33px;   ">
+                    <span class="glyphicon glyphicon-plus-sign fa-2x" style="float:left; margin-top:-5px;"></span>Add Student
+                </button>
+            </div>
+        </div>
         <div class="container-fluid">
     <div class="row mt-4">
         <div class="col-md-6">
@@ -111,6 +119,15 @@
     <div class="row">
         @Html.ActionLink("Student Details", "StudentInfo", "Admin")
     </div>
+            <div class="row">
+                <div class="col">
+                    <a href="@Url.Action("AddStudent", "Admin")">
+                        <i class="fa fa-plus-circle" id="upload-data"></i>
+                        <div id="addDiv"><label class="ml-2">Add</label></div>
+                    </a>
+                </div>
+                <br />
+            </div>
 </div>
     </body>
 

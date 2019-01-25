@@ -93,29 +93,29 @@ namespace Edujinni.Controllers
         //    return View();
         //}
 
-        public async  Task<ActionResult> AddStudent(addstudent student)
-        {
-            addclass a = new addclass();
-            a.gettingdetails();
-            //student.GETCLASS();
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://www.edujinni.in/");
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Accept.Clear();
-            student.insert_by = "srikar";
-            student.insert_date = DateTime.Now;
-            student.update_by = "srikar";
-            student.update_date = DateTime.Now;
-            student.school_id = 1;
-            HttpResponseMessage res = await client.PostAsJsonAsync("addingStudentDetails", student);
-            if (res.IsSuccessStatusCode == true)
-            {
-                Response.Cookies.Clear();
-                ModelState.Clear();
-                return ViewBag.Message();
-            }
-            return View();
-        }
+        //public async  Task<ActionResult> AddStudent(addstudent student)
+        //{
+        //    addclass a = new addclass();
+        //    a.gettingdetails();
+        //    //student.GETCLASS();
+        //    HttpClient client = new HttpClient();
+        //    client.BaseAddress = new Uri("http://www.edujinni.in/");
+        //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //    client.DefaultRequestHeaders.Accept.Clear();
+        //    student.insert_by = "srikar";
+        //    student.insert_date = DateTime.Now;
+        //    student.update_by = "srikar";
+        //    student.update_date = DateTime.Now;
+        //    student.school_id = 1;
+        //    HttpResponseMessage res = await client.PostAsJsonAsync("addingStudentDetails", student);
+        //    if (res.IsSuccessStatusCode == true)
+        //    {
+        //        Response.Cookies.Clear();
+        //        ModelState.Clear();
+        //        return ViewBag.Message();
+        //    }
+        //    return View();
+        //}
         //STUDENTS OVERVIEW MODULE //
         public ActionResult StudentsOverView()
         {
@@ -279,7 +279,7 @@ namespace Edujinni.Controllers
             {
                 //string s = nn;
                 SelectList list = new SelectList(lname,"class_name");
-                //string s = list;             
+                //string s = list.ToString();            
                 ViewBag.class_name = list;             
             }
             else

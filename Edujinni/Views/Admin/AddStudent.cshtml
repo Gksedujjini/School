@@ -149,14 +149,18 @@
                             <input class="" id="getfile1" style="display: none;" type="file" accept="image/*"
                                    onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" />
                             @*</div>*@
-                            <div class="col ml-4">
+                            <div class="col ml-1">
                                 <div class="row mt-2">
-                                    <div class="col-md-4 mt-5 input-group">
-                                        <div class="form-check form-check-inline ml-auto mt-1">
+                                    <div class="col-md-3 mt-5 input-group">
+                                        <div class="form-check form-check-inline  mt-1">
                                             @Html.RadioButtonFor(Model => Model.student_gender, "Male", new { @class = "form-check-input", @id = "inlineCheckboxMale" })
-                                            <label class="form-check-label" for="inlineCheckboxMale">Male</label>
+                                            <label class="form-check-label" for="inlineCheckboxMale">Male</label>                                           
                                         </div>
-                                        <div class="form-check form-check-inline ml-auto mt-1">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-3 input-group">
+                                        <div class="form-check form-check-inline  mt-1">                                            
                                             @Html.RadioButtonFor(Model => Model.student_gender, "Female", new { @class = "form-check-input", @id = "inlineCheckboxFemale", @style = "margin-left:15px" })
                                             <label class="form-check-label" for="inlineCheckboxFemale">Female</label>
                                         </div>
@@ -174,14 +178,7 @@
                                     @Html.TextBoxFor(Model => Model.student_last_name, new { @class = "form-control", @placeholder = "Last Name" })
                                 </div>
                                 <div class="col-md-2 mt-2">
-                                    @Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control", @placeholder = "Class" })
-                                    @*<select name="class" class="form-control" id="classs" placeholder="Class"  style="margin-right: 20px; ">
-                            <option selected="selected">--Select class--</option>
-                            <option>LKG</option>
-                            <option>UKG</option>
-                            <option>First Class</option>
-                            <option>Second Class</option>
-                        </select>*@
+                                    @Html.DropDownListFor(Model => Model.student_class, list, new { @class = "form-control", @placeholder = "Class" })                                    
                                 </div>
                                 <div class="col-md-2 mt-2">
                                     <select name="section" class="form-control" id="section" placeholder="Section" style="">
@@ -210,7 +207,6 @@
                                 </div>
                             </div><br>
                             <hr>
-
                         </div>
                     </div>
                     <br>
@@ -286,12 +282,12 @@
                                     <div class="col-md-4 mt-2">
                                         @Html.TextBoxFor(Model => Model.student_pincode, new { @class = "form-control", @placeholder = "Area Code" })
                                     </div>
-                                    <div class="col-md-4 mt-2">
+                                    <div class="col-md-2 mt-2">
                                         <button type="submit" class="btn btn-success" style="height: 40px; width: 190px;border-radius: 20px;">Submit</button>
                                     </div>
                                 </div>                                
                             </div>
-                        </div>
+                        </div><br />
                 </form>
             </div>
         </div>
